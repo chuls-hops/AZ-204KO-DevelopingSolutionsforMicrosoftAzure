@@ -114,7 +114,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **항목 만들기** 블레이드에서 다음 작업을 수행합니다.
 
-    1.  **이름** 텍스트 상자에 **hrtopic*[yourname]***을 입력합니다.
+    1.  **이름** 텍스트 상자에 **hrtopic*[yourname]*** 을 입력합니다.
     
     1.  **리소스 그룹** 섹션에서 **새로 만들기**를 선택하고 **PubSubEvents**를 입력한 다음 **확인**을 선택합니다.
 
@@ -146,7 +146,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     
     1.  **리소스 그룹** 섹션에서 **PubSubEvents**를 선택합니다.
 
-    1.  **이름** 텍스트 상자에 **eventviewer*[yourname]***을 입력합니다.
+    1.  **이름** 텍스트 상자에 **eventviewer*[yourname]*** 을 입력합니다.
 
     1.  **게시** 섹션에서 **Docker 컨테이너**를 선택합니다.
 
@@ -230,7 +230,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
     1.  **웹 후크 선택** 대화 상자의 **구독자 엔드포인트** 텍스트 상자에 이전에 기록한 **웹앱 URL** 값을 입력하고, **https://** 접두사를 사용하는지 확인하고, **/api/updates** 접미사를 추가한 다음 **선택 확인**을 선택합니다.
 
-        > **참고**: 예를 들어, **웹앱 URL** 값이 **http://eventviewerstudent.azurewebsites.net/**인 경우 **구독자 엔드포인트**는 **https://eventviewerstudent.azurewebsites.net/api/updates**가 되어야 합니다.
+        > **참고**: 예를 들어, **웹앱 URL** 값이 **http://eventviewerstudent.azurewebsites.net/** 인 경우 **구독자 엔드포인트**는 **https://eventviewerstudent.azurewebsites.net/api/updates** 가 되어야 합니다.
 
     1.  **만들기**를 선택합니다.
   
@@ -461,7 +461,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
         string topicHostname = new Uri(topicEndpoint).Host;
         ```
 
-    1.  다음 코드 줄을 추가하고 **topicHostname** 및 **events** 변수를 매개 변수로 사용하여 **EventGridClient.PublishEventsAsync(https://docs.microsoft.com/dotnet/api/microsoft.azure.eventgrid.eventgridclient.publisheventswithhttpmessagesasync)** 메서드를 호출합니다.
+    1.  다음 코드 줄을 추가하고 **topicHostname** 및 **events** 변수를 매개 변수로 사용하여 **[EventGridClient.PublishEventsAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventgrid.eventgridclient.publisheventswithhttpmessagesasync)** 메서드를 호출합니다.
 
         ```
         await client.PublishEventsAsync(topicHostname, events);

@@ -66,7 +66,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
     1.  **지원되는 계정 유형** 목록에서 **이 조직 디렉터리의 계정만(기본 디렉터리만 - 단일 테넌트)** 체크 박스를 선택합니다.
 
-    1.  **리디렉션 URI** 드롭다운 목록에서 **공용 클라이언트/네이티브(모바일 및 데스크톱)**를 선택합니다.
+    1.  **리디렉션 URI** 드롭다운 목록에서 **공용 클라이언트/네이티브(모바일 및 데스크톱)** 를 선택합니다.
 
     1.  **리디렉션 URI** 텍스트 상자에서 **http\://localhost**를 입력합니다.
 
@@ -209,22 +209,22 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     IPublicClientApplication app;
     ```
 
-1.  **Main** 메서드에서 다음 작업을 수행하여 정적 **PublicClientApplicationBuilder(https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder)** 클래스를 사용하여 공용 클라이언트 애플리케이션 인스턴스를 빌드한 다음 *앱* 변수에 저장합니다.
+1.  **Main** 메서드에서 다음 작업을 수행하여 정적 **[PublicClientApplicationBuilder](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder)** 클래스를 사용하여 공용 클라이언트 애플리케이션 인스턴스를 빌드한 다음 *앱* 변수에 저장합니다.
 
-    1.  정적 **PublicClientApplicationBuilder(https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder)** 클래스에 액세스하려면 다음 코드 줄을 추가합니다.
+    1.  정적 **[PublicClientApplicationBuilder](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder)** 클래스에 액세스하려면 다음 코드 줄을 추가합니다.
 
         ```
         PublicClientApplicationBuilder
         ```
 
-    1.  **PublicClientApplicationBuilder** 클래스의 **Create()(https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder.create)** 메서드를 사용하도록 다른 코드 줄을 추가하여 이전 코드 줄을 업데이트하고 *_clientId* 변수를 매개 변수로 전달합니다.
+    1.  **PublicClientApplicationBuilder** 클래스의 **[Create()](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder.create)** 메서드를 사용하도록 다른 코드 줄을 추가하여 이전 코드 줄을 업데이트하고 *_clientId* 변수를 매개 변수로 전달합니다.
 
         ```
         PublicClientApplicationBuilder
             .Create(_clientId)
         ```
 
-    1.  기본 **AbstractApplicationBuilder<>(https://docs.microsoft.com/dotnet/api/microsoft.identity.client.abstractapplicationbuilder-1)** 클래스의 **WithAuthority()(https://docs.microsoft.com/dotnet/api/microsoft.identity.client.abstractapplicationbuilder-1.withauthority)** 메서드를 사용하기 위해 다른 코드 줄을 추가하여 이전 코드 줄을 업데이트하고 열거형 값 **[AzureCloudInstance.AzurePublic](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.azurecloudinstance)** 및 *_tenantId* 변수를 매개 변수로 전달합니다.
+    1.  기본 **[AbstractApplicationBuilder<>](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.abstractapplicationbuilder-1)** 클래스의 **[WithAuthority()](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.abstractapplicationbuilder-1.withauthority)** 메서드를 사용하기 위해 다른 코드 줄을 추가하여 이전 코드 줄을 업데이트하고 열거형 값 **[AzureCloudInstance.AzurePublic](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.azurecloudinstance)** 및 *_tenantId* 변수를 매개 변수로 전달합니다.
 
         ```
         PublicClientApplicationBuilder
@@ -232,7 +232,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
             .WithAuthority(AzureCloudInstance.AzurePublic, _tenantId)
         ```
 
-    1.  기본 **AbstractApplicationBuilder<>** 클래스의 **WithRedirectUri()(https://docs.microsoft.com/dotnet/api/microsoft.identity.client.abstractapplicationbuilder-1.withredirecturi)**메서드를 사용하도록 다른 코드 줄을 추가하여 이전 코드 줄을 업데이트하고 **http://localhost**의 문자열 값을 전달합니다.
+    1.  기본 **AbstractApplicationBuilder<>** 클래스의 **[WithRedirectUri()](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.abstractapplicationbuilder-1.withredirecturi)** 메서드를 사용하도록 다른 코드 줄을 추가하여 이전 코드 줄을 업데이트하고 **http://localhost** 의 문자열 값을 전달합니다.
 
         ```
         PublicClientApplicationBuilder
@@ -241,7 +241,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
             .WithRedirectUri("http://localhost")
         ```
 
-    1.  **PublicClientApplication** 클래스의 **Build()(https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder.build)** 메서드를 사용하도록 다른 코드 줄을 추가하여 이전 코드 줄을 업데이트합니다.
+    1.  **PublicClientApplication** 클래스의 **[Build()](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder.build)** 메서드를 사용하도록 다른 코드 줄을 추가하여 이전 코드 줄을 업데이트합니다.
 
         ```
         PublicClientApplicationBuilder
@@ -261,7 +261,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
             .Build();
         ```
 
-1.  **Main** 메서드에서 다음 코드 줄을 추가하여 새 일반 문자열 **List<>(https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1)**를 **user.read**의 단일 값으로 만듭니다.
+1.  **Main** 메서드에서 다음 코드 줄을 추가하여 새 일반 문자열 **[List<>](https://docs.microsoft.com/dotnet/api/system.collections.generic.list-1)** 를 **user.read**의 단일 값으로 만듭니다.
 
     ```
     List<string> scopes = new List<string> 
@@ -270,7 +270,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     };
     ```
 
-1.  **Main** 메서드에서 다음 코드 줄을 추가하여 인증 **AuthenticationResult(https://docs.microsoft.com/dotnet/api/microsoft.identity.client.authenticationresult)** 유형의 *결과*라는 이름을 가진 새 변수를 만듭니다.
+1.  **Main** 메서드에서 다음 코드 줄을 추가하여 인증 **[AuthenticationResult](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.authenticationresult)** 유형의 *결과*라는 이름을 가진 새 변수를 만듭니다.
 
     ```
     AuthenticationResult result;
@@ -284,14 +284,14 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
         app
         ```
 
-    1.  **IPublicClientApplicationBuilder** 인터페이스의 **AcquireTokenInteractive()(https://docs.microsoft.com/dotnet/api/microsoft.identity.client.ipublicclientapplication.acquiretokeninteractive)** 메서드를 사용하도록 다른 코드 줄을 추가하여 이전 코드 줄을 업데이트하고 *scopes* 변수를 매개 변수로 전달합니다.
+    1.  **IPublicClientApplicationBuilder** 인터페이스의 **[AcquireTokenInteractive()](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.ipublicclientapplication.acquiretokeninteractive)** 메서드를 사용하도록 다른 코드 줄을 추가하여 이전 코드 줄을 업데이트하고 *scopes* 변수를 매개 변수로 전달합니다.
 
         ```
         app
             .AcquireTokenInteractive(scopes)
         ```
 
-    1.  **[AbstractAcquireTokenParameterBuilder](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.abstractacquiretokenparameterbuilder-1)** 클래스의 **ExecuteAsync()(https://docs.microsoft.com/dotnet/api/microsoft.identity.client.abstractacquiretokenparameterbuilder-1.executeasync)** 메서드를 사용하도록 다른 코드 줄을 추가하여 이전 코드 줄을 업데이트합니다.
+    1.  **[AbstractAcquireTokenParameterBuilder](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.abstractacquiretokenparameterbuilder-1)** 클래스의 **[ExecuteAsync()](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.abstractacquiretokenparameterbuilder-1.executeasync)** 메서드를 사용하도록 다른 코드 줄을 추가하여 이전 코드 줄을 업데이트합니다.
 
         ```
         app
@@ -315,7 +315,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
             .ExecuteAsync();
         ```
 
-1.  **기본** 메서드에서 **Console.WriteLine** 메서드를 사용하도록 다음 코드 줄을 추가하여 **AuthenticationResult.AccessToken(https://docs.microsoft.com/dotnet/api/microsoft.identity.client.authenticationresult.accesstoken)** 멤버의 값을 콘솔로 출력합니다.
+1.  **기본** 메서드에서 **Console.WriteLine** 메서드를 사용하도록 다음 코드 줄을 추가하여 **[AuthenticationResult.AccessToken](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.authenticationresult.accesstoken)** 멤버의 값을 콘솔로 출력합니다.
 
     ```
     Console.WriteLine($"Token:\t{result.AccessToken}");

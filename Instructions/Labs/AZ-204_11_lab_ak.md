@@ -72,15 +72,15 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     
     1.  **리소스 그룹** 섹션에서 **새로 만들기**를 선택하고 **AsyncProcessor**를 입력한 다음 **확인**을 선택합니다.
     
-    1.  **스토리지 계정 이름** 텍스트 상자에 **asyncstor*[yourname]***을 입력합니다.
+    1.  **스토리지 계정 이름** 텍스트 상자에 **asyncstor*[yourname]*** 을 입력합니다.
     
     1.  **위치** 목록에서 **(미국) 미국 동부** 지역을 선택합니다.
     
     1.  **성능** 섹션에서 **표준**을 선택합니다.
     
-    1.  **계정 종류** 목록에서 **StorageV2(범용 v2)**를 선택합니다.
+    1.  **계정 종류** 목록에서 **StorageV2(범용 v2)** 를 선택합니다.
     
-    1.  **복제** 목록에서 **LRS(로컬 중복 스토리지)**를 선택합니다.
+    1.  **복제** 목록에서 **LRS(로컬 중복 스토리지)** 를 선택합니다.
     
     1.  **액세스 계층(기본값)** 섹션에서 **핫**이 선택되어 있는지 확인합니다.
     
@@ -308,7 +308,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
         await client.ReceiveMessagesAsync(batchSize, visibilityTimeout);
         ```
 
-    1.  더 많은 코드를 추가하여 이전 코드 행을 업데이트하고 **Response<QueueMessage[]>(https://docs.microsoft.com/dotnet/api/azure.response-1)** 유형의 *messages*라는 새 변수에 식의 결과를 저장합니다.
+    1.  더 많은 코드를 추가하여 이전 코드 행을 업데이트하고 **[Response<QueueMessage[]]>(https://docs.microsoft.com/dotnet/api/azure.response-1)** 유형의 *messages*라는 새 변수에 식의 결과를 저장합니다.
 
         ```
         Response<QueueMessage[]> messages = await client.ReceiveMessagesAsync(batchSize, visibilityTimeout);
@@ -316,7 +316,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **Main** 메서드에서 다음 작업을 수행하여 각 메시지의 속성을 반복하고 렌더링합니다.
 
-    1.  다음 코드 줄을 추가하여 **QueueMessage[](https://docs.microsoft.com/dotnet/api/azure.storage.queues.models.queuemessage)** 유형 *messages* 변수의 **Value(https://docs.microsoft.com/dotnet/api/azure.response-1.value)** 특성에 저장된 각 메시지를 반복하는 **foreach** 루프를 작성합니다.
+    1.  다음 코드 줄을 추가하여 **[QueueMessage[]](https://docs.microsoft.com/dotnet/api/azure.storage.queues.models.queuemessage)** 유형 *messages* 변수의 **[Value](https://docs.microsoft.com/dotnet/api/azure.response-1.value)** 특성에 저장된 각 메시지를 반복하는 **foreach** 루프를 작성합니다.
 
         ```
         foreach(QueueMessage message in messages?.Value)
@@ -522,7 +522,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **기본** 메서드에서 다음 작업을 수행하여 비동기적으로 메시지를 만들고 전송합니다.
 
-    1.  다음 코드 줄을 추가하여 값이 **Hi, Developer!**인 *greeting* 이라는 새 문자열 변수를 만듭니다.
+    1.  다음 코드 줄을 추가하여 값이 **Hi, Developer!** 인 *greeting* 이라는 새 문자열 변수를 만듭니다.
 
         ```
         string greeting = "Hi, Developer!";        

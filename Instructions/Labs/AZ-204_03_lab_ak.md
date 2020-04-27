@@ -46,7 +46,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  Microsoft 계정의 이메일 주소를 입력한 다음 **다음** 을 선택합니다.
 
-1.  Microsoft 계정의 암호를 입력한 다음 ** 로그인** 을 선택합니다.
+1.  Microsoft 계정의 암호를 입력한 다음 **로그인** 을 선택합니다.
 
     > **참고**: Azure Portal에 처음 로그인하는 경우 포털 둘러보기가 제공됩니다. 둘러보기를 건너뛰고 포털을 사용하려면 **시작하기** 를 선택합니다.
 
@@ -164,7 +164,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
     1.  **파일** 섹션에서 **폴더** 아이콘을 선택합니다.
 
-    1.  **파일 탐색기 ** 창에서 **Allfiles (F):\\Allfiles\\Labs\\03\\Starter\\Images** 로 이동하여 **graph.jpg** 파일을 선택하고 **열기** 를 선택합니다.
+    1.  **파일 탐색기** 창에서 **Allfiles (F):\\Allfiles\\Labs\\03\\Starter\\Images** 로 이동하여 **graph.jpg** 파일을 선택하고 **열기** 를 선택합니다.
 
     1.  **파일이 이미 있는 경우 덮어쓰기** 확인란이 선택되어 있는지 확인하고, **업로드** 를 선택합니다. 
     
@@ -263,7 +263,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  해당 랩 앞에서 기록한 스토리지 계정의 **키** 로 값을 설정하여 **storageAccountKey** 문자열 상수를 업데이트합니다.
 
-1.  **프로그램** 클래스에서 다음 코드 줄을 입력하여 새 비동기 ** 메인** 메서드를 만듭니다.
+1.  **프로그램** 클래스에서 다음 코드 줄을 입력하여 새 비동기 **메인** 메서드를 만듭니다.
 
 ```
     public static async Task Main(string[] args)
@@ -567,7 +567,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     await Console.Out.WriteLineAsync($"New Container:\t{container.Name}");
 ```
 
-1.  **GetContainerAsync** 메서드에서 다음 코드를 입력하여 **GetContainerAsync** 메서드의 결과로 **컨테이너** 라는 **BlobContainerClient ** 클래스의 인스턴스를 반환합니다.
+1.  **GetContainerAsync** 메서드에서 다음 코드를 입력하여 **GetContainerAsync** 메서드의 결과로 **컨테이너** 라는 **BlobContainerClient** 클래스의 인스턴스를 반환합니다.
 
 ```
     return container;
@@ -667,7 +667,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     }
 ```
 
-1.  **GetBlobAsync** 메서드에서 다음 코드를 입력하여 **BlobContainerClient ** 클래스의 **GetBlobClient** 메서드를 사용하여 **BlobName** 매개 변수를 전달하여 **BlobClient** 클래스의 새 인스턴스를 가져옵니다.
+1.  **GetBlobAsync** 메서드에서 다음 코드를 입력하여 **BlobContainerClient** 클래스의 **GetBlobClient** 메서드를 사용하여 **BlobName** 매개 변수를 전달하여 **BlobClient** 클래스의 새 인스턴스를 가져옵니다.
 
 ```
     BlobClient blob = client.GetBlobClient(blobName);
@@ -750,7 +750,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  현재 실행 중인 콘솔 애플리케이션의 출력을 살펴봅니다. 업데이트된 출력에는 BLOB에 온라인으로 액세스할 수 있는 최종 URL이 포함됩니다. 이 URL의 값을 기록하여 이 랩의 후반부에서 사용합니다.
 
-    > **참고**: URL은 다음 문자열 **https://mediastor*[yourname]*.blob.core.windows.net/vector-graphics/graph.svg와 유사할 수 있습니다.**
+    > **참고**: URL은 다음 문자열 **https://mediastor*[yourname]*.blob.core.windows.net/vector-graphics/graph.svg** 와 유사할 수 있습니다.
 
 1.  **터미널 종료** 또는 **휴지통** 아이콘을 선택하여 현재 열려 있는 터미널 및 관련된 모든 작업을 종료합니다.
 
