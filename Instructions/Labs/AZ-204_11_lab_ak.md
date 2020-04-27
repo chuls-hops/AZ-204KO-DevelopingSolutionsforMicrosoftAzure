@@ -308,7 +308,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
         await client.ReceiveMessagesAsync(batchSize, visibilityTimeout);
         ```
 
-    1.  더 많은 코드를 추가하여 이전 코드 행을 업데이트하고 **[Response<QueueMessage[]]>(https://docs.microsoft.com/dotnet/api/azure.response-1)** 유형의 *messages*라는 새 변수에 식의 결과를 저장합니다.
+    1.  더 많은 코드를 추가하여 이전 코드 행을 업데이트하고 **[Response<QueueMessage[]>](https://docs.microsoft.com/dotnet/api/azure.response-1)** 유형의 *messages*라는 새 변수에 식의 결과를 저장합니다.
 
         ```
         Response<QueueMessage[]> messages = await client.ReceiveMessagesAsync(batchSize, visibilityTimeout);
