@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '랩: Azure App Service용 웹 애플리케이션 구축'
     module: '모듈 01: Azure App Service Web Apps 만들기'
