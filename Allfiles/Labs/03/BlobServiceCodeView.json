@@ -2,7 +2,7 @@
     "rules": [
         {
             "enabled": true,
-            "name": "hahaysh02cb",
+            "name": "ruleFoo",
             "type": "Lifecycle",
             "definition": {
                 "actions": {
@@ -14,7 +14,7 @@
                             "daysAfterModificationGreaterThan": 90
                         },
                         "delete": {
-                            "daysAfterModificationGreaterThan": 180
+                            "daysAfterModificationGreaterThan": 2555
                         }
                     },
                     "snapshot": {
