@@ -1,12 +1,12 @@
-﻿---
+---
 lab:
     title: '랩: .NET용 Azure Storage SDK를 사용하여 Azure Storage 리소스 및 메타데이터 검색'
     module: '모듈 03: BLOB 스토리지를 사용하는 솔루션 개발'
-    type: '해답'
+    type: 'Answer Key'
 ---
 
 # 랩: .NET용 Azure Storage SDK를 사용하여 Azure Storage 리소스 및 메타데이터 검색
-# 학생 랩 답변 키
+# 학생 랩 Answer Key
 
 ## Microsoft Azure 사용자 인터페이스
 
@@ -72,7 +72,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
     1.  **스토리지 계정 이름** 텍스트 상자에 **mediastor*[yourname]*** 을 입력합니다.
 
-    1.  **위치** 드롭다운 목록에서 **(미국) 미국 동부** 하위 지역을 선택합니다.
+    1.  **위치** 드롭다운 목록에서 **(US) 미국 동부** 하위 지역을 선택합니다.
 
     1.  **성능** 섹션에서 **표준** 을 선택합니다.
 
@@ -98,7 +98,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **스토리지 계정** 블레이드에서 **설정** 섹션을 찾은 다음 **속성** 링크를 선택합니다.
 
-1.  **속성** 섹션에서 **기본 Blob service 엔드포인트** 텍스트 상자의 값을 기록합니다.
+1.  **속성** 섹션에서 **기본 엔드포인트 Blob service ** 텍스트 상자의 값을 기록합니다.
 
     > **참고**: 이 값은 랩에서 나중에 사용합니다.
 
@@ -134,15 +134,15 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     
     1.  **이 름** 텍스트 상자에 **raster-graphics** 를 입력합니다.
     
-    1.  **공용 액세스 수준** 드롭다운 목록에서 **비공개(익명 액세스 없음)** 를 선택하고 **확인** 을 선택합니다.
+    1.  **공용 액세스 수준** 드롭다운 목록에서 **프라이빗(익명 액세스 없음)** 를 선택하고 **확인** 을 선택합니다.
 
 1.  **컨테이너** 섹션으로 돌아가서 **+ 컨테이너** 를 선택합니다.
 
 1.  **새 컨테이너** 팝업 창에서 다음 작업을 수행합니다.
     
-    1.  **이 름** 텍스트 박스에 **압축-오디오** 를 입력합니다.
+    1.  **이 름** 텍스트 박스에 **compressed-audio** 를 입력합니다.
     
-    1.  **공용 액세스 수준** 드롭다운 목록에서 **비공개(익명 액세스 없음)** 를 선택하고 **확인** 을 선택합니다.
+    1.  **공용 액세스 수준** 드롭다운 목록에서 **프라이빗(익명 액세스 없음)** 를 선택하고 **확인** 을 선택합니다.
 
 1.  **컨테이너** 섹션에서, 컨테이너의 업데이트된 목록을 관찰합니다.
 
@@ -156,7 +156,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **스토리지 계정** 블레이드에서 **Blob 서비스** 섹션에 있는 **컨테이너** 링크를 선택합니다.
 
-1.  **컨테이너** 섹션에서 최근에 만든 **래스터 그래픽** 컨테이너를 선택합니다.
+1.  **컨테이너** 섹션에서 최근에 만든 **raster-graphics** 컨테이너를 선택합니다.
 
 1.	**컨테이너** 블레이드에서 **업로드** 를 선택합니다.
 
@@ -192,7 +192,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     dotnet new console --name BlobManager --output .
 ```
 
-    > **참고**: **dotnet new** 명령은 새 **콘솔** 프로젝트를 프로젝트와 이름이 같은 폴더에 만듭니다.
+    > **참고**: **dotnet new** 명령은 새 **console** 프로젝트를 프로젝트와 이름이 같은 폴더에 만듭니다.
 
 1.  명령 프롬프트에서 다음 명령을 입력하고 NuGet에서 **Azure.Storage.Blobs** 의 버전 12.0.0를 가져오기 위해  Enter 키를 선택합니다.
 
@@ -200,7 +200,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     dotnet add package Azure.Storage.Blobs --version 12.0.0
 ```
 
-    > **참고**: **dotnet 패키지 추가** 명령은 NuGet에서 **Azure.Storage.Blobs** 패키지를 추가합니다. 더 자세한 내용은 [Azure.Storage.Blobs](https://www.nuget.org/packages/Azure.Storage.Blobs/12.0.0)를 참조하세요.
+    > **참고**: **dotnet add package** 명령은 NuGet에서 **Azure.Storage.Blobs** 패키지를 추가합니다. 더 자세한 내용은 [Azure.Storage.Blobs](https://www.nuget.org/packages/Azure.Storage.Blobs/12.0.0)를 참조하세요.
 
 1.  명령 프롬프트에서 다음 명령을 입력하고 엔터를 선택하여 .NET 웹 애플리케이션을 빌드합니다.
 
@@ -231,7 +231,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     using System.Threading.Tasks;
 ```
 
-1.  다음 코드를 입력하여 새 **Program** 클래스를 만듭니다.
+1.  기존 코드 대신에 다음 코드를 입력하여 새 **Program** 클래스를 만듭니다.
 
 ```
     public class Program
@@ -245,7 +245,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     private const string blobServiceEndpoint = "";
 ```
 
-1.  이 랩의 앞에서 기록한 스토리지 계정의 **기본 Blob 서비스 엔드포인트** 로 값을 설정하여 **blobServiceEndpoint** 문자열 상수를 업데이트합니다.
+1.  이 랩의 앞에서 기록한 스토리지 계정의 **기본 엔드포인트 Blob Service ** 로 값을 설정하여 **blobServiceEndpoint** 문자열 상수를 업데이트합니다.
 
 1.  **Program** 클래스 내에서 다음 코드 줄을 입력하여 **storageAccountName** 이 라는 새 문자열 상수를 만듭니다.
 
@@ -263,7 +263,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  해당 랩 앞에서 기록한 스토리지 계정의 **키** 로 값을 설정하여 **storageAccountKey** 문자열 상수를 업데이트합니다.
 
-1.  **프로그램** 클래스에서 다음 코드 줄을 입력하여 새 비동기 **메인** 메서드를 만듭니다.
+1.  **Program** 클래스에서 다음 코드 줄을 입력하여 새 비동기 **Main** 메서드를 만듭니다.
 
 ```
     public static async Task Main(string[] args)
@@ -336,7 +336,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     await Console.Out.WriteLineAsync($"Account sku:\t{info?.SkuName}");
 ```
 
-1.  이제 다음을 포함해야 하는 **기본** 메서드를 살펴봅니다.
+1.  이제 다음을 포함해야 하는 **Main** 메서드를 살펴봅니다.
 
 ```
     public static async Task Main(string[] args)
@@ -372,7 +372,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 #### 작업 4: 기존 컨테이너 열거
 
-1.  **Program** 클래스에서 다음 코드를 입력하여 비동기이고 단일 **BlobServiceClient** 매개 변수 유형이 있는 **EnumerateContainersAsync** 라는 새 **개인 정적** 메서드를 만듭니다.
+1.  **Program** 클래스에서 다음 코드를 입력하여 비동기이고 단일 **BlobServiceClient** 매개 변수 유형이 있는 **EnumerateContainersAsync** 라는 새 **private static** 메서드를 만듭니다.
 
 ```
     private static async Task EnumerateContainersAsync(BlobServiceClient client)
@@ -447,7 +447,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 #### 작업 1: SDK를 사용하여 기존 컨테이너의 Blob을 열거합니다.
 
-1.  **Program** 클래스에서 다음 코드를 입력하여 비동기이며 **BlobServiceClient**와 **문자열** 이 라는 두 개의 매개 변수 유형이 있는 **EnumerateBlobsAsync** 라는 새 **개인 정적** 메서드를 만듭니다.
+1.  **Program** 클래스에서 다음 코드를 입력하여 비동기이며 **BlobServiceClient**와 **문자열** 이 라는 두 개의 매개 변수 유형이 있는 **EnumerateBlobsAsync** 라는 새 **private static** 메서드를 만듭니다.
 
 ```
     private static async Task EnumerateBlobsAsync(BlobServiceClient client, string containerName)
@@ -509,7 +509,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     await EnumerateBlobsAsync(serviceClient, existingContainerName);
 ```
 
-1.  이제 다음을 포함해야 하는 **기본** 메서드를 살펴봅니다.
+1.  이제 다음을 포함해야 하는 **Main** 메서드를 살펴봅니다.
 
 ```
     public static async Task Main(string[] args)
@@ -600,7 +600,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     BlobContainerClient containerClient = await GetContainerAsync(serviceClient, newContainerName);
 ```
 
-1.  이제 다음을 포함해야 하는 **기본** 메서드를 살펴봅니다.
+1.  이제 다음을 포함해야 하는 **Main** 메서드를 살펴봅니다.
 
 ```
     public static async Task Main(string[] args)
@@ -641,9 +641,9 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **StorageMedia** 블레이드에서 이 랩의 앞에서 만든 **mediastor*[yourname]*** 스토리지 계정을 선택합니다.
 
-1.  **스토리지 계정** 블레이드에서 **Blob 서비스** 섹션에 있는 **컨테이너** 링크를 선택합니다.
+1.  **스토리지 계정** 블레이드에서 **Blob Service** 섹션에 있는 **컨테이너** 링크를 선택합니다.
 
-1.  **컨테이너** 섹션에서 새로 만든 **벡터 그래픽** 컨테이너를 선택합니다.
+1.  **컨테이너** 섹션에서 새로 만든 **vector-graphics** 컨테이너를 선택합니다.
 
 1.	**컨테이너** 블레이드에서 **업로드** 를 선택합니다.
 
@@ -659,7 +659,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 #### 작업 4: SDK를 사용하여 BLOB URI에 액세스
 
-1.  **Program** 클래스에서 다음 코드를 입력하여 비동기이며 **BlobContainerClient** 및 **문자열** 이 라는 두 개의 매개 변수 유형이 있는 **GetBlobAsync** 라는 새 **개인 정적** 메서드를 만듭니다.
+1.  **Program** 클래스에서 다음 코드를 입력하여 비동기이며 **BlobContainerClient** 및 **문자열** 이 라는 두 개의 매개 변수 유형이 있는 **GetBlobAsync** 라는 새 **private static** 메서드를 만듭니다.
 
 ```
     private static async Task<BlobClient> GetBlobAsync(BlobContainerClient client, string blobName)
@@ -685,7 +685,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     return blob;
 ```
 
-1.  이제 다음을 포함해야 하는 **GetBlobAsync** 메서드를 준수하십시오.
+1.  이제 다음을 포함해야 하는 **GetBlobAsync** 메서드를 확인 합니다.
 
 ```
     private static async Task<BlobClient> GetBlobAsync(BlobContainerClient client, string blobName)
@@ -714,7 +714,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     await Console.Out.WriteLineAsync($"Blob Url:\t{blobClient.Uri}");
 ```
 
-1.  이제 다음을 포함해야 하는 **기본** 메서드를 살펴봅니다.
+1.  이제 다음을 포함해야 하는 **Main** 메서드를 살펴봅니다.
 
 ```
     public static async Task Main(string[] args)
