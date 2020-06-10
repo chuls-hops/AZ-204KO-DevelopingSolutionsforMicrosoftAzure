@@ -5,7 +5,7 @@ lab:
     type: 'Answer Key'
 ---
 
-# 랩: 여러 언어를 사용하는 데이터 솔루션 구축
+# 랩: polyglot 데이터 솔루션 구축
 # 학생 랩 Answer Key
 
 ## Microsoft Azure 사용자 인터페이스
