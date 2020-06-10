@@ -1,7 +1,7 @@
 ---
 lab:
-    title: 랩: Azure Cosmos DB를 사용하여 NoSQL 데이터 솔루션 구축
-    module: 모듈 04: Cosmos DB 스토리지를 사용하는 솔루션 개발
+    title: '랩: Azure Cosmos DB를 사용하여 NoSQL 데이터 솔루션 구축'
+    az204Module: '모듈 04: Cosmos DB 스토리지를 사용하는 솔루션 개발'
     type: 'Answer Key'
 ---
 
