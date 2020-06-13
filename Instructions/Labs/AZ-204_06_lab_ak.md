@@ -104,12 +104,12 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **파일** 메뉴에서 **폴더 열기**를 선택합니다.
 
-1.  열려있는 **파일 탐색기** 창에서 **Allfiles (F):\\Allfiles\\Labs\\07\\Starter**로 이동하여 **폴더 선택**을 선택합니다.
+1.  열려있는 **파일 탐색기** 창에서 **Allfiles (F):\\Allfiles\\Labs\\06\\Starter\\GraphClient**로 이동하여 **폴더 선택**을 선택합니다.
 
 1.  명령 프롬프트에서 다음 명령을 입력하고 **GraphClient**이라는 새 .NET Core 콘솔 애플리케이션을 만듭니다.
 
     ```
-    dotnet new console --name GraphClient
+    dotnet new console --name GraphClient --output .
     ```
     > **참고**: **dotnet new** 명령은 새 **콘솔** 프로젝트를 프로젝트와 이름이 같은 폴더에 만듭니다.
 
@@ -130,10 +130,6 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 1.  **터미널 종료** 또는 **휴지통** 아이콘을 선택하여 현재 열려 있는 터미널 및 관련된 모든 작업을 종료합니다.
 
 #### 작업 2: 프로그램 클래스 수정
-
-1.  **파일** 메뉴에서 **폴더 열기**를 선택합니다.
-
-1.  열려있는 **파일 탐색기** 창에서 **Allfiles (F):\\Allfiles\\Labs\\07\\Starter\\GraphClient**로 이동하여 **폴더 선택**을 선택합니다.
 
 1.  **Visual Studio Code** 창의 탐색기 창에서 **Program.cs** 파일을 엽니다.
 
