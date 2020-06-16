@@ -274,7 +274,9 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **Design** 탭으로 돌아가 작업 목록에서 **Get Legacy Data**를 선택합니다.
 
-1.	**Test** 탭에서 맨 아래쪽에 **Send**를 클릭합니다.
+1.	**Test** 탭에서 **Get Legacy Data** 작업을 선택합니다.   
+
+1.	**Get Legacy Data** 섹션에서 **Send**를 선택합니다.
 
 1.	API 요청의 결과를 관찰합니다.
 
