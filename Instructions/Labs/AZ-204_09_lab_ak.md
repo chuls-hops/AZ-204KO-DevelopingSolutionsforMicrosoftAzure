@@ -1,10 +1,10 @@
 ---
 lab:
-    title: 랩: Logic Apps로 비즈니스 프로세스 자동화
-    module: '모듈 09: App Service Logic Apps 개발
+    title: '랩: Logic Apps로 비즈니스 프로세스 자동화'
+    az204Module: '모듈 09: App Service Logic Apps 개발'
     type: 'Answer Key'
 ---
-    
+
 # 랩: Logic Apps로 비즈니스 프로세스 자동화
 # 학생 랩 답변 키
 
