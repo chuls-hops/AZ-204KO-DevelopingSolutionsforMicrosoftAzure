@@ -1,8 +1,8 @@
-﻿---
+---
 lab:
     title: '랩: MSAL 및 .NET SDK를 사용하여 Microsoft Graph 인증 및 쿼리'
     module: '모듈 06: 사용자 인증 및 권한 부여 구현'
-    type: '해답'
+    type: 'Answer Key'
 ---
 
 # 랩: MSAL 및 .NET SDK를 사용하여 Microsoft Graph 인증 및 쿼리
@@ -66,7 +66,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
     1.  **지원되는 계정 유형** 목록에서 **이 조직 디렉터리의 계정만(기본 디렉터리만 - 단일 테넌트)** 체크 박스를 선택합니다.
 
-    1.  **리디렉션 URI** 드롭다운 목록에서 **공용 클라이언트/네이티브(모바일 및 데스크톱)** 를 선택합니다.
+    1.  **리디렉션 URI** 드롭다운 목록에서 **퍼블릭 클라이언트/네이티브(모바일 및 데스크톱)** 를 선택합니다.
 
     1.  **리디렉션 URI** 텍스트 상자에서 **http\://localhost**를 입력합니다.
 
@@ -100,18 +100,17 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **시작** 화면에서 **Visual Studio Code** 타일을 선택합니다.
 
-1.  **파일** 메뉴에서 **폴더 열기**를 선택합니다.
-
-1.  열려있는 **파일 탐색기** 창에서 **Allfiles (F):\\Allfiles\\Labs\\07\\Starter\\GraphClient**로 이동하여 **폴더 선택**을 선택합니다.
-
 1.  **Visual Studio Code** 창에서 탐색기 창의 바로 가기 메뉴를 마우스 오른쪽 단추로 클릭하거나 활성화한 다음 **터미널에서 열기**를 선택합니다.
 
-1.  명령 프롬프트 열기에서 다음 명령을 입력하고 Enter 키를 눌러 현재 폴더에서 **GraphClient**이라는 새 .NET Core 콘솔 애플리케이션을 만듭니다.
+1.  **파일** 메뉴에서 **폴더 열기**를 선택합니다.
+
+1.  열려있는 **파일 탐색기** 창에서 **Allfiles (F):\\Allfiles\\Labs\\06\\Starter\\GraphClient**로 이동하여 **폴더 선택**을 선택합니다.
+
+1.  명령 프롬프트에서 다음 명령을 입력하고 **GraphClient**이라는 새 .NET Core 콘솔 애플리케이션을 만듭니다.
 
     ```
     dotnet new console --name GraphClient --output .
     ```
-
     > **참고**: **dotnet new** 명령은 새 **콘솔** 프로젝트를 프로젝트와 이름이 같은 폴더에 만듭니다.
 
 1.  명령 프롬프트에서 다음 명령을 입력하고 Enter 키를 눌러 NuGet에서 **Microsoft.Identity.Client**의 버전 4.7.1을 가져옵니다.
@@ -203,13 +202,13 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 #### 작업 3: MSAL(Microsoft 인증 라이브러리) 토큰을 가져옵니다
 
-1.  **Main** 메서드에서 다음 코드 줄을 추가하여 *앱*이라 명명된 **[IPublicClientApplication](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.ipublicclientapplication)** 형식의 새 변수를 만듭니다.
+1.  **Main** 메서드에서 다음 코드 줄을 추가하여 *app*이라 명명된 **[IPublicClientApplication](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.ipublicclientapplication)** 형식의 새 변수를 만듭니다.
 
     ```
     IPublicClientApplication app;
     ```
 
-1.  **Main** 메서드에서 다음 작업을 수행하여 정적 **[PublicClientApplicationBuilder](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder)** 클래스를 사용하여 공용 클라이언트 애플리케이션 인스턴스를 빌드한 다음 *앱* 변수에 저장합니다.
+1.  **Main** 메서드에서 다음 작업을 수행하여 정적 **[PublicClientApplicationBuilder](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder)** 클래스를 사용하여 공용 클라이언트 애플리케이션 인스턴스를 빌드한 다음 *app* 변수에 저장합니다.
 
     1.  정적 **[PublicClientApplicationBuilder](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder)** 클래스에 액세스하려면 다음 코드 줄을 추가합니다.
 
@@ -270,13 +269,13 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     };
     ```
 
-1.  **Main** 메서드에서 다음 코드 줄을 추가하여 인증 **[AuthenticationResult](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.authenticationresult)** 유형의 *결과*라는 이름을 가진 새 변수를 만듭니다.
+1.  **Main** 메서드에서 다음 코드 줄을 추가하여 인증 **[AuthenticationResult](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.authenticationresult)** 유형의 *result*라는 이름을 가진 새 변수를 만듭니다.
 
     ```
     AuthenticationResult result;
     ```
 
-1.  **Main** 메서드에서 다음 작업을 수행하여 토큰을 대화식으로 획득하고 *결과* 변수에 출력을 저장합니다.
+1.  **Main** 메서드에서 다음 작업을 수행하여 토큰을 대화식으로 획득하고 *result* 변수에 출력을 저장합니다.
 
     1.  다음 코드 줄을 추가하여 *app* 변수에 액세스합니다.
 
@@ -307,7 +306,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
             .ExecuteAsync();
         ```
 
-    1.  *결과* 변수에 식의 결과를 저장하기 위해 더 많은 코드를 추가하여 코드의 이전 줄을 업데이트합니다.
+    1.  *result* 변수에 식의 결과를 저장하기 위해 더 많은 코드를 추가하여 코드의 이전 줄을 업데이트합니다.
     
         ```
         result = await app
@@ -321,7 +320,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     Console.WriteLine($"Token:\t{result.AccessToken}");
     ```
 
-1.  이제 다음을 포함해야 하는 **기본** 메서드를 살펴봅니다.
+1.  이제 다음을 포함해야 하는 **Main** 메서드를 살펴봅니다.
 
     ```
     public static async Task Main(string[] args)
@@ -470,7 +469,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
         Console.WriteLine($"Token:\t{result.AccessToken}");
         ```
 
-1.  이제 다음을 포함해야 하는 **기본** 메서드를 살펴봅니다.
+1.  이제 다음을 포함해야 하는 **Main** 메서드를 살펴봅니다.
 
     ```
     public static async Task Main(string[] args)
@@ -490,13 +489,13 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     }
     ```
 
-1.  **기본** 메서드에서 다음 코드 줄을 추가하여 변수 *앱* 및 *범위*를 생성자 매개 변수로 전달하는 **DeviceCodeProvider** 유형의 *공급자*라는 새 변수를 만듭니다.
+1.  **Main** 메서드에서 다음 코드 줄을 추가하여 변수 *app* 및 *scopes*를 생성자 매개 변수로 전달하는 **DeviceCodeProvider** 유형의 *provider*라는 새 변수를 만듭니다.
 
     ```
     DeviceCodeProvider provider = new DeviceCodeProvider(app, scopes);
     ```
 
-1.  **Main** 메서드에서 다음 코드 줄을 추가하여 변수 *공급자*를 생성자 매개 변수로 전달하는 **GraphServiceClient** 형식의 새 변수 *클라이언트*를 만듭니다.
+1.  **Main** 메서드에서 다음 코드 줄을 추가하여 변수 *provider*를 생성자 매개 변수로 전달하는 **GraphServiceClient** 형식의 새 변수 *client*를 만듭니다.
 
     ```
     GraphServiceClient client = new GraphServiceClient(provider);
@@ -504,7 +503,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **Main** 메서드에서 **GraphServiceClient** 인스턴스를 사용하여 다음 작업을 수행하고 REST API의 상대적 **/Me** 디렉터리에 HTTP 요청을 발행하는 응답을 비동기적으로 니다.
 
-    1.  다음 코드 줄을 추가하여 *클라이언트* 변수의 **나**의 속성을 가져옵니다.
+    1.  다음 코드 줄을 추가하여 *client* 변수의 **Me**의 속성을 가져옵니다.
 
         ```
         client.Me
@@ -533,7 +532,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
             .GetAsync()
         ```
 
-    1.  **사용자** 형식의 새 변수, *myProfile*에 식의 결과를 저장하기 위해 코드를 더 추가하여 이전 코드 줄을 업데이트합니다.
+    1.  **User** 형식의 새 변수, *myProfile*에 식의 결과를 저장하기 위해 코드를 더 추가하여 이전 코드 줄을 업데이트합니다.
 
         ```
         User myProfile = await client.Me
@@ -541,7 +540,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
             .GetAsync();
         ```
 
-1.  **기본** 메서드에서 다음 코드 줄을 추가하고 **Console.WriteLine** 메서드를 사용하여 **User.DisplayName**멤버의 값을 콘솔에 렌더링합니다.
+1.  **Main** 메서드에서 다음 코드 줄을 추가하고 **Console.WriteLine** 메서드를 사용하여 **User.DisplayName**멤버의 값을 콘솔에 렌더링합니다.
 
     ```
     Console.WriteLine($"Name:\t{myProfile.DisplayName}");
@@ -553,7 +552,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     Console.WriteLine($"AAD Id:\t{myProfile.Id}");
     ```
 
-1.  이제 다음을 포함해야 하는 **기본** 메서드를 살펴봅니다.
+1.  이제 다음을 포함해야 하는 **Main** 메서드를 살펴봅니다.
 
     ```
     public static async Task Main(string[] args)
