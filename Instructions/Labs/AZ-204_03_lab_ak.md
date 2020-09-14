@@ -1,7 +1,8 @@
 ---
 lab:
     title: '랩: .NET용 Azure Storage SDK를 사용하여 Azure Storage 리소스 및 메타데이터 검색'
-    module: '모듈 03: BLOB 스토리지를 사용하는 솔루션 개발'
+    az204Module: '모듈 03: BLOB 스토리지를 사용하는 솔루션 개발'
+    az020Module: '모듈 03: BLOB 스토리지를 사용하는 솔루션 개발'
     type: 'Answer Key'
 ---
 
@@ -188,25 +189,25 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  열린 명령 프롬프트에서 다음 명령을 입력하고 현재 폴더에서 **BlobManager** 라는 새 .NET 프로젝트를 만들기 위해 엔터를 선택합니다.
 
-```
+    ```
     dotnet new console --name BlobManager --output .
-```
+    ```
 
     > **참고**: **dotnet new** 명령은 새 **console** 프로젝트를 프로젝트와 이름이 같은 폴더에 만듭니다.
 
 1.  명령 프롬프트에서 다음 명령을 입력하고 NuGet에서 **Azure.Storage.Blobs** 의 버전 12.0.0를 가져오기 위해  Enter 키를 선택합니다.
 
-```
+    ```
     dotnet add package Azure.Storage.Blobs --version 12.0.0
-```
+    ```
 
     > **참고**: **dotnet add package** 명령은 NuGet에서 **Azure.Storage.Blobs** 패키지를 추가합니다. 더 자세한 내용은 [Azure.Storage.Blobs](https://www.nuget.org/packages/Azure.Storage.Blobs/12.0.0)를 참조하세요.
 
 1.  명령 프롬프트에서 다음 명령을 입력하고 엔터를 선택하여 .NET 웹 애플리케이션을 빌드합니다.
 
-```
+    ```
     dotnet build
-```
+    ```
 
 1.  **터미널 종료** 또는 **휴지통** 아이콘을 선택하여 현재 열려 있는 터미널 및 관련된 모든 작업을 종료합니다.
 
@@ -218,62 +219,62 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  다음 코드 줄을 추가하여 NuGet에서 가져온 **Azure.Storage.Blobs**  패키지에서 **Azure.Storage**, **Azure.Storage.Blobs**와 **Azure.Storage.Blobs.Models** 네임스페이스를 가져옵니다.
 
-```
+    ```
     using Azure.Storage;
     using Azure.Storage.Blobs;
     using Azure.Storage.Blobs.Models;
-```
+    ```
     
 1.  다음 코드 줄을 추가하여 이 파일에 사용할 기본 제공 네임스페이스에 대해 **using** 지시문을 추가합니다.
 
-```
+    ```
     using System;
     using System.Threading.Tasks;
-```
+    ```
 
 1.  기존 코드 대신에 다음 코드를 입력하여 새 **Program** 클래스를 만듭니다.
 
-```
+    ```
     public class Program
     {
     }
-``` 
+    ``` 
 
 1.  **Program** 클래스 내에서 다음 코드 줄을 입력하여 **blobServiceEndpoint** 라는 새 문자열 상수를 만듭니다.
 
-```
+    ```
     private const string blobServiceEndpoint = "";
-```
+    ```
 
 1.  이 랩의 앞에서 기록한 스토리지 계정의 **기본 엔드포인트 Blob Service ** 로 값을 설정하여 **blobServiceEndpoint** 문자열 상수를 업데이트합니다.
 
 1.  **Program** 클래스 내에서 다음 코드 줄을 입력하여 **storageAccountName** 이 라는 새 문자열 상수를 만듭니다.
 
-```
+    ```
     private const string storageAccountName = "";
-```
+    ```
 
 1.  이전에 랩에서 기록한 스토리지 계정의 **스토리지 계정 이름** 으로 값을 설정하여 **storageAccountName** 문자열 상수를 업데이트합니다.
 
 1.  **Program** 클래스에서 다음 코드 줄을 입력하여 **storageAccountKey** 이 라는 새 문자열 상수를 만듭니다.
 
-```
+    ```
     private const string storageAccountKey = "";
-```
+    ```
 
 1.  해당 랩 앞에서 기록한 스토리지 계정의 **키** 로 값을 설정하여 **storageAccountKey** 문자열 상수를 업데이트합니다.
 
 1.  **Program** 클래스에서 다음 코드 줄을 입력하여 새 비동기 **Main** 메서드를 만듭니다.
 
-```
+    ```
     public static async Task Main(string[] args)
     {
     }
-```
+    ```
 
 1.  이제 다음을 포함하는 **Program.cs** 파일을 관찰하세요.
 
-```
+    ```
     using Azure.Storage;
     using Azure.Storage.Blobs;
     using Azure.Storage.Blobs.Models;
@@ -290,55 +291,55 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
         {
         }
     }
-```
+    ```
 
 #### 작업 3: Azure Storage Blob 서비스 엔드포인트에 연결
 
 1.  **Main** 메서드에서 다음 코드 줄을 추가하여 **storageAccountName** 및 **storageAccountKey** 상수를 생성자 매개 변수로 사용하여 **StorageSharedKeyCredential** 자격 증명 클래스의 새 인스턴스를 만듭니다.
 
-```
+    ```
     StorageSharedKeyCredential accountCredentials = new StorageSharedKeyCredential(storageAccountName, storageAccountKey);
-```
+    ```
 
 1.  **Main** 메서드에서 다음 코드 줄을 추가하여 **BlobServiceEndpoint** 상수 및 *accountCredentials* 변수를 생성자 매개 변수로 사용하여 **BlobServiceClient** 클래스의 새 인스턴스를 만듭니다.
 
-```
+    ```
     BlobServiceClient serviceClient = new BlobServiceClient(new Uri(blobServiceEndpoint), accountCredentials);
-```
+    ```
 
 1.  **Main** 메서드에서 다음 코드 줄을 추가하여 **BlobServiceClient** 클래스의 **GetAccountInfoAsync** 메서드를 호출하여 서비스에서 계정 메타데이터를 검색합니다.     
 
-```
+    ```
     AccountInfo info = await serviceClient.GetAccountInfoAsync();
-```
+    ```
     
 1.  **Main** 메서드 내에서 다음 코드 줄을 추가하여 콘솔에 소개 메시지를 렌더링합니다.
 
-```
+    ```
     await Console.Out.WriteLineAsync($"Connected to Azure Storage Account");
-```
+    ```
     
 1.  **Main** 메서드 내에서 다음 코드 줄을 추가하여 스토리지 계정 이름을 렌더링합니다.
 
-```
+    ```
     await Console.Out.WriteLineAsync($"Account name:\t{storageAccountName}");
-```
+    ```
     
 1.  **Main** 메서드 내에서 다음 코드 줄을 추가하여 스토리지 계정 형식을 렌더링합니다:
 
-```
+    ```
     await Console.Out.WriteLineAsync($"Account kind:\t{info?.AccountKind}");
-```
+    ```
     
 1.  **Main** 메서드에서 다음 코드 줄을 추가하여 스토리지 계정에 대해 현재 선택된 SKU(Stock Keeping Unit)를 렌더링합니다.
 
-```
+    ```
     await Console.Out.WriteLineAsync($"Account sku:\t{info?.SkuName}");
-```
+    ```
 
 1.  이제 다음을 포함해야 하는 **Main** 메서드를 살펴봅니다.
 
-```
+    ```
     public static async Task Main(string[] args)
     {
         StorageSharedKeyCredential accountCredentials = new StorageSharedKeyCredential(storageAccountName, storageAccountKey);	
@@ -352,7 +353,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
         await Console.Out.WriteLineAsync($"Account kind:\t{info?.AccountKind}");
         await Console.Out.WriteLineAsync($"Account sku:\t{info?.SkuName}");
     }
-```
+    ```
 
 1.  **Program.cs** 파일을 저장합니다.
 
@@ -360,9 +361,9 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  열린 명령 프롬프트에서 다음 명령을 입력하고 엔터를 선택하여 .NET 웹 애플리케이션을 실행합니다.
 
-```
+    ```
     dotnet run
-```
+    ```
 
     > **참고**: 빌드 오류가 있는 경우 **Allfiles (F):\\Allfiles\\Labs\\03\\Solution\\BlobManager** 폴더에 있는 **Program.cs** 파일을 검토합니다.
 
@@ -374,29 +375,29 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **Program** 클래스에서 다음 코드를 입력하여 비동기이고 단일 **BlobServiceClient** 매개 변수 유형이 있는 **EnumerateContainersAsync** 라는 새 **private static** 메서드를 만듭니다.
 
-```
+    ```
     private static async Task EnumerateContainersAsync(BlobServiceClient client)
     {        
     }
-```
+    ```
 
 1.  **EnumerateContainersAsyn** 메서드에서 다음 코드를 입력하여 **BlobServiceClient** 클래스의 **GetBlobContainersAsync** 메서드 호출 결과를 반복하는 비동기 **foreach** 루프를 만듭니다.
 
-```
+    ```
     await foreach (BlobContainerItem container in client.GetBlobContainersAsync())
     {
     }
-```
+    ```
 
 1.  **foreach** 루프 내에서 다음 코드를 입력하여 각 컨테이너의 이름을 인쇄합니다.
 
-```
+    ```
     await Console.Out.WriteLineAsync($"Container:\t{container.Name}");
-```
+    ```
 
 1.  이제 다음을 포함해야 하는 **EnumerateContainersAsync** 메서드를 관찰합니다. 
 
-```
+    ```
     private static async Task EnumerateContainersAsync(BlobServiceClient client)
     {        
         await foreach (BlobContainerItem container in client.GetBlobContainersAsync())
@@ -404,24 +405,24 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
             await Console.Out.WriteLineAsync($"Container:\t{container.Name}");
         }
     }
-```
+    ```
 
 1.  **Mai** 메서드에서 다음 코드를 입력 하여 **EnumerateContainersAsync** 메서드를 호출하여 *serviceClient* 변수를 매개 변수로  전달합니다.   
 
-```
+    ```
     await EnumerateContainersAsync(serviceClient);
-```
+    ```
 
 1.  이제 다음을 포함해야 하는 **기본** 메서드를 살펴봅니다.
 
-```
+    ```
     public static async Task Main(string[] args)
     {
         \\간결성을 위해 제거된 기존 코드
         
         await EnumerateContainersAsync(serviceClient);
     }
-```
+    ```
 
 1.  **Program.cs** 파일을 저장합니다.
 
@@ -429,9 +430,9 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  열린 명령 프롬프트에서 다음 명령을 입력하고 엔터를 선택하여 .NET 웹 애플리케이션을 실행합니다.
 
-```
+    ```
     dotnet run
-```
+    ```
 
     > **참고**: 빌드 오류가 있는 경우 **Allfiles (F):\\Allfiles\\Labs\\03\\Solution\\BlobManager** 폴더에 있는 **Program.cs** 파일을 검토합니다.
 
@@ -449,41 +450,41 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **Program** 클래스에서 다음 코드를 입력하여 비동기이며 **BlobServiceClient**와 **문자열** 이 라는 두 개의 매개 변수 유형이 있는 **EnumerateBlobsAsync** 라는 새 **private static** 메서드를 만듭니다.
 
-```
+    ```
     private static async Task EnumerateBlobsAsync(BlobServiceClient client, string containerName)
     {      
     }
-```
+    ```
 
-1.  **EnumerateContainersAsync]** 메서드에서 다음 코드를 입력하여 **BlobServiceClient** 클래스의 **GetBlobContainerClient** 메서드를 사용하여 **BlobContainerClient** 클래스의 새 인스턴스를 **containerName** 매개 변수에 전달합니다.
+1.  **EnumerateBlobsAsync** 메서드에서 다음 코드를 입력하여 **BlobServiceClient** 클래스의 **GetBlobContainerClient** 메서드를 사용하여 **BlobContainerClient** 클래스의 새 인스턴스를 **containerName** 매개 변수에 전달합니다.
 
-```
+    ```
     BlobContainerClient container = client.GetBlobContainerClient(containerName);
-```
+    ```
 
 1.   **EnumerateBlobsAsync** 메서드에서 다음 코드를 입력하여 열거될 컨테이너의 이름을 렌더링합니다. 
 
-```
+    ```
     await Console.Out.WriteLineAsync($"Searching:\t{container.Name}");
-```
+    ```
 
 1.  **EnumerateBlobsAsync** 메서드에서 다음 코드를 입력하여 **BlobContainerClient** 클래스의 **GetBlobsAsync** 메서드 호출 결과를 반복하는 비동기 **foreach** 루프를 만듭니다.
 
-```
+    ```
     await foreach (BlobItem blob in container.GetBlobsAsync())
     {        
     }
-```
+    ```
 
 1.  **foreach** 루프 내에서 다음 코드를 입력하여 각 Blob의 이름을 인쇄합니다. 
 
-```
+    ```
      await Console.Out.WriteLineAsync($"Existing Blob:\t{blob.Name}");
-```
+    ```
 
 1.  이제 다음을 포함해야 하는 **EnumerateBlobsAsync** 메서드를 준수하세요.
 
-```
+    ```
     private static async Task EnumerateBlobsAsync(BlobServiceClient client, string containerName)
     {      
         BlobContainerClient container = client.GetBlobContainerClient(containerName);
@@ -495,23 +496,23 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
              await Console.Out.WriteLineAsync($"Existing Blob:\t{blob.Name}");
         }
     }
-```
+    ```
 
 1.  **Main** 메서드에서 메서드 끝에 다음 코드를 입력하여 **래스터 그래픽** 값을 가진 *existingContainerName* 이 라는 변수를 만듭니다.
 
-```
+    ```
     string existingContainerName = "raster-graphics";
-```
+    ```
 
 1.  **기본** 메서드에서 다음 코드를 입력하여 **EnumerateBlobsAsync** 메서드를 호출하여 *serviceClient* 및 *existingContainerName* 변수를 매개 변수로 전달합니다.
 
-```
+    ```
     await EnumerateBlobsAsync(serviceClient, existingContainerName);
-```
+    ```
 
 1.  이제 다음을 포함해야 하는 **Main** 메서드를 살펴봅니다.
 
-```
+    ```
     public static async Task Main(string[] args)
     {
         \\간결성을 위해 제거된 기존 코드
@@ -521,7 +522,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
         string existingContainerName = "raster-graphics";
         await EnumerateBlobsAsync(serviceClient, existingContainerName);
     }
-```
+    ```
 
 1.  **Program.cs** 파일을 저장합니다.
 
@@ -529,9 +530,9 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  열린 명령 프롬프트에서 다음 명령을 입력하고 엔터를 선택하여 .NET 웹 애플리케이션을 실행합니다.
 
-```
+    ```
     dotnet run
-```
+    ```
 
     > **참고**: 빌드 오류가 있는 경우 **Allfiles (F):\\Allfiles\\Labs\\03\\Solution\\BlobManager** 폴더에 있는 **Program.cs** 파일을 검토합니다.
 
@@ -543,66 +544,66 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **Program** 클래스에서 다음 코드를 입력하여 비동기인 **BlobServiceClient** 및 **string** 이 라는 두 개의 매개 변수 유형이 있는 **GetContainerAsync** 라는 새 **private static** 메서드를 만듭니다:
 
-```
+    ```
     private static async Task<BlobContainerClient> GetContainerAsync(BlobServiceClient client, string containerName)
     {      
     }
-```
+    ```
 
 1.  **GetContainerAsync** 메서드에서 다음 코드를 입력하여 **BlobServiceClient** 클래스의 **GetBlobContainerClient** 메서드를 사용하여 **BlobContainerClient** 클래스의 새 인스턴스를 **containerName** 매개 변수에 전달합니다.
 
-```
+    ```
     BlobContainerClient container = client.GetBlobContainerClient(containerName);
-```
+    ```
 
 1.  **GetContainerAsync** 메서드에서 다음 코드를 입력하여 **BlobContainerClient** 클래스의 **CreateIfNotExistsAsync** 메서드를 호출합니다.
 
-```
+    ```
     await container.CreateIfNotExistsAsync(PublicAccessType.Blob);
-```
+    ```
 
 1.  **GetContainerAsync** 메서드에서 다음 코드를 입력하여 잠재적으로 만들어진 컨테이너의 이름을 렌더링합니다.
 
-```
+    ```
     await Console.Out.WriteLineAsync($"New Container:\t{container.Name}");
-```
+    ```
 
 1.  **GetContainerAsync** 메서드에서 다음 코드를 입력하여 **GetContainerAsync** 메서드의 결과로 **컨테이너** 라는 **BlobContainerClient** 클래스의 인스턴스를 반환합니다.
 
-```
+    ```
     return container;
-```  
+    ```  
 
 1.  이제 다음을 포함해야 하는 **GetContainerAsync** 메서드를 살펴봅니다.
 
-```
+    ```
     private static async Task<BlobContainerClient> GetContainerAsync(BlobServiceClient client, string containerName)
     {      
         BlobContainerClient container = client.GetBlobContainerClient(containerName);
         
-        await container.CreateIfNotExistsAsync();
+        await container.CreateIfNotExistsAsync(PublicAccessType.Blob);
         
         await Console.Out.WriteLineAsync($"New Container:\t{container.Name}");
         
         return container;
     }
-```
+    ```
 
 1.  **기본** 메서드에서 메서드 끝에 다음 코드를 입력하여 **벡터 그래픽** 값을 가진 *newContainerName* 이 라는 변수를 만듭니다.
 
-```
+    ```
     string newContainerName = "vector-graphics";
-```
+    ```
 
 1.  **Main** 메서드에서 다음 코드를 입력하여 **GetContainerAsync** 메서드를 호출하고 *serviceClient* 및 *newContainerName* 변수를 매개 변수로 전달하고 **BlobContainerClient** 형식의 *containerClient* 라는 변수에 결과를 저장합니다.
 
-```
+    ```
     BlobContainerClient containerClient = await GetContainerAsync(serviceClient, newContainerName);
-```
+    ```
 
 1.  이제 다음을 포함해야 하는 **Main** 메서드를 살펴봅니다.
 
-```
+    ```
     public static async Task Main(string[] args)
     {
         \\간결성을 위해 제거된 기존 코드
@@ -615,7 +616,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
         string newContainerName = "vector-graphics";
         BlobContainerClient containerClient = await GetContainerAsync(serviceClient, newContainerName);
     }
-```
+    ```
 
 1.  **Program.cs** 파일을 저장합니다.
 
@@ -623,9 +624,9 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  열린 명령 프롬프트에서 다음 명령을 입력하고 엔터를 선택하여 .NET 웹 애플리케이션을 실행합니다.
 
-```
+    ```
     dotnet run
-```
+    ```
 
     > **참고**: 빌드 오류가 있는 경우 **Allfiles (F):\\Allfiles\\Labs\\03\\Solution\\BlobManager** 폴더에 있는 **Program.cs** 파일을 검토합니다.
 
@@ -661,62 +662,62 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **Program** 클래스에서 다음 코드를 입력하여 비동기이며 **BlobContainerClient** 및 **문자열** 이 라는 두 개의 매개 변수 유형이 있는 **GetBlobAsync** 라는 새 **private static** 메서드를 만듭니다.
 
-```
+    ```
     private static async Task<BlobClient> GetBlobAsync(BlobContainerClient client, string blobName)
     {      
     }
-```
+    ```
 
 1.  **GetBlobAsync** 메서드에서 다음 코드를 입력하여 **BlobContainerClient** 클래스의 **GetBlobClient** 메서드를 사용하여 **BlobName** 매개 변수를 전달하여 **BlobClient** 클래스의 새 인스턴스를 가져옵니다.
 
-```
+    ```
     BlobClient blob = client.GetBlobClient(blobName);
-```
+    ```
 
 1.  **GetBlobAsync** 메서드에서 참조된 Blob의 이름을 렌더링하려면 다음 코드를 입력합니다.
 
-```
+    ```
     await Console.Out.WriteLineAsync($"Blob Found:\t{blob.Name}");
-```
+    ```
 
 1.  **GetBlobAsync** 메서드에서 다음 코드를 입력하여 **GetBlobAsync** 메서드의 결과로 **Blob** 이 라는 **BlobClient** 클래스의 인스턴스를 반환합니다.
 
-```
+    ```
     return blob;
-```
+    ```
 
 1.  이제 다음을 포함해야 하는 **GetBlobAsync** 메서드를 확인 합니다.
 
-```
+    ```
     private static async Task<BlobClient> GetBlobAsync(BlobContainerClient client, string blobName)
     {      
         BlobClient blob = client.GetBlobClient(blobName);
         await Console.Out.WriteLineAsync($"Blob Found:\t{blob.Name}");
         return blob;
     }
-```
+    ```
 
 1.  **Main** 메서드에서 메서드 끝에 다음 코드를 입력하여 **graph.svg** 값을 가진 *uploadedBlobName* 라는 이름의 변수를 만듭니다.
 
-```
+    ```
     string uploadedBlobName = "graph.svg";
-```
+    ```
 
 1.  **Main** 메서드에서 다음 코드를 입력하여 **GetBlobAsync** 메서드를 호출하고 *containerClient* 및 *uploadedBlobName* 변수를 매개 변수로 전달하고 *BlobClient* 형식이라는 **blobClient** 변수에 결과를 저장합니다.
 
-```
+    ```
     BlobClient blobClient = await GetBlobAsync(containerClient, uploadedBlobName);
-```
+    ```
 
 1.  **Main** 메서드에서 **blobClient** 변수의 *Uri* 속성을 렌더링하는 메서드의 끝에 다음 코드를 입력합니다.
 
-```
+    ```
     await Console.Out.WriteLineAsync($"Blob Url:\t{blobClient.Uri}");
-```
+    ```
 
 1.  이제 다음을 포함해야 하는 **Main** 메서드를 살펴봅니다.
 
-```
+    ```
     public static async Task Main(string[] args)
     {
         \\간결성을 위해 제거된 기존 코드
@@ -734,7 +735,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
         await Console.Out.WriteLineAsync($"Blob Url:\t{blobClient.Uri}");
     }
-```
+    ```
 
 1.  **Program.cs** 파일을 저장합니다.
 
@@ -742,9 +743,9 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  열린 명령 프롬프트에서 다음 명령을 입력하고 엔터를 선택하여 .NET 웹 애플리케이션을 실행합니다.
 
-```
+    ```
     dotnet run
-```
+    ```
 
     > **참고**: 빌드 오류가 있는 경우 **Allfiles (F):\\Allfiles\\Labs\\03\\Solution\\BlobManager** 폴더에 있는 **Program.cs** 파일을 검토합니다.
 
@@ -780,25 +781,13 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
     > **참고**: 랩으로 진행하기 전에 Cloud Shell이 초기 설치 절차를 완료할 때까지 기다립니다. Cloud Shell의 구성 옵션이 나타나지 않는 경우 이 과정의 랩에서 기존 구독을 사용하고 있기 때문일 가능성이 높습니다. 랩은 새 구독을 사용한다는 가정 하에서 작성됩니다.
 
-1.  포털의 **Cloud Shell** 명령 프롬프트에서 다음 명령을 입력하고 엔터를 선택하여 구독의 모든 리소스 그룹을 나열합니다.
-
-```
-    az group list
-```
-
-1.  명령 프롬프트에서 다음 명령을 입력하고 Enter 키를 눌러 리소스 그룹을 삭제하는 데 사용할 수 있는 명령 목록을 가져옵니다.
-
-```
-    az group delete --help
-```
-
 #### 작업 2: 리소스 그룹 삭제
 
 1.  명령 프롬프트에서 다음 명령을 입력하고 Enter 키를 눌러 **StorageMedia** 리소스 그룹을 삭제합니다.
 
-```
+    ```
     az group delete --name StorageMedia --no-wait --yes
-```
+    ```
     
 1.  포털에서 Cloud Shell 창을 닫습니다.
 

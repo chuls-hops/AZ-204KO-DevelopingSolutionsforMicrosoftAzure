@@ -1,7 +1,8 @@
 ---
 lab:
     title: '랩: MSAL 및 .NET SDK를 사용하여 Microsoft Graph 인증 및 쿼리'
-    module: '모듈 06: 사용자 인증 및 권한 부여 구현'
+    az204Module: '모듈 06: 사용자 인증 및 권한 부여 구현'
+    az020Module: '모듈 06: 사용자 인증 및 권한 부여 구현'
     type: 'Answer Key'
 ---
 
@@ -100,17 +101,18 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **시작** 화면에서 **Visual Studio Code** 타일을 선택합니다.
 
-1.  **Visual Studio Code** 창에서 탐색기 창의 바로 가기 메뉴를 마우스 오른쪽 단추로 클릭하거나 활성화한 다음 **터미널에서 열기**를 선택합니다.
-
 1.  **파일** 메뉴에서 **폴더 열기**를 선택합니다.
 
 1.  열려있는 **파일 탐색기** 창에서 **Allfiles (F):\\Allfiles\\Labs\\06\\Starter\\GraphClient**로 이동하여 **폴더 선택**을 선택합니다.
+
+1.  **Visual Studio Code** 창에서 탐색기 창의 바로 가기 메뉴를 마우스 오른쪽 단추로 클릭하거나 활성화한 다음 **터미널에서 열기**를 선택합니다.
 
 1.  명령 프롬프트에서 다음 명령을 입력하고 **GraphClient**이라는 새 .NET Core 콘솔 애플리케이션을 만듭니다.
 
     ```
     dotnet new console --name GraphClient --output .
     ```
+
     > **참고**: **dotnet new** 명령은 새 **콘솔** 프로젝트를 프로젝트와 이름이 같은 폴더에 만듭니다.
 
 1.  명령 프롬프트에서 다음 명령을 입력하고 Enter 키를 눌러 NuGet에서 **Microsoft.Identity.Client**의 버전 4.7.1을 가져옵니다.
@@ -360,7 +362,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     dotnet run
     ```
 
-    > **참고**: 빌드 오류가 있는 경우, **Allfiles (F):\\Allfiles\\Labs\\07\\Solution\\GraphClient** 폴더에 있는 **Program.cs** 파일을 검토하세요.
+    > **참고**: 빌드 오류가 있는 경우, **Allfiles (F):\\Allfiles\\Labs\\06\\Solution\\GraphClient** 폴더에 있는 **Program.cs** 파일을 검토하세요.
 
 1.  실행 중인 콘솔 애플리케이션은 기본 브라우저의 인스턴스를 자동으로 엽니다.
 
@@ -595,7 +597,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     dotnet run
     ```
 
-    > **참고**: 빌드 오류가 있는 경우, **Allfiles (F):\\Allfiles\\Labs\\07\\Solution\\GraphClient** 폴더에 있는 **Program.cs** 파일을 검토하세요.
+    > **참고**: 빌드 오류가 있는 경우, **Allfiles (F):\\Allfiles\\Labs\\06\\Solution\\GraphClient** 폴더에 있는 **Program.cs** 파일을 검토하세요.
 
 1.  현재 실행 중인 콘솔 애플리케이션의 출력에서 메시지를 살펴봅니다. 메시지에 코드 값을 기록합니다. 이 값은 랩에서 나중에 사용합니다.
 

@@ -1,10 +1,10 @@
 ---
 lab:
-    title: '랩: Azure App Service용 웹 애플리케이션 구축'
-    module: '모듈 01: Azure App Service Web Apps 만들기'
+    title: '랩: Azure PaaS(Platform-as-a-Service) 제품에서 웹 애플리케이션 빌드'
+    az204Module: '모듈 01: Azure App Service Web Apps 만들기'
+    az020Module: '모듈 01: Azure App Service Web Apps 만들기'
     type: 'Answer Key'
 ---
-
 
 # 랩: Azure PaaS(Platform-as-a-Service) 에서 웹 애플리케이션 빌드
 # 학생 랩 Answer Key
@@ -159,7 +159,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
     1.  **게시** 섹션에서 **코드** 를 선택합니다.
 
-    1.  **런타임 스택** 드롭다운 목록에서 **NET Core 3.1(LTS)** 을 선택합니다.
+    1.  **런타임 스택** 드롭다운 목록에서 **.NET Core 3.1 (LTS)** 을 선택합니다.
 
     1.  **운영 체제** 섹션에서 **Windows** 를 선택합니다.
 
@@ -209,6 +209,8 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **속성** 섹션에서 **URL** 텍스트 상자의 값을 복사합니다. 이 값은 랩에서 나중에 사용합니다.
 
+    > **참고**: 이 시점에서 이 URL의 웹 서버는 404 오류를 반환합니다. 아직 웹앱에 코드를 배포하지 않았습니다. 나중에 이 랩에서 웹앱에 코드를 배포합니다.
+
 #### 작업 6: ASP.NET 웹 애플리케이션을 Web Apps에 배포합니다.
 
 1.  작업 표시줄에서 **Visual Studio Code** 아이콘을 선택합니다.
@@ -229,9 +231,9 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  열린 명령 프롬프트에 다음 명령을 입력하고 Enter 키를 선택하여 Azure CLI(명령줄 인터페이스)에 로그인합니다.
 
-```
+    ```
     az login
-```
+    ```
 
 1.	**Microsoft Edge** 브라우저 창에서 다음 작업을 수행합니다.
     
@@ -243,33 +245,33 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.	명령 프롬프트에 다음 명령을 입력하고 Enter 키를 선택한 후 **ManagedPlatform** 리소스 그룹에 모든 앱을 나열합니다.
 
-```
-    az webapp list --resource-group ManagedPlatform -o table
-```
+    ```
+    az webapp list --resource-group ManagedPlatform
+    ```
 
 1.	다음 명령을 입력하고 Enter 키를 선택하여 **imgapi\*** 접두사가 있는 앱을 찾습니다.
 
-```
+    ```
     az webapp list --resource-group ManagedPlatform --query "[?starts_with(name, 'imgapi')]"
-```
+    ```
 
 1.	다음 명령을 입력한 후 Enter 키를 선택하여 **imgapi\*** 접두사가 있는 단일 앱의 이름만 렌더링합니다.
 
-```
+    ```
     az webapp list --resource-group ManagedPlatform --query "[?starts_with(name, 'imgapi')].{Name:name}" --output tsv
-```
+    ```
 
 1.	다음 명령을 입력한 후 엔터를 선택하여 현재 디렉터리를 랩 파일이 포함된 **Allfiles (F):\\Allfiles\\Labs\\01\\Starter\\API** 디렉터리로 변경합니다.
 
-```
+    ```
     cd F:\Allfiles\Labs\01\Starter\API\
-```
+    ```
 
 1.	다음 명령을 입력한 후 Enter 키를 선택하여 이전에 이 랩에서 만든 웹앱에 **api.zip** 파일을 배포합니다.
 
-```
+    ```
     az webapp deployment source config-zip --resource-group ManagedPlatform --src api.zip --name <name-of-your-api-app>
-```
+    ```
 
     > **참고**: *\<name-of-your-api-app\>* 자리 표시자를 이 랩의 앞부분에서 만든 웹앱의 이름으로 바꿉니다. 이전 단계에서 이 앱의 이름을 쿼리했습니다.
   
@@ -321,7 +323,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
     1.  **게시** 섹션에서 **코드** 를 선택합니다.
 
-    1.  **런타임 스택** 드롭다운 목록에서 **NET Core 3.1(LTS)** 을 선택합니다.
+    1.  **런타임 스택** 드롭다운 목록에서 **.NET Core 3.1 (LTS)** 을 선택합니다.
 
     1.  **운영 체제** 섹션에서 **Windows** 를 선택합니다.
 
@@ -387,9 +389,9 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  열린 명령 프롬프트에 다음 명령을 입력한 후 Enter 키를 선택하여 Azure CLI에 로그인합니다.
 
-```
+    ```
     az login
-```
+    ```
 
 1.  브라우저 창에서 다음 작업을 수행합니다.
     
@@ -401,33 +403,33 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.	다음 명령을 입력한 후 Enter 키를 선택하여 **ManagedPlatform** 리소스 그룹의 모든 앱을 나열합니다.
 
-```
+    ```
     az webapp list --resource-group ManagedPlatform
-```
+    ```
 
 1.	다음 명령을 입력한 후 엔터를 선택하여 **imgweb\*** 접두사가 있는 앱을 찾습니다.
 
-```
+    ```
     az webapp list --resource-group ManagedPlatform --query "[?starts_with(name, 'imgweb')]"
-```
+    ```
 
 1.	다음 명령을 입력한 후 엔터를 선택하여 **imgweb\*** 접두사가 있는 단일 앱의 이름만 렌더링합니다.
 
-```
+    ```
     az webapp list --resource-group ManagedPlatform --query "[?starts_with(name, 'imgweb')].{Name:name}" --output tsv
-```
+    ```
 
 1.	다음 명령을 입력한 후 엔터를 선택하여 현재 디렉터리를 랩 파일이 포함된 **Allfiles (F):\\Allfiles\\Labs\\01\\Starter\\Web** 디렉터리로 변경합니다.
 
-```
+    ```
     cd F:\Allfiles\Labs\01\Starter\Web\
-```
+    ```
 
 1.	다음 명령을 입력한 후 엔터를 선택하여 이전에 랩에서 만든 웹앱에 **web.zip** 파일을 배포합니다.
 
-```
+    ```
     az webapp deployment source config-zip --resource-group ManagedPlatform --src web.zip --name <name-of-your-web-app>
-```
+    ```
 
     > **참고**: *\<name-of-your-web-app\>* 자리 표시자를 이전에 랩에서 만든 웹앱의 이름으로 대체합니다. 이전 단계에서 이 앱의 이름을 쿼리했습니다.
   
@@ -479,25 +481,13 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
     > **참고**: Cloud Shell의 구성 옵션이 나타나지 않는 경우 이 과정의 랩에서 기존 구독을 사용하고 있기 때문일 수 있습니다. 랩은 새 구독을 사용한다는 가정 하에서 작성됩니다.
 
-1.  포털의 **Cloud Shell** 명령 프롬프트에서 다음 명령을 입력하고 엔터를 선택하여 구독의 모든 리소스 그룹을 나열합니다.
-
-```
-    az group list
-```
-
-1.  다음 명령을 입력하고 Enter 키를 선택하여 리소스 그룹을 삭제할 수 있는 명령 목록을 가져옵니다.
-
-```
-    az group delete --help
-```
-
 #### 작업 2: 리소스 그룹 삭제
 
 1.  다음 명령을 입력한 후 Enter 키를 선택하여 **ManagedPlatform** 리소스 그룹을 삭제합니다.
 
-```
+    ```
     az group delete --name ManagedPlatform --no-wait --yes
-```
+    ```
 
 1.  포털에서 Cloud Shell 창을 닫습니다.
 

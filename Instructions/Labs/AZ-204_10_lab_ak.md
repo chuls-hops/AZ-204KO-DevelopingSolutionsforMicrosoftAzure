@@ -1,7 +1,8 @@
 ﻿---
 lab:
     title: '랩: Event Grid 이벤트 게시 및 구독'
-    module: '모듈 10: 이벤트 기반 솔루션 개발'
+    az204Module: '모듈 10: 이벤트 기반 솔루션 개발'
+    az020Module: '모듈 09: 이벤트 기반 솔루션 개발'
     type: 'Answer Key'
 ---
     
@@ -68,7 +69,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     az --version
     ```
 
-#### 작업 3: Microsoft.EventGrid 공급자 등록
+#### 작업 3: Microsoft.EventGrid 공급자 등록 보기
 
 1.  포털에서 **Cloud Shell**명령 프롬프트에 따라 다음 작업을 수행합니다.
 
@@ -114,13 +115,11 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **토픽 만들기** 블레이드에서 다음 작업을 수행합니다.
 
-    1.  **리소스 그룹** 섹션에서 **새로 만들기**를 선택하고 **PubSubEvents**를 입력한 다음 **확인**을 선택합니다.
-
     1.  **이름** 텍스트 상자에 **hrtopic*[yourname]*** 을 입력합니다.
     
+    1.  **리소스 그룹** 섹션에서 **새로 만들기**를 선택하고 **PubSubEvents**를 입력한 다음 **확인**을 선택합니다.
+
     1.  **위치** 드롭다운 목록에서 **미국 동부** 지역을 선택합니다.
-    
-    1.  **다음:고급** 을 선택합니다.
 
     1.  **이벤트 스키마** 드롭다운 목록에서 **Event Grid 스키마**를 선택한 후 **만들기**를 선택합니다.
   
@@ -366,7 +365,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
     public class Program
     {
-        private const string topicEndpoint = <topic-endpoint>";
+        private const string topicEndpoint = "<topic-endpoint>";
         private const string topicKey = "<topic-key>";
         
         public static async Task Main(string[] args)
@@ -569,18 +568,6 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     1.  대화 박스는 셸을 사용하여 시작할 새 스토리지 계정을 만들라는 메시지를 표시합니다. 기본 설정을 수락하고 **스토리지 만들기**를 선택합니다. 
 
     > **참고**: 랩으로 진행하기 전에 Cloud Shell이 초기 설치 절차를 완료할 때까지 기다립니다. Cloud Shell의 구성 옵션이 나타나지 않는 경우 이 과정의 랩에서 기존 구독을 사용하고 있기 때문일 수 있습니다. 랩은 새 구독을 사용한다는 가정 하에서 작성됩니다.
-
-1.  **Cloud Shell** 명령 프롬프트에서 다음 명령을 입력하고 Enter 키를 눌러 구독의 모든 리소스 그룹을 나열합니다.
-
-    ```
-    az group list
-    ```
-
-1.  다음 명령을 입력하고 Enter 키를 선택하여 리소스 그룹을 삭제할 수 있는 명령 목록을 가져옵니다.
-
-    ```
-    az group delete --help
-    ```
 
 #### 작업 2: 리소스 그룹 삭제
 
