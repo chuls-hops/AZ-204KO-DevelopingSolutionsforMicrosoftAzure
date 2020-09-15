@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '랩: Logic Apps로 비즈니스 프로세스 자동화'
     az204Module: '모듈 09: App Service Logic Apps 개발'
