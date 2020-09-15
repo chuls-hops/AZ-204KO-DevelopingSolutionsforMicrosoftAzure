@@ -73,15 +73,15 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     
     1.  **리소스 그룹** 섹션에서 **새로 만들기**를 선택하고 **서버리스**를 입력한 다음 **확인**을 선택합니다.
     
-    1.  **스토리지 계정 이름** 텍스트 상자에 **funcstor[yourname]을 입력합니다**.
+    1.  **스토리지 계정 이름** 텍스트 상자에 **funcstor*[yourname]*** 을 입력합니다.
     
     1.  **위치** 목록에서 **(미국) 미국 동부** 지역을 선택합니다.
     
     1.  **성능** 섹션에서 **표준**을 선택합니다.
     
-    1.  **계정 종류** 목록에서 **StorageV2(범용 v2)**를 선택합니다.
+    1.  **계정 종류** 목록에서 **StorageV2(범용 v2)** 를 선택합니다.
     
-    1.  **복제** 목록에서 **LRS(로컬 중복 스토리지)**를 선택합니다.
+    1.  **복제** 목록에서 **LRS(로컬 중복 스토리지)** 를 선택합니다.
     
     1.  **액세스 계층(기본값)** 섹션에서 **핫**이 선택되어 있는지 확인합니다.
     
@@ -115,11 +115,11 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     
     1.  **리소스 그룹** 섹션에서 **기존 사용**을 선택한 다음 목록에서 **서버리스**를 선택합니다.
     
-    1.  **함수 앱 이름** 텍스트 상자에 funclogic[yourname]을 입력합니다.
+    1.  **함수 앱 이름** 텍스트 상자에 **funclogic*[yourname]*** 을 입력합니다.
 
     1.  **게시** 섹션에서 **코드**를 선택합니다.
 
-    1.  **런타임 스택** 드롭다운 목록에서 **NET Core**를 선택합니다.
+    1.  **런타임 스택** 드롭다운 목록에서 **.NET Core**를 선택합니다.
 
     1.  **버전** 드롭다운 목록에서 **3.1**을 선택합니다.
 
@@ -129,7 +129,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **호스팅** 탭에서 다음 작업을 수행합니다.
 
-    1.  **스토리지 계정** 드롭다운 목록에서, 이 랩의 앞에서 만든 funcstor[사용자 이름] 스토리지 계정을 선택합니다.
+    1.  **스토리지 계정** 드롭다운 목록에서, 이 랩의 앞에서 만든 **funcstor*[yourname]*** 스토리지 계정을 선택합니다.
 
     1.  **운영 체제** 섹션에서 **Windows**를 선택합니다.
 
@@ -155,7 +155,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서, 이 랩의 앞에서 만든 **서버리스** 리소스 그룹을 찾아 선택합니다.
 
-1.  **서버리스** 블레이드에서 이 랩의 앞에서 만든 **funclogic[yourname]** 함수 앱을 선택합니다.
+1.  **서버리스** 블레이드에서 이 랩의 앞에서 만든 **funclogic*[yourname]*** 함수 앱을 선택합니다.
 
 1.  **App Service** 블레이드에서 **Functions** 섹션의 **Functions** 옵션을 선택합니다.
 
@@ -196,10 +196,10 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
         name = name ?? data?.name;
 
         string responseMessage = string.IsNullOrEmpty(name)
-            ? "이 HTTP 트리거 함수가 성공적으로 실행되었습니다. 개인화된 응답을 위해 쿼리 문자열 또는 요청 본문에 이름을 전달합니다."
+            ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
                     : $"Hello, {name}. This HTTP triggered function executed successfully.";
 
-                return new OkObjectResult(responseMessage):
+                return new OkObjectResult(responseMessage);
     }
     ```
 
@@ -277,7 +277,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서, 이 랩의 앞에서 만든 **서버리스** 리소스 그룹을 찾아 선택합니다.
 
-1.  **서버리스** 블레이드에서 이 랩의 앞에서 만든 funclogic[yourname] 함수 앱을 선택합니다.
+1.  **서버리스** 블레이드에서 이 랩의 앞에서 만든 **funclogic*[yourname]*** 함수 앱을 선택합니다.
 
 1.  **App Service** 블레이드에서 **URL** 텍스트 상자의 값을 복사합니다. 이 값은 랩에서 나중에 사용합니다.
 
@@ -291,7 +291,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     httprepl <function-app-url>
     ```
 
-    > **참고**: 예를 들어 URL이 **https://funclogicstudent.azurewebsites.net**인 경우 명령은 **httprepl https://funclogicstudent.azurewebsites.net**이 됩니다.
+    > **참고**: 예를 들어 URL이 **https://funclogicstudent.azurewebsites.net** 인 경우 명령은 **httprepl https://funclogicstudent.azurewebsites.net** 이 됩니다.
 
 1.  httprepl 도구가 표시하는 오류 메시지를 살펴봅니다. 이 메시지는 도구가 API를 "통과"하는 데 사용할 Swagger 정의 파일을 검색하기 때문에 발생합니다. 논리 앱은 Swagger 정의 파일을 생성하지 않으므로 API를 수동으로 통과해야 합니다.
 
@@ -307,25 +307,25 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     cd echo
     ```
 
-1.  다음 명령을 입력한 다음 Enter 키를 선택하여 \-\-content 옵션을 통해 숫자 값이 **3**으로 설정된 HTTP 요청 본문으로 전송하는 **post** 명령을 실행합니다.
+1.  다음 명령을 입력한 다음 Enter 키를 선택하여 **\-\-content** 옵션을 통해 숫자 값이 **3**으로 설정된 HTTP 요청 본문으로 전송하는 **post** 명령을 실행합니다.
 
     ```
     post --content 3
     ```
 
-1.  다음 명령을 입력한 다음 Enter 키를 선택하여 \-\-content 옵션을 통해 숫자 값이 **5**로 설정된 HTTP 요청 본문으로 전송하는 **post** 명령을 실행합니다.
+1.  다음 명령을 입력한 다음 Enter 키를 선택하여 **\-\-content** 옵션을 통해 숫자 값이 **5**로 설정된 HTTP 요청 본문으로 전송하는 **post** 명령을 실행합니다.
 
     ```
     post --content 5
     ```
 
-1.  다음 명령을 입력한 다음 Enter 키를 선택하여 \-\-content 옵션을 통해 스트링 값이 **Hello**로 설정된 HTTP 요청 본문으로 전송하는 **post** 명령을 실행합니다.
+1.  다음 명령을 입력한 다음 Enter 키를 선택하여 **\-\-content** 옵션을 통해 스트링 값이 **Hello**로 설정된 HTTP 요청 본문으로 전송하는 **post** 명령을 실행합니다.
 
     ```
     post --content "Hello"
     ```
 
-1.  다음 명령을 입력한 다음 Enter 키를 선택하여 \-\-content 옵션을 통해 {"msg": "Successful"}의 JSON(JavaScript Object Notation) 값으로 설정된 HTTP 요청 본문으로 보내는 **post** 명령을 실행합니다.
+1.  다음 명령을 입력한 다음 Enter 키를 선택하여 **\-\-content** 옵션을 통해 **{"msg": "Successful"}** 의 JSON(JavaScript Object Notation) 값으로 설정된 HTTP 요청 본문으로 보내는 **post** 명령을 실행합니다.
 
     ```
     post --content "{"msg": "Successful"}"
@@ -353,7 +353,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서, 이 랩의 앞에서 만든 **서버리스** 리소스 그룹을 찾아 선택합니다.
 
-1.  **서버리스** 블레이드에서 이 랩의 앞에서 만든 **funclogic[yourname]** 함수 앱을 선택합니다.
+1.  **서버리스** 블레이드에서 이 랩의 앞에서 만든 **funclogic*[yourname]*** 함수 앱을 선택합니다.
 
 1.  **App Service** 블레이드에서 **Functions** 섹션의 **Functions** 옵션을 선택합니다.
 
@@ -365,7 +365,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
     1.  **세부 정보** 탭 내에서 **새 함수** 텍스트 상자를 찾아 **되풀이**를 입력합니다.
 
-    1.  **세부 정보** 탭 내에서 **일정** 텍스트 상자를 찾은 다음 0 \/2를 입력합니다.
+    1.  **세부 정보** 탭 내에서 **일정** 텍스트 상자를 찾은 다음 **0 \*/2 \* \* \* \*** 를 입력합니다.
 
     1.  **세부 정보** 탭 내에서 **권한 부여** 텍스트 상자를 찾은 후 **익명**을 선택합니다.
 
@@ -411,7 +411,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서, 이 랩의 앞에서 만든 **서버리스** 리소스 그룹을 찾아 선택합니다.
 
-1.  **서버리스** 블레이드에서 이 랩의 앞에서 만든 **funclogic[yourname]** 함수 앱을 선택합니다.
+1.  **서버리스** 블레이드에서 이 랩의 앞에서 만든 **funclogic*[yourname]*** 함수 앱을 선택합니다.
 
 1.  **App Service** 블레이드에서 **Functions** 섹션의 **Functions** 옵션을 선택합니다.
 
@@ -433,7 +433,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서, 이 랩의 앞에서 만든 **서버리스** 리소스 그룹을 찾아 선택합니다.
 
-1.  **서버리스** 블레이드에서 이 랩의 앞에서 만든 funcstor[yourname] 스토리지 계정을 선택합니다.
+1.  **서버리스** 블레이드에서 이 랩의 앞에서 만든 **funcstor*[yourname]*** 스토리지 계정을 선택합니다.
 
 1.  **스토리지 계정** 블레이드에서 **Blob 서비스** 섹션에 있는 **컨테이너** 링크를 선택합니다.
 
@@ -443,7 +443,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     
     1.  **이름** 텍스트 상자에 **content**를 입력합니다.
     
-    1.  **공용 액세스 수준** 드롭다운 목록에서 **비공개(익명 액세스 없음)**를 선택합니다.
+    1.  **공용 액세스 수준** 드롭다운 목록에서 **비공개(익명 액세스 없음)** 를 선택합니다.
     
     1.  **확인**을 선택합니다.
 
@@ -455,7 +455,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
     1.  **파일** 섹션에서 **폴더** 아이콘을 선택합니다.
 
-    1.  **파일 탐색기** 창에서 **Allfiles (F):\\Allfiles\\Labs\\02\\Starter**를 찾아 **settings.json** 파일을 선택하고 **열기**를 선택합니다.
+    1.  **파일 탐색기** 창에서 **Allfiles (F):\\Allfiles\\Labs\\02\\Starter** 를 찾아 **settings.json** 파일을 선택하고 **열기**를 선택합니다.
 
     1.  **파일이 이미 있는 경우 덮어쓰기** 확인란이 선택되어 있는지 확인하고, **업로드**를 선택합니다. 
     
@@ -467,7 +467,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서, 이 랩의 앞에서 만든 **서버리스** 리소스 그룹을 찾아 선택합니다.
 
-1.  **서버리스** 블레이드에서 이 랩의 앞에서 만든 **funclogic[yourname]** 함수 앱을 선택합니다.
+1.  **서버리스** 블레이드에서 이 랩의 앞에서 만든 **funclogic*[yourname]*** 함수 앱을 선택합니다.
 
 1.  **App Service** 블레이드에서 **Functions** 섹션의 **Functions** 옵션을 선택합니다.
 
@@ -524,10 +524,10 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
         name = name ?? data?.name;
 
         string responseMessage = string.IsNullOrEmpty(name)
-            ? "이 HTTP 트리거 함수가 성공적으로 실행되었습니다. 개인화된 응답을 위해 쿼리 문자열 또는 요청 본문에 이름을 전달합니다."
+            ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
                     : $"Hello, {name}. This HTTP triggered function executed successfully.";
 
-                return new OkObjectResult(responseMessage):
+                return new OkObjectResult(responseMessage);
     }
     ```
 
@@ -556,7 +556,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 1.  **실행** 메서드에서 다음 코드 줄을 입력하여 *json* 매개 변수의 내용을 함수의 HTTP 응답으로 반환합니다.
 
     ```
-    return new OkObjectResult(json):
+    return new OkObjectResult(json);
     ```
 
 1.  이제 다음을 포함해야 하는 **run.csx** 파일을 확인합니다.
@@ -567,7 +567,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
     public static IActionResult Run(HttpRequest request, string json)
     {
-        OkObjectResult(secureBlobUrl)를 호출 반환합니다;
+        return new OkObjectResult(json);
     }
     ```
 
@@ -583,7 +583,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     httprepl <function-app-url>
     ```
 
-    > **참고**: 예를 들어 URL이 **https://funclogicstudent.azurewebsites.net**인 경우 명령은 **httprepl https://funclogicstudent.azurewebsites.net**이 됩니다.
+    > **참고**: 예를 들어 URL이 **https://funclogicstudent.azurewebsites.net** 인 경우 명령은 **httprepl https://funclogicstudent.azurewebsites.net** 이 됩니다.
 
 1.  도구 프롬프트에서 다음 명령을 입력한 다음 Enter 키를 선택하여 상대 **API** 엔드포인트로 찾아봅니다.
 
@@ -609,11 +609,11 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     {
         "version": "0.2.4",
         "root": "/usr/libexec/mews_principal/",
-        "디바이스": {
+        "device": {
             "id": "21e46d2b2b926cba031a23c6919"
         },
         "notifications": {
-            "이메일": "Anais85@outlook.com",
+            "email": "Anais85@outlook.com",
             "phone": "751.757.2014 x4151"
         }
     }

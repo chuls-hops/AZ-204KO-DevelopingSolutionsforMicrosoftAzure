@@ -357,9 +357,9 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  열린 쿼리 편집기에서 다음 쿼리를 입력합니다.
 
-```
+    ```
     SELECT * FROM AdventureWorks.dbo.Models
-```
+    ```
 
 1.  **실행** 을 선택하여 쿼리를 실행한 다음 결과를 살펴봅니다.
 
@@ -367,9 +367,9 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  쿼리 편집기에서 기존 쿼리를 다음 쿼리로 바꿉니다.
 
-```
+    ```
     SELECT * FROM AdventureWorks.dbo.Products
-```
+    ```
 
 1.  **실행** 을 선택하여 쿼리를 실행한 다음 결과를 살펴봅니다.
 
@@ -393,9 +393,9 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  열린 명령 프롬프트에서 다음 명령을 입력하고 Enter 키를 눌러 .NET 웹 애플리케이션을 빌드합니다.
 
-```
+    ```
     dotnet build
-```
+    ```
 
     > **참고**: **dotnet build** 명령은 폴더의 모든 프로젝트를 빌드하기 전에 누락된 NuGet 패키지를 자동으로 복원합니다.
 
@@ -411,12 +411,12 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  3행의 JSON(JavaScript Object Notation) 개체에서 **ConnectionStrings.AdventureWorksSqlContext** 경로를 찾습니다. 현재 값이 비어 있는지 확인합니다.
 
-```
+    ```
     "ConnectionStrings": {
         "AdventureWorksSqlContext": "",
         ...
     },
-```
+    ```
 
 1.  이전에 랩에서 기록한 SQL 데이터베이스의 **ADO.NET(SQL 인증) 연결 문자열** 에 값을 설정하여 **AdventureWorksSqlContext** 속성의 값을 업데이트합니다.
 
@@ -428,12 +428,12 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  8줄의 JSON 개체에서 **Settings.BlobContainerUrl** 경로를 찾습니다. 현재 값이 비어 있는지 확인합니다.
 
-```
+    ```
     "Settings": {
         "BlobContainerUrl": "",
         ...
     }
-```
+    ```
 
 1.  값을 이전에 랩에서 기록한 **images** 라는 Azure Storage Blob 컨테이너의 **URL** 속성으로 설정하여 **BlobContainerUrl** 속성의 값을 업데이트합니다.
 
@@ -445,15 +445,15 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  열린 명령 프롬프트에서 다음 명령을 입력하고 Enter 키를 선택하여 터미널 컨텍스트를 **AdventureWorks.Web** 폴더로 전환합니다.
 
-```
+    ```
     cd .\AdventureWorks.Web\
-```
+    ```
 
 1.  명령 프롬프트에서 다음 명령을 입력하고 Enter 키를 선택하여 .NET Core 웹 애플리케이션을 실행합니다.
 
-```
+    ```
     dotnet run
-```
+    ```
 
     > **참고**: **dotnet run** 명령은 프로젝트의 모든 변경 내용을 자동으로 빌드한 다음 디버거를 연결하지 않고 웹 애플리케이션을 시작합니다. 이 명령은 실행 중인 애플리케이션의 URL과 할당된 포트를 출력합니다.
 
@@ -483,55 +483,55 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  열린 명령 프롬프트에서 다음 명령을 입력하고 엔터를 선택하여 동일한 이름의 폴더에 **AdventureWorks.Migrate** 라는 새 .NET 프로젝트를 만듭니다.
 
-```
+    ```
     dotnet new console --name AdventureWorks.Migrate
-```
+    ```
 
     > **참고**: **dotnet new** 명령은 새 **콘솔** 프로젝트를 프로젝트와 이름이 같은 폴더에 만듭니다.
 
 1.  명령 프롬프트에서 다음 명령을 입력하고 Enter 키를 선택하여 기존 **AdventureWorks.Models** 프로젝트에 참조를 추가합니다.
 
-```
+    ```
     dotnet add .\AdventureWorks.Migrate\AdventureWorks.Migrate.csproj reference .\AdventureWorks.Models\AdventureWorks.Models.csproj
-```
+    ```
 
     > **참고**: **dotnet add reference** 명령은 **AdventureWorks.Model** 프로젝트에 포함된 모델 클래스 참조를 추가합니다.
 
 1.  명령 프롬프트에서 다음 명령을 입력하고 Enter 키를 선택하여 기존 **AdventureWorks.Context** 프로젝트에 참조를 추가합니다.
 
-```
+    ```
     dotnet add .\AdventureWorks.Migrate\AdventureWorks.Migrate.csproj reference .\AdventureWorks.Context\AdventureWorks.Context.csproj
-```
+    ```
 
     > **참고**: **dotnet add reference** 명령은 **AdventureWorks.Context** 프로젝트에 포함된 컨텍스트 클래스 참조를 추가합니다.
 
 1.  명령 프롬프트에서 다음 명령을 입력하고 Enter 키를 선택하여 터미널 컨텍스트를 **AdventureWorks.Migrate** 폴더로 전환합니다.
 
-```
+    ```
     cd .\AdventureWorks.Migrate\
-```
+    ```
 
 1.  명령 프롬프트에서 다음 명령을 입력하고 Enter 키를 선택하여 NuGet에서 **Microsoft.EntityFrameworkCore.SqlServer** 버전 2.2.6을 가져옵니다.
 
-```
+    ```
     dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 3.0.1
-```
+    ```
 
     > **참고**: **dotnet add package** 명령은 **NuGet** 에서 **Microsoft.EntityFrameworkCore.SqlServer** 패키지를 추가합니다. 자세한 내용은 다음을 참조하십시오. [Microsoft.EntityFrameworkCore.SqlServer](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/3.0.1).
 
 1.  명령 프롬프트에서 다음 명령을 입력하고 Enter 키를 선택하여 NuGet에서 **Microsoft.Azure.Cosmos** 의 버전 3.4.1을 가져옵니다.
 
-```
+    ```
     dotnet add package Microsoft.Azure.Cosmos --version 3.4.1
-```
+    ```
 
     > **참고**: **dotnet add package** 명령은 **NuGet** 에서 **Microsoft.Azure.Cosmos** 패키지를 추가합니다. 자세한 내용은 다음을 참조하십시오. [Microsoft.Azure.Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/3.4.1).
 
 1.  명령 프롬프트에서 다음 명령을 입력하고 엔터를 선택하여 .NET 애플리케이션을 빌드합니다.
 
-```
+    ```
     dotnet build
-```
+    ```
 
 1.  **터미널 종료** 또는 **휴지통** 아이콘을 선택하여 현재 열려 있는 터미널 및 관련된 모든 작업을 종료합니다.
 
@@ -545,45 +545,45 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  다음 코드 줄을 추가하여 참조된 **AdventureWorks.Models** 및 **AdventureWorks.Context** 프로젝트의 **AdventureWorks.Models** 및 **AdventureWorks.Context** 네임스페이스를 가져옵니다.
 
-```
+    ```
     using AdventureWorks.Context;
     using AdventureWorks.Models;
-```
+    ```
 
 1.  다음 코드 줄을 추가하여 NuGet에서 가져온 **Microsoft.Azure.Cosmos** 패키지에서 **Microsoft.Azure.Cosmos** 네임스페이스를 가져옵니다.
 
-```
+    ```
     using Microsoft.Azure.Cosmos;
-```
+    ```
 
 1.  다음 코드 줄을 추가하여 NuGet에서 가져온 **Microsoft.EntityFrameworkCore.SqlServer** 패키지에서 **Microsoft.EntityFrameworkCore** 네임스페이스를 가져옵니다.
 
-```
+    ```
     using Microsoft.EntityFrameworkCore;
-```
+    ```
 
 1.  다음 코드 줄을 추가하여 이 파일에 사용할 기본 제공 네임스페이스에 대해 **using** 지시문을 추가합니다.
 
-```
+    ```
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-```
+    ```
 
 1.  다음 코드를 입력하여 새 **Program** 클래스를 만듭니다.
 
-```
+    ```
     public class Program
     {
     }
-```
+    ```
 
 1.  **Program** 클래스 내에서 다음 코드 줄을 입력하여 **sqlDBConnectionString** 이라는 새 문자열 상수를 만듭니다.
 
-```
+    ```
     private const string sqlDBConnectionString = "";
-```
+    ```
 
 1.  이 랩의 앞 부분에서 기록한 SQL 데이터베이스의 **ADO.NET(SQL 인증) 연결 문자열** 에 해당 값을 설정하여 **sqlDBConnectionString** 문자열 상수를 업데이트합니다.
 
@@ -591,25 +591,25 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **Program** 클래스 내에서 다음 코드 줄을 입력하여 **cosmosDBConnectionString** 이라는 새 문자열 상수를 만듭니다. 
 
-```
+    ```
     private const string cosmosDBConnectionString = "";
-```
+    ```
 
 1.  이 랩의 앞 부분에서 기록한 Azure Cosmos DB 계정의 **기본 연결 문자열** 로 값을 설정하여 **cosmosDBConnectionString** 문자열 상수를 업데이트합니다.
 
 1.  **Program** 클래스 내에서 다음 코드 줄을 입력하여 새 비동기 **Main** 메서드를 만듭니다.
 
-```
+    ```
     public static async Task Main(string[] args)
     {
     }
-```
+    ```
 
 1.  **기본** 메서드 내에서 다음 코드 줄을 추가하여 콘솔에 소개 메시지를 출력합니다.
 
-```
+    ```
     await Console.Out.WriteLineAsync("Start Migration");
-```
+    ```
 
 1.  **Program.cs** 파일을 저장합니다.
 
@@ -617,15 +617,15 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  열린 명령 프롬프트에서 다음 명령을 입력하고 Enter 키를 선택하여 터미널 컨텍스트를 **AdventureWorks.Migrate** 폴더로 전환합니다.
 
-```
+    ```
     cd .\AdventureWorks.Migrate\
-```
+    ```
 
 1.  명령 프롬프트에서 다음 명령을 입력하고 엔터를 선택하여 .NET 애플리케이션을 빌드합니다.
 
-```
+    ```
     dotnet build
-```
+    ```
 
 1.  **터미널 종료** 또는 **휴지통** 아이콘을 선택하여 현재 열려 있는 터미널 및 관련된 모든 작업을 종료합니다.
 
@@ -633,23 +633,23 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **Program.cs** 파일 내 **Program** 클래스의 **Main** 메서드 내에서 다음 코드 줄을 추가하여 *sqlDBConnectionString* 변수를 연결 문자열 값으로 전달하면서 **AdventureWorksSqlContext** 클래스의 새 인스턴스를 만듭니다.
 
-```
+    ```
     using AdventureWorksSqlContext context = new AdventureWorksSqlContext(sqlDBConnectionString);
-```
+    ```
 
 1.  **Main** 메서드 내에서 다음 코드 블록을 추가하여 LINQ(언어 통합 쿼리)를 발행함으로써 데이터베이스에서 모든 **Models** 및 하위 **Products** 를 가져오고 메모리 내 **List<>** 컬렉션에 저장합니다.
 
-```
+    ```
     List<Model> items = await context.Models
         .Include(m => m.Products)
         .ToListAsync<Model>();
-```
+    ```
 
 1.  **기본** 메서드 내에서 다음 코드 줄을 추가하여 SQL Database에서 가져온 레코드 수를 출력합니다.
 
-```
+    ```
     await Console.Out.WriteLineAsync($"Total Azure SQL DB Records: {items.Count}");
-```
+    ```
 
 1.  **Program.cs** 파일을 저장합니다.
 
@@ -657,15 +657,15 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  열린 명령 프롬프트에서 다음 명령을 입력하고 Enter 키를 선택하여 터미널 컨텍스트를 **AdventureWorks.Migrate** 폴더로 전환합니다.
 
-```
+    ```
     cd .\AdventureWorks.Migrate\
-```
+    ```
     
 1.  명령 프롬프트에서 다음 명령을 입력하고 Enter 키를 선택하여 .NET Core 애플리케이션을 빌드합니다.
 
-```
+    ```
     dotnet build
-```
+    ```
 
     > **참고**: 빌드 오류가 있는 경우 **Allfiles (F):\\Allfiles\\Labs\\04\\Solution\\AdventureWorks\\AdventureWorks.Migrate** 폴더에 있는 **Program.cs** 파일을 검토합니다.
 
@@ -675,19 +675,19 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **Program.cs** 파일 내 **Program** 클래스의 **Main** 메서드 내에서 다음 코드 줄을 추가하여 *cosmosDBConnectionString* 변수를 연결 문자열 값으로 전달하면서 **CosmosClient** 클래스의 새 인스턴스를 만듭니다.
 
-```
+    ```
     using CosmosClient client = new CosmosClient(cosmosDBConnectionString);
-```
+    ```
 
 1.  **Main** 메서드 내에서 다음 코드 줄을 추가하여 Azure Cosmos DB 계정에 아직 없는 경우 새 **Database** 인 **Retail** 을 만듭니다.
 
-```
+    ```
     Database database = await client.CreateDatabaseIfNotExistsAsync("Retail");
-```
+    ```
 
 1.  **Main** 메서드 내에서 다음 코드 블록을 추가하여 파티션 키 경로가 **/Category** 이고 처리량이 **1000** 요청 단위인 **Online** 이라는 새 **컨테이너**(Azure Cosmos DB 계정에 아직 없는 경우)를 만듭니다.
 
-```
+    ```
     Container container = await database.CreateContainerIfNotExistsAsync("Online",
         partitionKeyPath: $"/{nameof(Model.Category)}",
         throughput: 1000
@@ -696,35 +696,35 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **Main** 메서드 내에서 다음 코드 줄을 추가하여 *count* 라는 **int** 변수를 만듭니다.
 
-```
+    ```
     int count = 0;
-```
+    ```
 
 1.  **Main** 메서드 내에서 다음 코드 블록을 추가하여 **items** 컬렉션의 개체를 반복하는 **foreach** 반복을 만듭니다.
 
-```
+    ```
     foreach (var item in items)
     {
     }
-```
+    ```
 
 1.  **Main** 메서드의 **foreach** 반복 내에서 다음 코드 줄을 추가하여 개체를 Azure Cosmos DB 컬렉션에 **upsert** 하고 결과를 **document** 라는 *ItemResponse<>* 형식의 변수에 결과를 저장합니다.
 
-```
+    ```
     ItemResponse<Model> document = await container.UpsertItemAsync<Model>(item);
-```
+    ```
 
 1.  **Main** 메서드에 포함된 **foreach** 반복 내에서 다음 코드 줄을 추가하여 각 upsert 작업의 활동 ID를 인쇄합니다.
 
-```
+    ```
     await Console.Out.WriteLineAsync($"Upserted document #{++count:000} [Activity Id: {document.ActivityId}]");
-```
+    ```
 
 1.  다시 **Main** 메서드 내에서(**foreach** 루프 외부) 다음 코드 줄을 추가하여 Azure Cosmos DB로 내보낸 문서 수를 인쇄합니다.
 
-```
+    ```
     await Console.Out.WriteLineAsync($"Total Azure Cosmos DB Documents: {count}");
-```
+    ```
 
 1.  **Program.cs** 파일을 저장합니다.
 
@@ -732,15 +732,15 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  열린 명령 프롬프트에서 다음 명령을 입력하고 Enter 키를 선택하여 터미널 컨텍스트를 **AdventureWorks.Migrate** 폴더로 전환합니다.
 
-```
+    ```
     cd .\AdventureWorks.Migrate\
-```
+    ```
     
 1.  명령 프롬프트에서 다음 명령을 입력하고 엔터를 선택하여 .NET 애플리케이션을 빌드합니다.
 
-```
+    ```
     dotnet build
-```
+    ```
 
     > **참고**: 빌드 오류가 있는 경우 **Allfiles (F):\\Allfiles\\Labs\\04\\Solution\\AdventureWorks\\AdventureWorks.Migrate** 폴더에 있는 **Program.cs** 파일을 검토합니다.
 
@@ -748,9 +748,9 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  열린 명령 프롬프트에서 다음 명령을 입력하고 엔터를 선택하여 .NET 애플리케이션을 실행합니다.
 
-```
+    ```
     dotnet run
-```
+    ```
 
     > **참고**: **dotnet run** 명령은 콘솔 애플리케이션을 시작합니다.
 
@@ -778,17 +778,17 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  쿼리 탭에서 다음 텍스트를 입력합니다.
 
-```
+    ```
     SELECT * FROM models
-```
+    ```
 
 1.  **쿼리 실행** 을 선택한 다음 쿼리가 반환하는 JSON 모델 목록을 살펴봅니다.
 
 1.  쿼리 편집기로 돌아가서 기존 텍스트를 다음 텍스트로 바꿉니다.
 
-```
+    ```
     SELECT VALUE COUNT(1) FROM models
-```
+    ```
 
 1.  **쿼리 실행** 을 선택한 다음 **COUNT** 집계 작업의 결과를 살펴봅니다.
 
@@ -806,23 +806,23 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  열린 명령 프롬프트에서 다음 명령을 입력하고 엔터를 선택하여 터미널 컨텍스트를 **AdventureWorks.Context** 폴더로 전환합니다.
 
-```
+    ```
     cd .\AdventureWorks.Context\
-```
+    ```
 
 1.  명령 프롬프트에서 다음 명령을 입력하고 엔터를 선택하여 NuGet에서 **Microsoft.Azure.Cosmos** 를 가져옵니다.
 
-```
+    ```
     dotnet add package Microsoft.Azure.Cosmos --version 3.4.1
-```
+    ```
 
     > **참고**: **dotnet add package** 명령은 **NuGet** 에서 **Microsoft.Azure.Cosmos** 패키지를 추가합니다. 자세한 내용은 다음을 참조하십시오. [Microsoft.Azure.Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/3.4.1).
 
 1.  명령 프롬프트에서 다음 명령을 입력하고 엔터를 선택하여 .NET 웹 애플리케이션을 빌드합니다.
 
-```
+    ```
     dotnet build
-```
+    ```
 
 1.  **터미널 종료** 또는 **휴지통** 아이콘을 선택하여 현재 열려 있는 터미널 및 관련된 모든 작업을 종료합니다.
 
@@ -836,83 +836,83 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **AdventureWorksCosmosContext.cs** 파일의 코드 편집기 탭에서 다음 코드 줄을 추가하여 참조된 **AdventureWorks.Models** 프로젝트에서 **AdventureWorks.Models** 네임스페이스를 가져옵니다.
 
-```
+    ```
     using AdventureWorks.Models;
-```
+    ```
 
 1.  다음 코드 줄을 추가하여 NuGet에서 가져온 **Microsoft.Azure.Cosmos** 패키지에서 **Microsoft.Azure.Cosmos** 및 **Microsoft.Azure.Cosmos.Linq** 네임스페이스를 가져옵니다.
 
-```
+    ```
     using Microsoft.Azure.Cosmos;
     using Microsoft.Azure.Cosmos.Linq;
-```
+    ```
 
 1.  다음 코드 줄을 추가하여 이 파일에 사용할 기본 제공 네임스페이스에 대해 **using** 지시문을 추가합니다.
 
-```
+    ```
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-```
+    ```
 
 1.  다음 코드를 입력하여 **AdventureWorks.Context** 네임스페이스 블록을 추가합니다.
 
-```
+    ```
     namespace AdventureWorks.Context
     {
     }
-```
+    ```
 
 1.  **AdventureWorks.Context** 네임스페이스 내에서 다음 코드를 입력하여 새 **AdventureWorksCosmosContext** 클래스를 만듭니다.
 
-```
+    ```
     public class AdventureWorksCosmosContext
     {
     }
-```
+    ```
 
 1.  이 클래스가 **IAdventureWorksProductContext** 인터페이스를 구현한다는 것을 나타내는 사양을 추가하여 **AdventureWorksCosmosContext** 클래스 선언을 업데이트합니다.
 
-```
+    ```
     public class AdventureWorksCosmosContext : IAdventureWorksProductContext
     {
     }
-```
+    ```
 
 1.  **AdventureWorksCosmosContext** 클래스 내에서 다음 코드 줄을 입력하여 **_container** 라는 새 읽기 전용 *Container* 변수를 만듭니다.
 
-```
+    ```
     private readonly Container _container;
-```
+    ```
 
 1.  **AdventureWorksCosmosContext** 클래스 내에서 다음 서명을 사용하여 새 생성자를 추가합니다.
 
-```
+    ```
     public AdventureWorksCosmosContext(string connectionString, string database = "Retail", string container = "Online")
     {
     }
-```
+    ```
 
 1.  생성자 내에서 다음 코드 블록을 추가하여 **CosmosClient** 클래스의 새 인스턴스를 만든 다음 클라이언트에서 **Database** 및 **Container** 인스턴스를 모두 가져옵니다.
 
-```
+    ```
     _container = new CosmosClient(connectionString)
         .GetDatabase(database)
         .GetContainer(container);
-```
+    ```
 
 1.  **AdventureWorksCosmosContext** 클래스 내에서 다음 서명을 사용하여 새 **FindModelAsync** 메서드를 추가합니다.
 
-```
+    ```
     public async Task<Model> FindModelAsync(Guid id)
     {
     }
-```
+    ```
 
 1.  **FindModelAsync** 메서드 내에서 다음 코드 블록을 추가하여 LINQ 쿼리를 만들고, 이를 반복기로 변환하고, 결과 집합을 반복한 다음, 결과 집합에서 단일 항목을 반환합니다.
 
-```
+    ```
     var iterator = _container.GetItemLinqQueryable<Model>()
         .Where(m => m.id == id)
         .ToFeedIterator<Model>();
@@ -925,19 +925,19 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     }
 
     return matches.SingleOrDefault();
-```
+    ```
 
 1.  **AdventureWorksCosmosContext** 클래스 내에서 다음 서명을 사용하여 새 **GetModelsAsync** 메서드를 추가합니다.
 
-```
+    ```
     public async Task<List<Model>> GetModelsAsync()
     {
     }
-```
+    ```
 
 1.  **GetModelsAsync** 메서드 내에서 다음 코드 블록을 추가하여 SQL 쿼리를 실행하고, 쿼리 결과 반복기를 가져오고, 결과 집합을 반복한 다음, 모든 결과의 집합을 반환합니다.
 
-```
+    ```
     string query = $@"SELECT * FROM items";
 
     var iterator = _container.GetItemQueryIterator<Model>(query);
@@ -950,19 +950,19 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     }
 
     return matches;
-```
+    ```
 
 1.  **AdventureWorksCosmosContext** 클래스 내에서 다음 서명을 사용하여 새 **FindProductAsync** 메서드를 추가합니다.
 
-```
+    ```
     public async Task<Product> FindProductAsync(Guid id)
     {
     }
-```
+    ```
 
 1.  **FindProductAsync** 메서드 내에서 다음 코드 블록을 추가하여 SQL 쿼리를 실행하고, 쿼리 결과 반복기를 가져오고, 결과 집합을 반복한 다음, 결과 집합에서 단일 항목을 반환합니다.
 
-```
+    ```
     string query = $@"SELECT VALUE products
                         FROM models
                         JOIN products in models.Products
@@ -978,7 +978,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     }
 
     return matches.SingleOrDefault();
-```
+    ```
 
 1.  **AdventureWorksCosmosContext.cs** 파일을 저장합니다.
 
@@ -986,15 +986,15 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  열린 명령 프롬프트에서 다음 명령을 입력하고 엔터를 선택하여 터미널 컨텍스트를 **AdventureWorks.Context** 폴더로 전환합니다.
 
-```
+    ```
     cd .\AdventureWorks.Context\
-```
+    ```
     
 1.  명령 프롬프트에서 다음 명령을 입력하고 엔터를 선택하여 .NET 웹 애플리케이션을 빌드합니다.
 
-```
+    ```
     dotnet build
-```
+    ```
 
     > **참고**: 빌드 오류가 있는 경우 **Allfiles (F):\\Allfiles\\Labs\\04\\Solution\\AdventureWorks\\AdventureWorks.Context** 폴더에 있는 **AdventureWorksCosmosContext.cs** 파일을 검토합니다.
 
@@ -1008,13 +1008,13 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  4줄의 JSON 개체에서 **ConnectionStrings.AdventureWorksCosmosContext** 경로를 찾습니다. 현재 값이 비어 있는지 확인합니다.
 
-```
+    ```
     "ConnectionStrings": {
         ...
         "AdventureWorksCosmosContext": "",
         ...
     },
-```
+    ```
 
 1.  이 랩의 앞부분에서 기록한 Azure Cosmos DB 계정의 **기본 연결 문자열** 로 값을 설정하여 **AdventureWorksCosmosContext** 속성 값을 업데이트합니다.
 
@@ -1028,7 +1028,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **시작** 클래스에서 기존 **ConfigureProductService** 메서드를 찾습니다.
 
-```
+    ```
     public void ConfigureProductService(IServiceCollection services)
     {
         services.AddScoped<IAdventureWorksProductContext, AdventureWorksSqlContext>(provider =>
@@ -1037,27 +1037,27 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
             )
         );
     }
-```
+    ```
 
     > **참고**: 현재 제품 서비스는 SQL을 데이터베이스로 사용합니다.
 
 1.  **ConfigureProductService** 메서드 내에서 기존 코드 줄을 모두 삭제합니다.
 
-```
+    ```
     public void ConfigureProductService(IServiceCollection services)
     {
     }
-```
+    ```
 
 1.  **ConfigureProductService** 메서드 내에서 다음 코드 블록을 추가하여 이 랩의 앞 부분에서 만든 **AdventureWorksCosmosContext** 구현으로 제품 공급자를 변경합니다.
 
-```
+    ```
     services.AddScoped<IAdventureWorksProductContext, AdventureWorksCosmosContext>(provider =>
         new AdventureWorksCosmosContext(
             _configuration.GetConnectionString(nameof(AdventureWorksCosmosContext))
         )
     );
-```
+    ```
 
 1.  **Startup.cs** 파일을 저장합니다.
 
@@ -1067,15 +1067,15 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  열린 명령 프롬프트에서 다음 명령을 입력하고 Enter 키를 선택하여 터미널 컨텍스트를 **AdventureWorks.Web** 폴더로 전환합니다.
 
-```
+    ```
     cd .\AdventureWorks.Web\
-```
+    ```
 
 1.  명령 프롬프트에서 다음 명령을 입력하고 Enter 키를 선택하여 .NET Core 웹 애플리케이션을 실행합니다.
 
-```
+    ```
     dotnet run
-```
+    ```
 
     > **참고**: **dotnet run** 명령은 프로젝트의 모든 변경 내용을 자동으로 빌드한 다음 디버거를 연결하지 않고 웹 애플리케이션을 시작합니다. 이 명령은 실행 중인 애플리케이션의 URL과 할당된 포트를 출력합니다.
 
@@ -1119,9 +1119,9 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  명령 프롬프트에서 다음 명령을 입력하고 엔터를 선택하여 **PolyglotData** 리소스 그룹을 삭제합니다.
 
-```
+    ```
     az group delete --name PolyglotData --no-wait --yes
-```
+    ```
     
 1.  포털에서 Cloud Shell 창을 닫습니다.
 

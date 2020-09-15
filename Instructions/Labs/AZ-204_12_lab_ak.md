@@ -397,7 +397,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     az webapp deployment source config-zip --resource-group MonitoredAssets --src api.zip --name <name-of-your-api-app>
     ```
 
-    > **참고**: *\<name-of-your-api-app\>* 자리 표시자를 이 랩의 앞에서 만든 웹앱의 이름으로 바꿉니다. 최근에 이전 단계에서 이 앱의 이름을 쿼리했습니다.   
+    > **참고**: *name-of-your-api-app* 자리 표시자를 이 랩의 앞에서 만든 웹앱의 이름으로 바꿉니다. 최근에 이전 단계에서 이 앱의 이름을 쿼리했습니다.   
 
     > **참고**: 이 랩을 진행하기 전에 배포가 완료될 때까지 기다립니다.
 
@@ -413,7 +413,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **App Service** 블레이드에서 **찾아보기**를 선택합니다. 새 브라우저 창 또는 탭이 열리고 "404(찾을 수 없음)" 오류가 반환됩니다.
 
-1.  브라우저 주소 표시줄에서 현재 URL의 끝에 **weatherforecast** 접미사를 더하여 URL을 업데이트하고 엔터를 선택합니다.
+1.  브라우저 주소 표시줄에서 현재 URL의 끝에 **/weatherforecast** 접미사를 더하여 URL을 업데이트하고 엔터를 선택합니다.
 
     > **참고**: 예를 들어 URL이 https://smpapistudent.azurewebsites.net 이 경우 새 URL은 https://smpapistudent.azurewebsites.net/weatherforecast 가 됩니다.
 

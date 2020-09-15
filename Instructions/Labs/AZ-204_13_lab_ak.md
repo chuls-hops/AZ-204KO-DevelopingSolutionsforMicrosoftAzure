@@ -69,15 +69,15 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
     1.  **리소스 그룹** 섹션에서 **새로 만들기**를 선택하고 **MarketingContent**를 입력한 다음 **확인**을 선택합니다.
 
-    1.  **스토리지 계정 이름**텍스트 상자에 **contenthost[yourname]** 을 입력합니다.
+    1.  **스토리지 계정 이름**텍스트 상자에 **contenthost*[yourname]*** 을 입력합니다.
 
     1.  **위치** 드롭다운 목록에서 **(미국) 미국 동부** 지역을 선택합니다.
 
     1.  **성능** 섹션에서 **표준**을 선택합니다.
 
-    1.  **계정 종류** 드롭다운 목록에서 **StorageV2(범용 v2)**를 선택합니다.
+    1.  **계정 종류** 드롭다운 목록에서 **StorageV2(범용 v2)** 를 선택합니다.
 
-    1.  **복제** 드롭다운 목록에서 **RA-GRS(읽기 액세스 지역 중복 스토리지)**를 선택합니다.
+    1.  **복제** 드롭다운 목록에서 **RA-GRS(읽기 액세스 지역 중복 스토리지)** 를 선택합니다.
 
     1.  **액세스 계층** 섹션에서 **핫**이 선택되어 있는지 확인합니다.
 
@@ -111,7 +111,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     
     1.  **리소스 그룹** 섹션에서 **MarketingContent**를 선택합니다.
 
-    1.  **이름** 텍스트 상자에 **landingpage[yourname]** 을/를 입력합니다.
+    1.  **이름** 텍스트 상자에 **landingpage*[yourname]*** 을/를 입력합니다.
 
     1.  **게시** 섹션에서 **Docker 컨테이너**를 선택합니다.
 
@@ -147,7 +147,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서 이 랩의 앞부분에서 만든 **MarketingContent** 리소스 그룹을 선택합니다.
 
-1.  **MarketingContent** 블레이드에서 이 랩의 앞부분에서 만든 **landingpage[yourname]** 웹앱을 선택합니다.
+1.  **MarketingContent** 블레이드에서 이 랩의 앞부분에서 만든 **landingpage*[yourname]*** 웹앱을 선택합니다.
 
 1.  **앱 서비스** 블레이드의 **설정** 범주에서 **속성** 링크를 선택합니다.
 
@@ -257,7 +257,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서 이 랩의 앞부분에서 만든 **MarketingContent** 리소스 그룹을 선택합니다.
 
-1.  **MarketingContent** 블레이드에서 이 랩의 앞부분에서 만든 **contenthost[yourname]** 스토리지 계정을 선택합니다.
+1.  **MarketingContent** 블레이드에서 이 랩의 앞부분에서 만든 **contenthost*[yourname]*** 스토리지 계정을 선택합니다.
 
 1.  **스토리지 계정** 블레이드에서 **Blob 서비스** 섹션에 있는 **컨테이너** 링크를 선택합니다.
 
@@ -267,7 +267,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     
     1.  **이름** 텍스트 상자에 **media**를 입력합니다.
     
-    1.  **공용 액세스 수준** 드롭다운 목록에서 **Blob(Blob 전용 익명 읽기 권한)**를 선택합니다. 
+    1.  **공용 액세스 수준** 드롭다운 목록에서 **Blob(Blob 전용 익명 읽기 권한)** 를 선택합니다. 
     
     1.  **확인**을 선택합니다.
 
@@ -277,7 +277,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     
     1.  **이름** 텍스트 상자에 **video**를 입력합니다.
     
-    1.  **공용 액세스 수준** 드롭다운 목록에서 **Blob(Blob 전용 익명 읽기 권한)**를 선택합니다. 
+    1.  **공용 액세스 수준** 드롭다운 목록에서 **Blob(Blob 전용 익명 읽기 권한)** 를 선택합니다. 
     
     1.  **확인**을 선택합니다.
 
@@ -295,7 +295,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **엔드포인트 추가** 팝업 대화 상자에서 다음 작업을 수행합니다.
 
-    1.  **이름** 텍스트 상자에 **cdnmedia[yourname]**을 입력합니다.
+    1.  **이름** 텍스트 상자에 **cdnmedia*[yourname]*** 을 입력합니다.
 
     1.  **원본 형식** 드롭다운 목록에서 **스토리지**를 선택합니다.
 
@@ -315,7 +315,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **엔드포인트 추가** 팝업 대화 상자에서 다음 작업을 수행합니다.
 
-    1.  **이름** 텍스트 상자에 **cdnvideo[yourname]**을 입력합니다.
+    1.  **이름** 텍스트 상자에 **cdnvideo*[yourname]*** 을 입력합니다.
 
     1.  **원본 형식** 드롭다운 목록에서 **스토리지**를 선택합니다.
 
@@ -335,7 +335,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **엔드포인트 추가** 팝업 대화 상자에서 다음 작업을 수행합니다.
 
-    1.  **이름** 텍스트 상자에 **cdnweb[yourname]**을 입력합니다.
+    1.  **이름** 텍스트 상자에 **cdnweb*[yourname]*** 을 입력합니다.
 
     1.  **원본 형식** 드롭다운 목록에서 **웹앱**을 선택합니다.
 
@@ -363,7 +363,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서 이 랩의 앞부분에서 만든 **MarketingContent** 리소스 그룹을 선택합니다.
 
-1.  **MarketingContent** 블레이드에서 이 랩의 앞부분에서 만든 **landingpage[yourname]** 웹앱을 선택합니다.
+1.  **MarketingContent** 블레이드에서 이 랩의 앞부분에서 만든 **landingpage*[yourname]*** 웹앱을 선택합니다.
 
 1.  **웹 서비스** 블레이드에서 **찾아보기**를 선택합니다. 새 브라우저 창 또는 탭이 열리고 현재 웹 사이트를 반환합니다.
 
@@ -377,7 +377,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서 이 랩의 앞부분에서 만든 **MarketingContent** 리소스 그룹을 선택합니다.
 
-1.  **MarketingContent** 블레이드에서 이 랩의 앞부분에서 만든 **contenthost[yourname]** 스토리지 계정을 선택합니다.
+1.  **MarketingContent** 블레이드에서 이 랩의 앞부분에서 만든 **contenthost*[yourname]*** 스토리지 계정을 선택합니다.
 
 1.  **스토리지 계정** 블레이드에서 **Blob 서비스** 섹션에 있는 **컨테이너** 링크를 선택합니다.
 
@@ -431,7 +431,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서 이 랩의 앞부분에서 만든 **MarketingContent** 리소스 그룹을 선택합니다.
 
-1.  **MarketingContent** 블레이드에서 이 랩의 앞부분에서 만든 **landingpage[yourname]** 웹앱을 선택합니다.
+1.  **MarketingContent** 블레이드에서 이 랩의 앞부분에서 만든 **landingpage*[yourname]*** 웹앱을 선택합니다.
 
 1.  **앱 서비스** 블레이드의 **설정** 범주에서 **구성** 링크를 선택합니다.
 
@@ -441,7 +441,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     
     1.  **애플리케이션 설정 추가/편집** 팝업 창의 **이름** 텍스트 상자에 **CDNMediaEndpoint**를 입력합니다.
     
-    1.  **값** 텍스트 상자에서 이 랩의 앞부분에서 기록한 **contenthost[yourname]** 스토리지 계정에 **미디어** 컨테이너의 **URI** 값을 입력합니다.
+    1.  **값** 텍스트 상자에서 이 랩의 앞부분에서 기록한 **contenthost*[yourname]*** 스토리지 계정에 **미디어** 컨테이너의 **URI** 값을 입력합니다.
     
     1.  **배포 슬롯 설정** 텍스트 상자를 기본값으로 두고, **확인**을 선택하여 팝업 창을 닫습니다.
     
@@ -449,7 +449,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     
     1.  **애플리케이션 설정 추가/편집** 팝업 창의 **이름** 텍스트 상자에 **CDNVideoEndpoint**를 입력합니다.
     
-    1.  **값** 텍스트 상자에 이전에 랩에서 기록한 **contenthost[yourname]** 스토리지 계정에 **비디오** 컨테이너의 **URI** 값을 입력합니다.
+    1.  **값** 텍스트 상자에 이전에 랩에서 기록한 **contenthost*[yourname]*** 스토리지 계정에 **비디오** 컨테이너의 **URI** 값을 입력합니다.
     
     1.  **배포 슬롯 설정** 텍스트 상자를 기본값으로 두고, **확인**을 선택하여 팝업 창을 닫습니다.
     
@@ -463,7 +463,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서 이 랩의 앞부분에서 만든 **MarketingContent** 리소스 그룹을 선택합니다.
 
-1.  **MarketingContent** 블레이드에서 이 랩의 앞부분에서 만든 **landingpage[yourname]** 웹앱을 선택합니다.
+1.  **MarketingContent** 블레이드에서 이 랩의 앞부분에서 만든 **landingpage*[yourname]*** 웹앱을 선택합니다.
 
 1.  **App Service** 블레이드에서 **다시 시작**을 선택합니다. 이 작업은 웹앱을 다시 시작합니다.
 
@@ -489,13 +489,13 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **MarketingContent** 블레이드에서 이전에 랩에서 만든 **contentdeliverynetwork** CDN 프로필을 선택합니다.
 
-1.  **CDN 프로필** 블레이드에서 **cdnmedia[yourname]** 끝점을 선택합니다.
+1.  **CDN 프로필** 블레이드에서 **cdnmedia*[yourname]*** 끝점을 선택합니다.
 
 1.  **엔드포인트** 블레이드에서 **엔드포인트 호스트 이름** 텍스트 상자의 값을 복사합니다. 이 값은 나중에 랩에서 사용합니다.
 
 1.  **엔드포인트** 블레이드를 닫습니다.
 
-1.  **CDN 프로필** 블레이드로 돌아가서 **cdnvideo[yourname]** 끝점을 선택합니다.
+1.  **CDN 프로필** 블레이드로 돌아가서 **cdnvideo*[yourname]*** 끝점을 선택합니다.
 
 1.  **엔드포인트** 블레이드에서 **엔드포인트 호스트 이름** 텍스트 상자의 값을 복사합니다. 이 값은 나중에 랩에서 사용합니다.
 
@@ -503,21 +503,21 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 #### 작업 2: 멀티미디어 콘텐츠 테스트
 
-1.  랩의 앞 부분에서 복사한 **cdnmedia[yourname]** 끝점에서 **끝점 호스트 이름** URL을 **/campus.jpg**의 상대 경로와 결합하여 **campus.jpg** 리소스용 URL을 만듭니다.
+1.  랩의 앞 부분에서 복사한 **cdnmedia*[yourname]*** 끝점에서 **끝점 호스트 이름** URL을 **/campus.jpg**의 상대 경로와 결합하여 **campus.jpg** 리소스용 URL을 만듭니다.
 
-    > **참고**: 예를 들어, **끝점 호스트 이름** URL이 **https://cdnmediastudent.azureedge.net/**인 경우, 새로 만든 URL은 **https://cdnmediastudent.azureedge.net/campus.jpg**가 됩니다.
+    > **참고**: 예를 들어, **끝점 호스트 이름** URL이 **https://cdnmediastudent.azureedge.net/** 인 경우, 새로 만든 URL은 **https://cdnmediastudent.azureedge.net/campus.jpg** 가 됩니다.
 
-1.  랩의 앞 부분에서 복사한 **cdnmedia[yourname]** 끝점에서 **끝점 호스트 이름** URL을 **/conference.jpg**의 상대 경로와 결합하여 **conference.jpg** 리소스용 URL을 만듭니다.
+1.  랩의 앞 부분에서 복사한 **cdnmedia*[yourname]*** 끝점에서 **끝점 호스트 이름** URL을 **/conference.jpg**의 상대 경로와 결합하여 **conference.jpg** 리소스용 URL을 만듭니다.
 
-    > **참고**: 예를 들어, **끝점 호스트 이름** URL이 **https://cdnmediastudent.azureedge.net/**인 경우, 새로 만든 URL은 **https://cdnmediastudent.azureedge.net/conference.jpg**가 됩니다.
+    > **참고**: 예를 들어, **끝점 호스트 이름** URL이 **https://cdnmediastudent.azureedge.net/** 인 경우, 새로 만든 URL은 **https://cdnmediastudent.azureedge.net/conference.jpg** 가 됩니다.
 
 1.  이전에 랩에서 복사한 **cdnmedia*[yourname]*** 엔드포인트에서 **엔드포인트 호스트 이름** URL을 **/poster.jpg**의 상대 경로와 결합하여 **poster.jpg** 리소스용 URL을 구성합니다.
 
-    > **참고**: 예를 들어, **엔드포인트 호스트 이름** URL이 **https://cdnmediastudent.azureedge.net/**인 경우, 새로 만든 URL은 **https://cdnmediastudent.azureedge.net/poster.jpg**가 됩니다.
+    > **참고**: 예를 들어, **엔드포인트 호스트 이름** URL이 **https://cdnmediastudent.azureedge.net/** 인 경우, 새로 만든 URL은 **https://cdnmediastudent.azureedge.net/poster.jpg** 가 됩니다.
 
 1.  랩의 앞부분에서 복사한 **cdnmedia*[yourname]*** 끝점에서 **끝점 호스트 이름** URL을 **/welcome.mp4**의 상대 경로와 결합하여**welcome.mp4** 리소스용 URL을 만듭니다.
 
-    > **참고**: 예를 들어, **끝점 호스트 이름** URL이 **https://cdnvideostudent.azureedge.net/**인 경우, 새로 만든 URL은 **https://cdnvideostudent.azureedge.net/welcome.mp4**가 됩니다.
+    > **참고**: 예를 들어, **끝점 호스트 이름** URL이 **https://cdnvideostudent.azureedge.net/** 인 경우, 새로 만든 URL은 **https://cdnvideostudent.azureedge.net/welcome.mp4** 가 됩니다.
 
 1.  작업 표시줄에서 **Microsoft Edge** 아이콘을 오른쪽 버튼으로 클릭하거나 바로 가기 메뉴를 활성화한 다음 **새 창**을 선택합니다.
 
@@ -539,7 +539,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서 이 랩의 앞부분에서 만든 **MarketingContent** 리소스 그룹을 선택합니다.
 
-1.  **MarketingContent** 블레이드에서 이 랩의 앞부분에서 만든 **landingpage[yourname]** 웹앱을 선택합니다.
+1.  **MarketingContent** 블레이드에서 이 랩의 앞부분에서 만든 **landingpage*[yourname]*** 웹앱을 선택합니다.
 
 1.  **앱 서비스** 블레이드의 **설정** 범주에서 **구성** 링크를 선택합니다.
 
@@ -549,11 +549,11 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     
     1.  기존의 **CDNMediaEndpoint** 애플리케이션 설정을 선택합니다.
 
-    1.  **애플리케이션 설정 추가/편집** 팝업 대화 상자에서 랩의 앞부분에서 복사한 **cdnmedia[yourname]** 엔드포인트에서 **엔드포인트 호스트 이름** URL을 입력하여 **값** 텍스트 상자를 업데이트한 후 **OK**를 선택합니다.
+    1.  **애플리케이션 설정 추가/편집** 팝업 대화 상자에서 랩의 앞부분에서 복사한 **cdnmedia*[yourname]*** 엔드포인트에서 **엔드포인트 호스트 이름** URL을 입력하여 **값** 텍스트 상자를 업데이트한 후 **OK**를 선택합니다.
     
     1.  기존의 **CDNVideoEndpoint** 애플리케이션 설정을 선택합니다.
 
-    1.  **애플리케이션 설정 추가/편집** 팝업 대화 상자에서 랩의 앞부분에서 복사한 **cdnvideo[yourname]** 끝점에서 **끝점 호스트 이름** URL을 입력하여 **값** 텍스트 상자를 업데이트한 후 **확인**을 선택합니다.
+    1.  **애플리케이션 설정 추가/편집** 팝업 대화 상자에서 랩의 앞부분에서 복사한 **cdnvideo*[yourname]*** 끝점에서 **끝점 호스트 이름** URL을 입력하여 **값** 텍스트 상자를 업데이트한 후 **확인**을 선택합니다.
     
     1.  블레이드 상단에 있는 **저장**을 선택하여 설정을 유지합니다.  
 
@@ -573,13 +573,13 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **MarketingContent** 블레이드에서 이전에 랩에서 만든 **contentdeliverynetwork** CDN 프로필을 선택합니다.
 
-1.  **CDN 프로필** 블레이드에서 **cdnweb[yourname]** 엔드포인트를 선택합니다.
+1.  **CDN 프로필** 블레이드에서 **cdnweb*[yourname]*** 엔드포인트를 선택합니다.
 
 1.  **엔드포인트** 블레이드에서 **엔드포인트 호스트 이름** 텍스트 상자의 값을 복사합니다.
 
 1.  작업 표시줄에서 **Microsoft Edge** 아이콘을 오른쪽 버튼으로 클릭하거나 바로 가기 메뉴를 활성화한 다음 **새 창**을 선택합니다.
 
-1.  새 브라우저 창에서 **cdnweb[yourname]** 끝점용 **끝점 호스트 이름** URL로 이동합니다.
+1.  새 브라우저 창에서 **cdnweb*[yourname]*** 끝점용 **끝점 호스트 이름** URL로 이동합니다.
 
 1.  Content Delivery Network를 사용하여 모두 제공되는 웹 사이트 및 멀티미디어 콘텐츠를 살펴봅니다.
 

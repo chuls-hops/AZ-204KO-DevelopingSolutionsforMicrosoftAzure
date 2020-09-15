@@ -306,7 +306,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     RUN dotnet publish --configuration Release --output out
 
     # 애플리케이션 DLL을 실행하여 컨테이너 시작
-    ENTRYPOINT ["dotnet", "ipcheck.dll"]
+    ENTRYPOINT ["dotnet", "out/ipcheck.dll"]
     ```
 
 1.  그래픽 편집기의 메뉴 또는 Ctrl+S 키보드 바로 가기 키를 사용하여 **Dockerfile** 파일을 저장합니다.
@@ -375,7 +375,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 #### 작업 5: 컨테이너 레지스트리에 Docker 컨테이너 이미지를 배포합니다.
 
-1.  다음 명령을 입력하고 Enter 키를 눌러 활성 디렉터리를 **\~/**에서 **\~/clouddrive/ipcheck**로 변경합니다.
+1.  다음 명령을 입력하고 Enter 키를 눌러 활성 디렉터리를 **\~/** 에서 **\~/clouddrive/ipcheck**로 변경합니다.
 
     ```
     cd ~/clouddrive/ipcheck

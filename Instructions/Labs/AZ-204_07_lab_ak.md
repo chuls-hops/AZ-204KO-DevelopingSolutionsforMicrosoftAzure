@@ -71,15 +71,15 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
     1.  **리소스 그룹** 섹션에서 **새로 만들기**를 선택하고 **SecureFunction**을 입력한 다음 **확인**을 선택합니다.
 
-    1.  **스토리지 계정 이름** 텍스트 상자에 **securestor[yourname]** 을 입력합니다.
+    1.  **스토리지 계정 이름** 텍스트 상자에 **securestor*[yourname]*** 을 입력합니다.
 
-    1.  **위치** 드롭다운 목록에서 (미국) 미국 동부 지역을 선택합니다.
+    1.  **위치** 드롭다운 목록에서 **(미국) 미국 동부** 지역을 선택합니다.
 
     1.  **성능** 섹션에서 **표준**을 선택합니다.
 
-    1.  **계정 종류** 드롭다운 목록에서 **StorageV2(범용 v2)**를 선택합니다.
+    1.  **계정 종류** 드롭다운 목록에서 **StorageV2(범용 v2)** 를 선택합니다.
 
-    1.  **복제** 드롭다운 목록에서 **LRS(로컬 중복 스토리지)**를 선택합니다.
+    1.  **복제** 드롭다운 목록에서 **LRS(로컬 중복 스토리지)** 를 선택합니다.
 
     1.  **액세스 계층** 섹션에서 **핫**이 선택되어 있는지 확인합니다.
 
@@ -95,7 +95,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **모든 서비스** 블레이드에서 **스토리지 계정**을 선택합니다.
 
-1.  **스토리지 계정** 블레이드에서 접두사 *securestor\*가 있는 스토리지 계정 인스턴스를 선택합니다.
+1.  **스토리지 계정** 블레이드에서 접두사 *securestor\** 가 있는 스토리지 계정 인스턴스를 선택합니다.
 
 1.  **스토리지 계정** 블레이드에서 **설정** 섹션을 찾은 다음 **액세스 키** 링크를 선택합니다.
 
@@ -125,7 +125,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     
     1.  **리소스 그룹** 섹션에서 **기존 사용**을 선택한 다음 목록에서 **SecureFunction**을 선택합니다.
     
-    1.  **키 자격 증명 모음 이름** 텍스트 상자에 **securevault[yourname]** 을 입력합니다.
+    1.  **키 자격 증명 모음 이름** 텍스트 상자에 **securevault*[yourname]*** 을 입력합니다.
 
     1.  **지역** 드롭다운 목록에서 **미국 동부** 지역을 선택합니다.
         
@@ -163,11 +163,11 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     
     1.  **리소스 그룹** 섹션에서 **기존 사용**을 선택한 다음 목록에서 **SecureFunction**을 선택합니다.
     
-    1.  **함수 앱 이름** 텍스트 상자에 **securefunc[yourname]** 을 입력합니다.
+    1.  **함수 앱 이름** 텍스트 상자에 **securefunc*[yourname]*** 을 입력합니다.
 
     1.  **게시** 섹션에서 **코드**를 선택합니다.
 
-    1.  **런타임 스택** 드롭다운 목록에서 **NET Core**를 선택합니다.
+    1.  **런타임 스택** 드롭다운 목록에서 **.NET Core**를 선택합니다.
 
     1.  **버전** 드롭다운 목록에서 **3.1**을 선택합니다.
 
@@ -177,7 +177,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **호스팅** 탭에서 다음 작업을 수행합니다.
 
-    1.  **스토리지 계정** 드롭다운 목록에서 이 랩의 앞에서 만든 **securestor[yourname]** 스토리지 계정을 선택합니다.
+    1.  **스토리지 계정** 드롭다운 목록에서 이 랩의 앞에서 만든 **securestor*[yourname]*** 스토리지 계정을 선택합니다.
 
     1.  **운영 체제** 섹션에서 **Windows**를 선택합니다.
 
@@ -203,7 +203,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서 해당 랩 앞에서 만든 **SecureFunction** 리소스 그룹을 찾아서 선택합니다.
 
-1.  **SecureFunction** 블레이드에서 이 랩의 앞에서 만든 **securefunc[yourname]** 함수 앱을 선택합니다.
+1.  **SecureFunction** 블레이드에서 이 랩의 앞에서 만든 **securefunc*[yourname]*** 함수 앱을 선택합니다.
 
 1.  **App Service** 블레이드의 **설정** 섹션에서 **ID** 옵션을 선택합니다.
 
@@ -221,7 +221,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서 해당 랩 앞에서 만든 **SecureFunction** 리소스 그룹을 찾아서 선택합니다.
 
-1.  **SecureFunction** 블레이드에서 이 랩의 앞에서 만든 **securevault[yourname]** 키 자격 증명 모음을 선택합니다.
+1.  **SecureFunction** 블레이드에서 이 랩의 앞에서 만든 **securevault*[yourname]*** 키 자격 증명 모음을 선택합니다.
 
 1.  **키 자격 증명 모음** 블레이드에서 **설정** 섹션에 있는 **비밀** 링크를 선택합니다.
 
@@ -265,7 +265,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서 해당 랩 앞에서 만든 **SecureFunction** 리소스 그룹을 찾아서 선택합니다.
 
-1.  **SecureFunction** 블레이드에서 이 랩의 앞에서 만든 **securevault[yourname]** 키 자격 증명 모음을 선택합니다.
+1.  **SecureFunction** 블레이드에서 이 랩의 앞에서 만든 **securevault*[yourname]*** 키 자격 증명 모음을 선택합니다.
 
 1.  **Key Vault** 블레이드에서 **설정** 섹션에 있는 **액세스 정책** 링크를 선택합니다.
 
@@ -275,7 +275,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     
     1.  **주체 선택** 링크를 선택합니다.
     
-    1.  **주체** 블레이드에서 **securefunc[yourname]** 이라는 서비스 주체를 찾아 선택한 다음, **선택**을 선택합니다.
+    1.  **주체** 블레이드에서 **securefunc*[yourname]*** 이라는 서비스 주체를 찾아 선택한 다음, **선택**을 선택합니다.
 
         > **참고**: 이 랩의 앞에서 만든 시스템 할당 관리 ID는 Azure Function 리소스와 이름이 동일합니다.
     
@@ -305,7 +305,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서 해당 랩 앞에서 만든 **SecureFunction** 리소스 그룹을 찾아서 선택합니다.
 
-1.  **SecureFunction** 블레이드에서 이 랩의 앞에서 만든 **securefunc[yourname]** 함수 앱을 선택합니다.
+1.  **SecureFunction** 블레이드에서 이 랩의 앞에서 만든 **securefunc*[yourname]*** 함수 앱을 선택합니다.
 
 1.  **App Service** 블레이드의 **설정** 섹션에서 **구성** 옵션을  선택합니다.
 
@@ -315,9 +315,9 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     
     1.  **애플리케이션 설정 추가/편집** 팝업 창의 **이름** 텍스트 상자에 **StorageConnectionString**을 입력합니다.
     
-    1.  **값** 텍스트 박스에서 다음 구문을 사용하여 값을 생성합니다. **Microsoft.KeyVault(SecretUri=*Secret Identifier*)**
+    1.  **값** 텍스트 박스에서 다음 구문을 사용하여 값을 생성합니다. **@Microsoft.KeyVault(SecretUri=*Secret Identifier*)**
 
-        > **참고**: 위의 구문을 사용하여 **비밀 식별자**에 대한 참조를 빌드해야 합니다. 예를 들어, 비밀 식별자가 **https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf**인 경우 값은 **Microsoft.KeyVault(SecretUri=https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf)**가 됩니다.
+        > **참고**: 위의 구문을 사용하여 **비밀 식별자**에 대한 참조를 빌드해야 합니다. 예를 들어, 비밀 식별자가 **https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf** 인 경우 값은 **@Microsoft.KeyVault(SecretUri=https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf)** 가 됩니다.
     
     1.  **패포 슬롯 설정** 텍스트 박스를 기본값으로 설정한 상태로 둡니다.
 
@@ -335,7 +335,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서 해당 랩 앞에서 만든 **SecureFunction** 리소스 그룹을 찾아서 선택합니다.
 
-1.  **SecureFunction** 블레이드에서 이 랩의 앞에서 만든 **securefunc[yourname]** 함수 앱을 선택합니다.
+1.  **SecureFunction** 블레이드에서 이 랩의 앞에서 만든 **securefunc*[yourname]*** 함수 앱을 선택합니다.
 
 1.  **App Service** 블레이드에서 **Functions** 섹션의 **Functions** 옵션을 선택합니다.
 
@@ -374,10 +374,10 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
         name = name ?? data?.name;
 
         string responseMessage = string.IsNullOrEmpty(name)
-            ? "이 HTTP 트리거 함수가 성공적으로 실행되었습니다. 개인화된 응답을 위해 쿼리 문자열 또는 요청 본문에 이름을 전달합니다."
+            ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
                     : $"Hello, {name}. This HTTP triggered function executed successfully.";
 
-                return new OkObjectResult(responseMessage):
+                return new OkObjectResult(responseMessage);
     }
     ```
 
@@ -466,7 +466,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서 해당 랩 앞에서 만든 **SecureFunction** 리소스 그룹을 찾아서 선택합니다.
 
-1.  **SecureFunction** 블레이드에서 이 랩의 앞 부분에서 만든 **securestor[yourname]** 스토리지 계정을 선택합니다.
+1.  **SecureFunction** 블레이드에서 이 랩의 앞 부분에서 만든 **securestor*[yourname]*** 스토리지 계정을 선택합니다.
 
 1.  **스토리지 계정** 블레이드에서 **Blob 서비스** 섹션에 있는 **컨테이너** 링크를 선택합니다.
 
@@ -476,7 +476,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     
     1.  **이름** 텍스트 상자에 **드롭**를 입력합니다.
     
-    1.  **공용 액세스 수준** 드롭다운 목록에서 **Blob(Blob 전용 익명 읽기 액세스)**을 선택한 후 **확인**을 선택합니다.
+    1.  **공용 액세스 수준** 드롭다운 목록에서 **Blob(Blob 전용 익명 읽기 액세스)** 을 선택한 후 **확인**을 선택합니다.
 
 1.  **컨테이너** 섹션으로 돌아가서 새로 만든 **드롭** 컨테이너를 선택합니다.
 
@@ -508,7 +508,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **액세스 수준 변경** 팝업창에서 다음 작업을 수행합니다.
     
-    1.  **공용 액세스 수준** 드롭다운 목록에서 **비공개(익명 액세스 없음)**를 선택합니다.
+    1.  **공용 액세스 수준** 드롭다운 목록에서 **비공개(익명 액세스 없음)** 를 선택합니다.
     
     1.  **확인**을 선택합니다.
 
@@ -526,7 +526,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서 해당 랩 앞에서 만든 **SecureFunction** 리소스 그룹을 찾아서 선택합니다.
 
-1.  **SecureFunction** 블레이드에서 이 랩의 앞에서 만든 **securefunc[yourname]** 함수 앱을 선택합니다.
+1.  **SecureFunction** 블레이드에서 이 랩의 앞에서 만든 **securefunc*[yourname]*** 함수 앱을 선택합니다.
 
 1.  **App Service** 블레이드의 **설정** 섹션에서 **구성** 옵션을  선택합니다.
 
@@ -554,11 +554,11 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서 해당 랩 앞에서 만든 **SecureFunction** 리소스 그룹을 찾아서 선택합니다.
 
-1.  **SecureFunction** 블레이드에서 이 랩의 앞에서 만든 **securefunc[yourname]** 함수 앱을 선택합니다.
+1.  **SecureFunction** 블레이드에서 이 랩의 앞에서 만든 **securefunc*[yourname]*** 함수 앱을 선택합니다.
 
 1.  **App Service** 블레이드의 **개발 도구** 섹션에서 **App Service 편집기(미리 보기)** 옵션을 선택합니다.
 
-1.  **App Service 편집기(미리 보기)** 창에서 **이동 ->**을 선택합니다.
+1.  **App Service 편집기(미리 보기)** 창에서 **이동 ->** 을 선택합니다.
 
 1.  **App Service 편집기** 브라우저 창에서 **FileParser** 폴더를 확장하고 컨텍스트 메뉴를 열어 **새 파일**을 선택합니다.
 
@@ -587,7 +587,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서 해당 랩 앞에서 만든 **SecureFunction** 리소스 그룹을 찾아서 선택합니다.
 
-1.  **SecureFunction** 블레이드에서 이 랩의 앞에서 만든 **securefunc[yourname]** 함수 앱을 선택합니다.
+1.  **SecureFunction** 블레이드에서 이 랩의 앞에서 만든 **securefunc*[yourname]*** 함수 앱을 선택합니다.
 
 1.  **App Service** 블레이드에서 **Functions** 섹션의 **Functions** 옵션을 선택합니다.
 
@@ -662,7 +662,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     using System.Net;
     using Microsoft.AspNetCore.Mvc;
     using Azure.Storage;
-    using Azure.Storage.Blobs:
+    using Azure.Storage.Blobs;
     using Azure.Storage.Blobs.Models;
 
     public static async Task<IActionResult> Run(HttpRequest req)
@@ -694,7 +694,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     using System.Net;
     using Microsoft.AspNetCore.Mvc;
     using Azure.Storage;
-    using Azure.Storage.Blobs:
+    using Azure.Storage.Blobs;
     using Azure.Storage.Blobs.Models;
 
     public static async Task<IActionResult> Run(HttpRequest req)
