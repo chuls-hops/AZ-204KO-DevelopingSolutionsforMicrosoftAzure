@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '랩: Azure Functions를 사용하여 작업 처리 논리 구현'
     az204Module: '모듈 02: Azure Functions 구현'
