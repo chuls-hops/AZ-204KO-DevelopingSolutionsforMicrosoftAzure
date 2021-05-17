@@ -1,9 +1,9 @@
 ﻿---
 lab:
-    az204Title: '랩 02: Azure Functions를 사용하여 작업 처리 논리 구현
-    az020Title: '랩 02: Azure Functions를 사용하여 작업 처리 논리 구현
-    az204Module: '모듈 02: Azure Functions 구현
-    az020Module: '모듈 02: Azure Functions 구현
+    az204Title: '랩 02: Azure Functions를 사용하여 작업 처리 논리 구현'
+    az020Title: '랩 02: Azure Functions를 사용하여 작업 처리 논리 구현'
+    az204Module: '모듈 02: Azure Functions 구현'
+    az020Module: '모듈 02: Azure Functions 구현'
     type: '해답'
 ---
 

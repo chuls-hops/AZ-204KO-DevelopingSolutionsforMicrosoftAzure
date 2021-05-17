@@ -2,8 +2,8 @@
 lab:
     az204Title: '랩 08: Azure에서 서비스를 사용하여 다중 계층 솔루션 만들기'
     az020Title: '랩 08: Azure에서 서비스를 사용하여 다중 계층 솔루션 만들기'
-    az204Module: '모듈 08: API Management 구현
-    az020Module: '모듈 08: API Management 구현
+    az204Module: '모듈 08: API Management 구현'
+    az020Module: '모듈 08: API Management 구현'
     type: '해답'
 ---
 

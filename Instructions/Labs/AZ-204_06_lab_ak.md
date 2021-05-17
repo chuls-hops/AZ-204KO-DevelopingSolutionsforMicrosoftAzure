@@ -1,9 +1,9 @@
 ﻿---
 lab:
-    az204Title: '랩 06: MSAL 및 .NET SDK를 사용하여 Microsoft Graph 인증 및 쿼리
-    az020Title: '랩 06: MSAL 및 .NET SDK를 사용하여 Microsoft Graph 인증 및 쿼리
-    az204Module: '모듈 06: 사용자 인증 및 권한 부여 구현
-    az020Module: '모듈 06: 사용자 인증 및 권한 부여 구현
+    az204Title: '랩 06: MSAL 및 .NET SDK를 사용하여 Microsoft Graph 인증 및 쿼리'
+    az020Title: '랩 06: MSAL 및 .NET SDK를 사용하여 Microsoft Graph 인증 및 쿼리'
+    az204Module: '모듈 06: 사용자 인증 및 권한 부여 구현'
+    az020Module: '모듈 06: 사용자 인증 및 권한 부여 구현'
     type: '해답'
 ---
 

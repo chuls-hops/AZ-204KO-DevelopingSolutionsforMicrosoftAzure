@@ -2,8 +2,8 @@
 lab:
     az204Title: '랩 10: Azure Queue Storage를 사용하여 비동기적으로 메시지 처리'
     az020Title: '랩 10: Azure Queue Storage를 사용하여 비동기적으로 메시지 처리'
-    az204Module: '모듈 10: 메시지 기반 솔루션 개발
-    az020Module: '모듈 10: 메시지 기반 솔루션 개발
+    az204Module: '모듈 10: 메시지 기반 솔루션 개발'
+    az020Module: '모듈 10: 메시지 기반 솔루션 개발'
     type: '해답'
 ---
 
