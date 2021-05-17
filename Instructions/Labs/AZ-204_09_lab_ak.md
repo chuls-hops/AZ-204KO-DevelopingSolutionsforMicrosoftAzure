@@ -1,11 +1,13 @@
----
+﻿---
 lab:
-    title: '랩: Logic Apps로 비즈니스 프로세스 자동화'
-    az204Module: '모듈 09: App Service Logic Apps 개발'
+    az204Title: '랩 09: Event Grid 이벤트 게시 및 구독
+    az020Title: '랩 09: Event Grid 이벤트 게시 및 구독
+    az204Module: '모듈 09: 이벤트 기반 솔루션 개발
+    az020Module: '모듈 09: 이벤트 기반 솔루션 개발
     type: '해답'
 ---
     
-# 랩: Logic Apps로 비즈니스 프로세스 자동화
+# 랩 09: Event Grid 이벤트 게시 및 구독
 # 학생 랩 답변 키
 
 ## Microsoft Azure 사용자 인터페이스
@@ -16,426 +18,536 @@ Microsoft는 커뮤니티가 필요한 변경 사항을 제공하면 이 교육 
 
 ## 지침
 
-### 시작하기 전에
+### 시작하기 전 확인 사항
 
 #### 랩 가상 머신에 로그인
 
 다음 자격 증명을 사용하여 Windows 10 VM(가상 머신)에 로그인합니다.
-    
--   사용자 이름: **Admin**
 
--   암호: **Pa55w.rd**
+- 사용자 이름: **Admin**
+
+- 암호: **Pa55w.rd**
 
 > **참고**: 강사가 가상 랩 환경 연결에 대한 지침을 제공합니다.
 
-#### 설치된 응용 프로그램 리뷰
+#### 설치된 애플리케이션 검토
 
 Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄에는 이 랩에서 사용할 애플리케이션에 대한 아이콘이 포함되어 있습니다.
-    
--   Microsoft Edge
 
--   파일 탐색기
+- Microsoft Edge
 
--   Windows Terminal
+- Microsoft Visual Studio Code
 
 ### 연습 1: Azure 리소스 만들기
 
 #### 작업 1: Azure Portal 열기
 
-1.  작업 표시줄에서 **Microsoft Edge** 아이콘을 선택합니다.
+1. 작업 표시줄에서 **Microsoft Edge** 아이콘을 선택합니다.
 
-1.  열려 있는 브라우저 창에서 Azure Portal(<https://portal.azure.com>)로 이동합니다.
+1. 열려 있는 브라우저 창에서 Azure Portal(<https://portal.azure.com>)로 이동합니다.
 
-1.  Microsoft 계정의 이메일 주소를 입력한 다음 **다음**을 선택합니다.
+1. Microsoft 계정의 전자 메일 주소를 입력하고 다음을 선택합니다.
 
-1.  Microsoft 계정의 암호를 입력한 다음 **로그인**을 선택합니다.
+1. Microsoft 계정의 암호를 입력한 다음 **로그인**을 선택합니다.
 
-    > **참고**: Azure Portal에 처음 로그인하는 경우 포털 둘러보기가 제공됩니다. 둘러보기를 건너뛰려면 **시작하기**를 선택합니다.
+    > **참고**: Azure Portal에 처음 로그인하는 경우 포털 둘러보기가 제공됩니다. 둘러보기를 건너뛰고 포털 사용을 시작하려면 시작하기를 선택합니다.
 
-#### 작업 2: API Management 리소스 만들기
+#### 작업 2: Azure Cloud Shell 열기
 
-1.  Azure Portal 탐색 창에서 **리소스 만들기**를 선택합니다.
+1. Azure Portal에서 Cloud Shell 아이콘을 선택하여 새 셸 인스턴스를 엽니다.
 
-1.  **새** 블레이드에서 **마켓플레이스 검색** 텍스트 상자를 찾습니다.
+    > **참고**: Cloud Shell 아이콘은 더 큼 기호(\>)와 밑줄 문자(\_)로 표시됩니다.
 
-1.  검색 상자에서 **API**를 입력한 다음 Enter 키를 선택합니다.
+1. 구독을 사용하여 Cloud Shell을 처음 여는 경우 Azure Cloud Shell 시작 마법사를 사용하여 Cloud Shell을 구성할 수 있습니다. 마법사에서 다음 작업을 수행합니다.
 
-1.  **마켓플레이스** 검색 결과 블레이드에서 **API 관리** 결과를 선택합니다.
+    - 셸을 사용하기 위해 새 스토리지 계정을 생성하라는 대화 상자가 표시되면 기본 설정을 수락한 다음 **스토리지 만들기**를 선택합니다.
 
-1.  **API 관리** 블레이드에서 **만들기**를 선택합니다.
+    > **참고**: 랩을 계속 진행하기 전에 Cloud Shell이 초기 설치 절차를 완료할 때까지 기다립니다. **Cloud Shell**의 구성 옵션이 나타나지 않는 경우 이 과정의 랩에서 기존 구독을 사용하고 있기 때문일 수 있습니다. 랩은 새 구독을 사용한다는 가정 하에서 작성됩니다.
 
-1.  **API 관리 서비스** 블레이드에서 다음 작업을 수행합니다.
-    
-    1.  **이름** 텍스트 상자에 **prodapim*[yourname]*** 을 입력합니다.
-    
-    1.  **구독** 텍스트 상자를 기본값으로 설정합니다.
-    
-    1.  **리소스 그룹** 섹션에서 **새로 만들기**를 선택하고 **AutomatedWorkflow**를 입력한 다음 **확인**을 선택합니다.
-    
-    1.  **위치** 목록에서 **미국 동부**를 선택합니다.
-    
-    1.  **조직 이름** 텍스트 상자에 **Contoso**를 입력합니다.
-    
-    1.  **관리자 이메일** 텍스트 상자를 기본값으로 설정한 상태로 둡니다.
-    
-    1.  **가격 계층** 목록에서 **사용(99.9 SLA, %)** 을 선택하고 **만들기**을 선택합니다.
-    
-    > **참고**: 랩을 진행하기 전에 Azure가 API Management 리소스 만들기를 완료할 때까지 기다립니다. 리소스가 생성되면 알림을 받게 됩니다.
+1. Azure Portal에서 **Cloud Shell** 명령 프롬프트에 따라 다음 명령을 입력한 다음 Enter 키를 눌러 Azure CLI(Azure 명령줄 인터페이스) 도구의 버전을 가져옵니다.
 
-#### 작업 3: 논리 앱 리소스 만들기
+    ```bash
+    az --version
+    ```
 
-1.  Azure Portal의 탐색 창에서 **+ 리소스 만들기**를 선택합니다.
+#### 작업 3: Microsoft.EventGrid 공급자 등록 보기
 
-1.  **새** 블레이드에서 **마켓플레이스 검색** 필드를 찾습니다.
+1. Portal의 **Cloud Shell** 명령 프롬프트에서 다음 작업을 수행합니다.
 
-1.  검색 필드에서 **논리**를 입력하고 엔터를 선택합니다.
+    1. 다음 명령을 입력하고 Enter 키를 눌러 Azure CLI의 루트 수준에서 하위 그룹 및 명령 목록을 가져옵니다.
 
-1.  **모든** 검색 결과 블레이드에서 **논리 앱**을 선택합니다.
+        ```bash
+        az --help
+        ```
 
-1.  **논리 앱** 블레이드에서 **만들기**를 선택합니다.
+    1. 다음 명령을 입력한 다음 Enter 키를 눌러 리소스 공급자가 사용할 수 있는 명령 목록을 가져옵니다.
 
-1.  **논리 앱** 블레이드에서 **기본**, **태그** 및 **검토 + 만들기**와 같은 블레이드의 탭을 검토합니다.
+        ```bash
+        az provider --help
+        ```
 
-    > **참고**: 각 탭은 새 논리 앱을 만드는 워크플로의 단계를 나타냅니다. 언제든지 **검토 + 만들기**를 선택하여 나머지 탭을 건너뛸 수 있습니다.
+    1. 다음 명령을 입력한 다음 Enter 키를 눌러 현재 등록된 모든 공급자를 나열합니다.
 
-1.  **기본** 탭을 선택하고 탭 영역 내에서 다음 작업을 수행합니다.
-       
-    1.  **구독** 필드를 기본값으로 놔둡니다.
-    
-    1.  **리소스 그룹** 섹션에서**기존 사용**을 선택한 다음 이전에 랩에서 만든 **AutomatedWorkflow** 그룹을 선택합니다.
+        ```bash
+        az provider list
+        ```
+
+    1. 다음 명령을 입력한 다음 Enter 키를 눌러 현재 등록된 공급자의 네임스페이스만 나열합니다.
+
+        ```bash
+        az provider list --query "[].namespace"
+        ```
+
+    1. 현재 등록된 공급자 목록을 검토합니다. **Microsoft.EventGrid** 공급자가 현재 공급자 목록에 포함되어 있습니다.
+
+1. Cloud Shell 창을 닫습니다.
+
+#### 작업 4: 사용자 지정 Event Grid 항목 만들기
+
+1. Azure Portal 탐색 창에서 **리소스 만들기**를 선택합니다.
+
+1. **새로 만들기** 블레이드에서 **Marketplace 검색** 텍스트 상자를 찾습니다.
+
+1. 검색 상자에 **Event Grid 항목**을 입력하고 Enter 키를 누릅니다.
+
+1. **모든 항목** 검색 결과 블레이드에서 **Event Grid 항목** 결과를 선택합니다.
+
+1. **Event Grid 항목** 블레이드에서 **만들기**를 선택합니다.
+
+1. **항목 만들기** 블레이드에서 다음 작업을 수행합니다.
+
+    1. **이름** 텍스트 상자에 **hrtopic*[사용자 이름]*** 을 입력합니다.
+
+    1. **리소스 그룹** 섹션에서 **새로 만들기**를 선택하고 **PubSubEvents**를 입력한 다음 **확인**을 선택합니다.
+
+    1. **위치** 드롭다운 목록에서 **(미국) 미국 동부** 지역을 선택합니다.
+
+    1. **이벤트 스키마** 드롭다운 목록에서 **Event Grid 스키마**를 선택한 후 **만들기**를 선택합니다.
+  
+    > **참고**: 랩을 진행하기 전에 Azure가 토픽을 만들 때까지 기다립니다. 항목이 생성되면 알림을 받게 됩니다.
+
+#### 작업 5: Azure Event Grid 뷰어를 웹앱에 배포하기
+
+1. Azure Portal 탐색 창에서 **리소스 만들기**를 선택합니다.
+
+1. 새로 만들기 블레이드에서 Marketplace 검색 텍스트 상자를 찾습니다.
+
+1. 검색 상자에 웹을 입력하고 Enter 키를 누릅니다.
+
+1. **모든 항목** 검색 결과 블레이드에서 **웹앱** 결과를 선택합니다.
+
+1. **웹앱** 블레이드에서 **만들기**를 선택합니다.
+
+1. 두 번째 **웹앱** 블레이드에서 **기본**과 같은 블레이드의 탭을 찾습니다.
+
+    > **참고**: 각 탭은 새 웹앱을 만드는 워크플로의 단계를 나타냅니다. 언제든지 검토 + 만들기를 선택하여 나머지 탭을 건너뛸 수 있습니다.
+
+1. **기본** 탭에서 다음 작업을 수행합니다.
+
+    1. 구독 텍스트 상자의 값은 기본값으로 설정된 상태로 유지합니다.
+
+    1. **리소스 그룹** 섹션에서 **PubSubEvents**를 선택합니다.
+
+    1. **이름** 텍스트 상자에 **eventviewer*[사용자 이름]*** 을 입력합니다.
+
+    1. **게시** 섹션에서 **Docker 컨테이너**를 선택합니다.
+
+    1. **운영 체제** 섹션에서 **Linux**를 선택합니다.
+
+    1. **지역** 드롭다운 목록에서 **미국 동부** 지역을 선택합니다.
+
+    1. **Linux 플랜(미국 동부)** 섹션에서 **새로 만들기**를 선택합니다. 
+
+    1. **이름** 텍스트 상자에 **EventPlan** 값을 입력하고 **확인**을 선택합니다.
+
+    1. SKU 및 크기 섹션을 기본값으로 둡니다.
+
+    1. **다음: Docker**를 선택합니다.
+
+1. **Docker** 탭에서 다음 작업을 수행합니다.
+
+    1. **옵션** 드롭다운 목록에서 **단일 컨테이너**를 선택합니다.
+
+    1. **이미지 원본** 드롭다운 목록에서 **Docker Hub**를 선택합니다.
+
+    1. **액세스 형식** 드롭다운 목록에서 **공개**를 선택합니다.
+
+    1. **이미지 및 태그** 텍스트 상자에 **microsoftlearning/azure-event-grid-viewer:latest**를 입력합니다.
+
+    1. **검토 + 만들기**를 선택합니다.
+
+1. **검토 + 만들기** 탭에서 이전 단계에서 선택한 옵션을 검토합니다.
+
+1. 지정된 구성을 사용하여 웹앱을 만들려면 **만들기**를 선택합니다. 
+  
+    > **참고**: 랩을 계속하기 전에 Azure에서 웹앱을 만들 때까지 기다립니다. 앱을 만들 때 알림을 받게 됩니다.
+
+#### 복습
+
+이 연습에서는 랩의 나머지 부분에서 사용할 Event Grid 토픽과 웹앱을 만들었습니다.
+
+### 연습 2: Event Grid 구독 만들기
+
+#### 작업 1: Event Grid 뷰어 웹 애플리케이션 액세스
+
+1. Azure Portal의 탐색 창에서 리소스 그룹을 선택합니다.
+
+1. **리소스 그룹** 블레이드에서 이 랩의 앞부분에서 만든 **PubSubEvents** 리소스 그룹을 선택합니다.
+
+1. **PubSubEvents** 블레이드에서 이 랩의 앞부분에서 만든 **eventviewer*[사용자 이름]*** 웹앱을 선택합니다.
+
+1. **App Service** 블레이드의 **설정** 범주에서 **속성** 링크를 선택합니다.
+
+1. **속성** 섹션에서 **URL** 텍스트 상자의 값을 기록합니다. 이 값은 랩에서 나중에 사용합니다.
+
+1. **개요**를 선택합니다.
+
+1. **개요** 섹션에서 **찾아보기**를 선택합니다.
+
+1. 현재 실행 중인 Azure Event Grid 뷰어 웹 애플리케이션을 관찰합니다. 이 웹 애플리케이션은 랩의 나머지 부분에서 실행되도록 둡니다.
+
+    > **참고**: 이 웹 애플리케이션은 이벤트가 엔드포인트로 전송될 때 실시간으로 업데이트됩니다. 이것을 사용하여 랩 전체의 이벤트를 모니터링합니다.
+
+1. Azure Portal을 표시하고 있고 현재 열려 있는 브라우저 창으로 돌아갑니다.
+
+#### 작업 2: 새 구독 만들기
+
+1. Azure Portal의 탐색 창에서 리소스 그룹을 선택합니다.
+
+1. 리소스 그룹 블레이드에서 이 랩의 앞부분에서 만든 PubSubEvents 리소스 그룹을 선택합니다.
+
+1. **PubSubEvents** 블레이드에서 이 랩의 앞부분에서 만든 **hrtopic*[사용자 이름]*** Event Grid 항목을 선택합니다.
+
+1. **Event Grid 항목** 블레이드에서 **+ 이벤트 구독**을 선택합니다.
+
+1. **이벤트 구독 만들기** 블레이드에서 다음 작업을 수행합니다.
+
+    1. **이름** 텍스트 상자에 **basicsub**를 입력합니다.
+
+    1. **이벤트 스키마** 목록에서 **Event Grid 스키마**를 선택합니다.
+
+    1. **엔드포인트 유형** 목록에서 **웹 후크**를 선택합니다.
+
+    1. **엔드포인트**를 선택합니다.
+
+    1. **웹 후크 선택** 대화 상자의 **구독자 엔드포인트** 텍스트 상자에 이전에 기록한 **웹앱 URL** 값을 입력합니다. 그런 다음 해당 URL에 **https://** 접두사가 사용되는지 확인하고 **/api/updates** 접미사를 추가한 후에 **선택 확인**을 선택합니다.
+
+        > **참고**: 예를 들어 **웹앱 URL** 값이 ``http://eventviewerstudent.azurewebsites.net/``인 경우 **구독자 엔드포인트**는 ``https://eventviewerstudent.azurewebsites.net/api/updates``가 됩니다.
+
+    1. **만들기**를 선택합니다.
+  
+    > **참고**: 랩을 계속하기 전에 Azure에서 구독을 만들 때까지 기다립니다. 구독이 생성되면 알림을 받게 됩니다.
+
+#### 작업 3: 구독 유효성 검사 이벤트 관찰
+
+1. **Azure Event Grid 뷰어** 웹 애플리케이션을 표시하는 브라우저 창으로 돌아갑니다.
+
+1. 구독 만들기 작업의 일부로 만든 **Microsoft.EventGrid.SubscriptionValidationEvent** 이벤트를 검토합니다.
+
+1. 이벤트를 선택하여 JSON 콘텐츠를 검토합니다.
+
+1. Azure Portal을 통해 현재 열려 있는 브라우저 창으로 돌아갑니다.
+
+#### 작업 4: 구독 자격 증명 기록
+
+1. Azure Portal의 탐색 창에서 리소스 그룹을 선택합니다.
+
+1. 리소스 그룹 블레이드에서 이 랩의 앞부분에서 만든 PubSubEvents 리소스 그룹을 선택합니다.
+
+1. PubSubEvents 블레이드에서 이 랩의 앞부분에서 만든 **hrtopic*[사용자 이름]*** Event Grid 항목을 선택합니다.
+
+1. **Event Grid 항목** 블레이드에서 **항목 엔드포인트** 필드의 값을 기록합니다. 이 값은 랩에서 나중에 사용합니다.
+
+1. **설정** 범주에서 **액세스 키** 링크를 선택합니다.
+
+1. **액세스 키** 섹션에서 **키 1** 텍스트 상자의 값을 기록합니다. 이 값은 랩에서 나중에 사용합니다.
+
+#### 복습
+
+이 연습에서는 새 구독을 만들고 등록의 유효성을 검사한 다음 토픽에 새 이벤트를 게시하는 데 필요한 자격 증명을 기록했습니다.
+
+### 연습 3: .NET에서 Event Grid 이벤트 게시
+
+#### 작업 1: .NET 프로젝트 만들기
+
+1. **시작** 화면에서 **Visual Studio Code** 타일을 선택합니다.
+
+1. 파일 메뉴에서 폴더 열기를 선택합니다.
+
+1. 열리는 **파일 탐색기** 창에서 Allfiles (F):\\Allfiles\\Labs\\09\\Starter\\EventPublisher**로 이동한 후 **폴더 선택**을 선택합니다.
+
+1. **Visual Studio Code** 창에서 탐색기 창의 바로 가기 메뉴를 마우스 오른쪽 단추로 클릭하거나 활성화한 다음 **터미널에서 열기**를 선택합니다.
+
+1. 열린 명령 프롬프트에서 다음 명령을 입력하고 Enter 키를 눌러 현재 폴더에 **EventPublisher**라는 새 .NET 프로젝트를 만듭니다.
+
+    ```powershell
+    dotnet new console --name EventPublisher --output .
+    ```
+
+    > **참고**: dotnet new 명령은 새 콘솔 프로젝트를 프로젝트와 이름이 같은 폴더에 만듭니다.
+
+1. 명령 프롬프트에서 다음 명령을 입력하고 Enter 키를 눌러 NuGet에서 **Azure.Messaging.EventGrid**의 버전 4.1.0을 가져옵니다.
+
+    ```powershell
+    dotnet add package Azure.Messaging.EventGrid --version 4.1.0
+    ```
+
+    > **참고**: **dotnet add package** 명령은 NuGet에서 **Microsoft.Azure.EventGrid** 패키지를 추가합니다. 더 자세한 내용은 [Azure.Messaging.EventGrid](https://www.nuget.org/packages/Azure.Messaging.EventGrid/4.1.0)를 참조하세요.
+
+1. 명령 프롬프트에서 다음 명령을 입력하고 Enter 키를 눌러 .NET 웹 애플리케이션을 빌드합니다.
+
+    ```powershell
+    dotnet build
+    ```
+
+1. **터미널 종료** 또는 **휴지통** 아이콘을 선택하여 현재 열려 있는 터미널 및 관련된 모든 작업을 종료합니다.
+
+#### 작업 2: Program 클래스를 수정하여 Event Grid에 연결
+
+1. **Visual Studio Code** 창의 탐색기 창에서 **Program.cs** 파일을 엽니다.
+
+1. **Program.cs** 파일의 코드 편집기 탭에서 기존 파일의 모든 코드를 삭제합니다.
+
+1. 다음 코드 줄을 추가하여 NuGet에서 가져온 **Azure.Messaging.EventGrid** 패키지의 **Azure** 및 **Azure.Messaging.EventGrid** 네임스페이스를 가져옵니다.
+
+    ```csharp
+    using Azure;
+    using Azure.Messaging.EventGrid;
+    ```
+
+1. 다음 코드 줄을 추가하여 이 파일에 사용할 기본 제공 네임스페이스에 대해 **using** 지시문을 추가합니다.
+
+    ```csharp
+    using System;
+    using System.Threading.Tasks;
+    ```
+
+1. 다음 코드를 입력하여 새 **Program** 클래스를 만듭니다.
+
+    ```csharp
+    public class Program
+    {
+    }
+    ```
+
+1. **Program** 클래스에서 다음 코드 줄을 입력하여 **topicEndpoint**라는 이름의 새 문자열 상수를 만듭니다.
+
+    ```csharp
+    private const string topicEndpoint = "";
+    ```
+
+1. 이 랩의 앞부분에서 기록한 Event Grid 항목의 **항목 엔드포인트**로 값을 설정하여 **topicEndpoint** 문자열 상수를 업데이트합니다.
+
+1. **Program** 클래스에서 다음 코드 줄을 입력하여 **topicKey라는 이름의 새 문자열 상수를 만듭니다.
+
+    ```csharp
+    private const string topicKey = "";
+    ```
+
+1. 이 랩의 앞부분에서 기록한 Event Grid 항목의 키에 값을 설정하여 topicKey 문자열 상수의 값을 업데이트합니다.
+
+1. **Program** 클래스에서 다음 코드 줄을 입력하여 새 비동기 **Main** 메서드를 만듭니다.
+
+    ```csharp
+    public static async Task Main(string[] args)
+    {
+    }
+    ```
+
+1. **Program.cs** 파일을 살펴봅니다. 이제 파일에 다음 코드가 포함되어 있어야 합니다.
+
+    ```csharp
+    using System;
+    using System.Threading.Tasks;
+    using Azure;
+    using Azure.Messaging.EventGrid;
+
+    public class Program
+    {
+        private const string topicEndpoint = "<topic-endpoint>";
+        private const string topicKey = "<topic-key>";
         
-    1.  **논리 앱 이름** 필드에 **prodflow*[yourname]*** 을 입력합니다.
+        public static async Task Main(string[] args)
+        {
+        }
+    }
+    ```
 
-    1.  **위치 선택** 섹션에서 **지역**을 선택합니다.
+#### 작업 3: 새 이벤트 게시
 
-    1.  **위치** 목록에서 **미국 동부**를 선택합니다.
-    
-    1.  **Log Analytics** 섹션에서 **끄기**를 선택합니다.
-    
-    1.  **검토 + 만들기**를 선택합니다.
+1. **Main** 메서드에서 다음 작업을 수행하여 이벤트 목록을 항목 엔드포인트에 게시합니다.
 
-1.  **검토+ 만들기** 탭에서 이전 단계에서 지정한 옵션을 검토합니다.
+    1. 다음 코드 줄을 추가하여 **Uri** 형식의 새 변수 **endpoint**를 만듭니다. 이때 생성자 매개 변수로는 **topicEndpoint** 문자열 상수를 사용합니다.
 
-1.  지정된 구성을 사용하여 논리 앱을 만들려면 **만들기**를 선택합니다.
+        ```csharp
+        Uri endpoint = new Uri(topicEndpoint); 
+        ```
 
-    > **참고**: 랩으로 진행하기 전에 Azure가 Logic Apps 리소스 만들기를 완료할 때까지 기다립니다. 리소스가 만들어지면 알림이 표시됩니다.
+    1. 다음 코드 줄을 추가하여 **[AzureKeyCredential](https://docs.microsoft.com/dotnet/api/azure.azurekeycredential)** 형식의 새 변수 **credential**을 만듭니다. 이때 생성자 매개 변수로는 **topicKey** 문자열 상수를 사용합니다.
 
-#### 작업 4: 스토리지 계정 만들기
+        ```csharp
+        AzureKeyCredential credential = new AzureKeyCredential(topicKey);
+        ```
 
-1.  Azure Portal 탐색 창에서 **모든 서비스**를 선택합니다.
+    1. 다음 코드 줄을 추가하여 **[EventGridPublisherClient](https://docs.microsoft.com/dotnet/api/azure.messaging.eventgrid.eventgridpublisherclient)** 형식의 새 변수 **client**를 만듭니다. 이때 생성자 매개 변수로는 **endpoint** 및 **credential** 변수를 사용합니다.
 
-1.  **모든 서비스** 블레이드에서 **스토리지 계정**을 선택합니다.
+        ```csharp
+        EventGridPublisherClient client = new EventGridPublisherClient(endpoint, credential);
+        ```
 
-1.  **스토리지 계정** 블레이드에서 스토리지 계정 인스턴스 목록을 가져오고, **추가**를 선택합니다.
+    1. 다음 코드 블록을 추가하여 [EventGridEvent](https://docs.microsoft.com/dotnet/api/azure.messaging.eventgrid.eventgridevent) 형식의 새 변수 firstEvent를 만든 다음, 샘플 데이터로 EventGridEvent 변수를 채웁니다.
 
-1.  **스토리지 계정 만들기** 블레이드에서 **기본** **태그** 및 **검토+만들기**와 같은 블레이드의 탭을 검토합니다.
+        ```csharp
+        EventGridEvent firstEvent = new EventGridEvent(
+            subject: $"New Employee: Alba Sutton",
+            eventType: "Employees.Registration.New",
+            dataVersion: "1.0",
+            data: new
+            {
+                FullName = "Alba Sutton",
+                Address = "4567 Pine Avenue, Edison, WA 97202"
+            }
+        );
+        ```
 
-    > **참고**: 각 탭은 새 스토리지 계정을 만드는 워크플로의 단계를 나타냅니다. 언제든지 **검토 + 만들기**를 선택하여 나머지 탭을 건너뛸 수 있습니다.
+    1. 다음 코드 블록을 추가하여 [EventGridEvent](https://docs.microsoft.com/dotnet/api/azure.messaging.eventgrid.eventgridevent) 형식의 새 변수 secondEvent를 만든 다음, 샘플 데이터로 EventGridEvent 변수를 채웁니다.
 
-1.  **기본** 탭을 선택하고 탭 영역 내에서 다음 작업을 수행합니다.
-    
-    1.  **구독** 텍스트 상자를 기본값으로 설정합니다.
-    
-    1.  **리소스 그룹** 섹션에서 이전에 랩에서 만든 **AutomatedWorkflow** 그룹을 선택합니다.
-    
-    1.  **스토리지 계정 이름** 텍스트 상자에 **prodstor*[yourname]*** 을 입력합니다.
-    
-    1.  **위치** 목록에서 **(미국) 미국 동부** 지역을 선택합니다.
-    
-    1.  **성능** 섹션에서 **표준**을 선택합니다.
-    
-    1.  **계정 종류** 목록에서 **StorageV2(범용 v2)** 를 선택합니다.
-    
-    1.  **복제** 목록에서 **LRS(로컬 중복 스토리지)** 를 선택합니다.
-    
-    1.  **액세스 계층(기본값)** 섹션에서 **핫**을 선택해야 합니다.
-    
-    1.  **검토 + 만들기**를 선택합니다.
+        ```csharp
+        EventGridEvent secondEvent = new EventGridEvent(
+            subject: $"New Employee: Alexandre Doyon",
+            eventType: "Employees.Registration.New",
+            dataVersion: "1.0",
+            data: new
+            {
+                FullName = "Alexandre Doyon",
+                Address = "456 College Street, Bow, WA 98107"
+            }
+        );
+        ```
 
-1.  **검토+ 만들기** 탭에서 이전 단계에서 지정한 옵션을 검토합니다.
+    1. 다음 코드 줄을 추가하여 **firstEvent** 변수를 매개 변수로 사용해 **[EventGridPublisherClient.SendEventAsync](https://docs.microsoft.com/dotnet/api/azure.messaging.eventgrid.eventgridpublisherclient.sendeventasync)** 메서드를 비동기식으로 호출합니다.
 
-1.  지정된 구성을 사용하여 스토리지 계정을 만들려면 **만들기**를 선택합니다.
+        ```csharp
+        await client.SendEventAsync(firstEvent);
+        ```
 
-    > **참고**: **배포** 블레이드에서 만들기 작업이 완료될 때까지 기다린 후 이 랩을 진행합니다.
+    1. 다음 코드 줄을 추가하여 **"First event published"** 메시지를 콘솔에 렌더링합니다.
 
-#### 작업 5: Azure Files에 샘플 콘텐츠 업로드
+        ```csharp
+        Console.WriteLine("First event published");
+        ```
 
-1.  Azure Portal 탐색 창에서 **리소스 그룹** 링크를 선택합니다.
+    1. 다음 코드 줄을 추가하여 **secondEvent** 변수를 매개 변수로 사용해 **[EventGridPublisherClient.SendEventAsync](https://docs.microsoft.com/dotnet/api/azure.messaging.eventgrid.eventgridpublisherclient.sendeventasync)** 메서드를 비동기식으로 호출합니다.
 
-1.  **리소스 그룹** 블레이드에서, 이 랩의 앞에서 만든 **AutomatedWorkflow** 리소스 그룹을 찾아 선택합니다.
+        ```csharp
+        await client.SendEventAsync(secondEvent);
+        ```
 
-1.  **AutomatedWorkflow** 블레이드에서 이전에 랩에서 만든 **prodstor*[yourname]*** 스토리지 계정을 선택합니다.
+    1. 다음 코드 줄을 추가하여 **"Second event published"** 메시지를 콘솔에 렌더링합니다.
 
-1.  **스토리지 계정** 블레이드의 **파일 서비스** 섹션에서 **파일 공유** 링크를 선택합니다.
+        ```csharp
+        Console.WriteLine("Second event published");
+        ```
 
-1.  **파일 공유** 섹션에서 **+ 파일 공유**를 선택합니다.
+1. **Main** 메서드를 검토합니다. 이제 메서드에 다음 코드가 포함되어 있어야 합니다.
 
-1.  **파일 공유** 팝업 대화 상자에서 다음 작업을 수행합니다.
-    
-    1.  **이름** 텍스트 상자에 **메타데이터**를 입력합니다.
-    
-    1.  **할당량** 텍스트 상자에 **1**(GiB)을 입력합니다.
-    
-    1.  **만들기**를 선택합니다.
-
-1.  **파일 공유** 섹션으로 돌아가서 새로 만든 **메타데이터** 공유를 선택합니다.
-
-1.	**파일 공유** 블레이드에서 **업로드**를 선택합니다.
-
-1.	**파일 업로드** 대화 상자에서 다음 단계를 수행합니다.
-
-    1.  **파일** 섹션에서 **폴더** 아이콘을 선택합니다.
-
-    1.  **파일 탐색기** 창에서 **Allfiles (F):\\Allfiles\\Labs\\09\\Starter** 로 이동하여 다음 파일을 선택한 다음, **열기**를 선택합니다.
-
-        -   **item_00.json**
+    ```csharp
+    public static async Task Main(string[] args)
+    {
+        Uri endpoint = new Uri(topicEndpoint);
+        AzureKeyCredential credential = new AzureKeyCredential(topicKey);
+        EventGridPublisherClient client = new EventGridPublisherClient(endpoint, credential);
         
-        -   **item_01.json**
-        
-        -   **item_02.json**
-        
-        -   **item_03.json**
-        
-        -   **item_04.json** 
+        EventGridEvent firstEvent = new EventGridEvent(
+            subject: $"New Employee: Alba Sutton",
+            eventType: "Employees.Registration.New",
+            dataVersion: "1.0",
+            data: new
+            {
+                FullName = "Alba Sutton",
+                Address = "4567 Pine Avenue, Edison, WA 97202"
+            }
+        );
 
-    1.  **파일이 이미 있는 경우 덮어쓰기** 확인란이 선택되어 있는지 확인하고, **업로드**를 선택합니다. 
-    
-    > **참고**: 이 랩을 계속하기 전에 Blob이 업로드될 때까지 기다립니다.
+        EventGridEvent secondEvent = new EventGridEvent(
+            subject: $"New Employee: Alexandre Doyon",
+            eventType: "Employees.Registration.New",
+            dataVersion: "1.0",
+            data: new
+            {
+                FullName = "Alexandre Doyon",
+                Address = "456 College Street, Bow, WA 98107"
+            }
+        );
 
-#### 검토
+        await client.SendEventAsync(firstEvent);
+        Console.WriteLine("First event published");
 
-이 연습에서는 이 랩에 사용할 모든 리소스를 만들었습니다.
-
-### 연습 2: Logic Apps를 사용하여 워크플로 구현
-
-#### 작업 1: 워크플로에 대한 트리거 만들기
-
-1.  Azure Portal 탐색 창에서 **리소스 그룹**을 선택합니다.
-
-1.  **리소스 그룹** 블레이드에서 이전에 랩에서 만든 **AutomatedWorkflow** 리소스 그룹을 선택합니다.
-
-1.  **AutomatedWorkflow** 블레이드에서 이전에 랩에서 만든 **prodflow*[yourname]*** 논리 앱을 선택합니다.
-
-1.  **Logic Apps 디자이너** 블레이드에서 **빈 논리 앱** 템플릿을 선택합니다.
-
-1.  **디자이너** 영역에서 다음 작업을 수행하여 **HTTP 요청을 받았을 때(요청)** 트리거를 추가합니다.
-    
-    1.  **커넥터 및 트리거 검색** 필드에서 **HTTP**를 입력합니다.
-    
-    1.  변환 목록에서 **요청**을 선택합니다.
-    
-    1.  **트리거** 결과 목록에서 **HTTP 요청이 수신된 경우**를 선택합니다.
-
-1.  **HTTP 요청이 수신된 경우** 영역에서 다음 작업을 수행하여 **HTTP 요청이 수신된 경우(요청)** 트리거를 구성합니다.
-    
-    1.  **새 매 변수 추가** 목록에서 **메서드**를 선택합니다.
-
-    1.  **메서드** 목록에서 **GET**을 선택합니다.
-
-#### 작업 2: Azure Storage 파일 공유를 쿼리하는 작업 만들기
-
-1.  **디자이너** 영역에서 **+ 새 단계**를 선택한 다음, 다음 작업을 수행하여 **파일 목록(Azure File Storage)** 작업을 추가합니다.
-    
-    1.  **검색 커넥터 및 트리거** 필드에서 **files**를 입력합니다.
-    
-    1.  범주 목록에서 **Azure File Storage**를 선택합니다.
-    
-    1.  **작업** 결과 목록에서 **파일 목록**을 선택합니다.
-    
-    1.  **연결 이름** 필드에 **filesConnection**을 입력합니다.
-    
-    1.  **스토리지 계정** 섹션에서 이전에 랩에서 만든 **prodstor*[yourname]*** 스토리지 계정을 선택한 다음 **만들기**를 선택합니다.
-    
-    1.  커넥터 리소스가 생성을 완료할 때까지 기다립니다.
-
-        > **참고**: 이러한 리소스를 만드는 데 1~5분 정도 걸릴 수 있습니다.
-
-1.  **파일 목록** 영역의 **폴더** 텍스트 상자에 **/metadata**를 입력합니다.
-    
-#### 작업 3: 프로젝트 목록 항목 속성에 대한 작업 만들기
-
-1.  **디자이너** 영역에서 **+ 새 단계**를 선택합니다.
-
-1.  **디자이너** 영역에서 다음 작업을 수행하여 **선택(데이터 작업)** 작업을 추가합니다.
-    
-    1.  **커넥터 및 트리거 검색** 필드에서 **선택**을 입력합니다.
-    
-    1.  범주 목록에서 **데이터 작업**을 선택합니다.
-    
-    1.  **작업** 결과 목록에서 **선택**을 선택합니다.
-
-1.  **선택** 영역에서 다음 작업을 수행하여 **선택(데이터 작업)** 작업을 구성합니다.
-    
-    1.  **From** 필드에 있는 **동적 콘텐츠** 목록의 **파일 목록** 범주 내에서 **값**을 선택합니다. 
-    
-    1.  **맵** 필드에서 **텍스트 모드로 전환**을 선택합니다.
-
-    1.  **파일 나열** 범주의 **동적 콘텐츠** 목록에 있는 **맵** 필드에서 **이름**을 선택합니다.
-    
-#### 작업 4: HTTP 응답 작업 빌드
-
-1.  **디자이너** 영역에서 **+ 새 단계**를 선택하고 다음 작업을 수행하여 **응답(요청)** 작업을 추가합니다.
- 
-    1.  **검색 커넥터 및 트리거** 필드에서 **응답**을 입력합니다.
-       
-    1.  **작업** 결과 목록에서 **응답**을 선택합니다.
-
-1.  **응답** 영역에서 다음 작업을 수행하여 **응답(요청)** 작업을 구성합니다.
-
-    1.  **상태 코드** 텍스트 상자에 **200**을 입력합니다.
-
-    1.  **본문** 필드에 있는 **선택** 범주 내의 **동적 콘텐츠** 목록에서 **출력**을 선택합니다.
-
-1.  **디자이너** 영역에서 **저장**을 선택합니다.
-
-#### 검토
-
-이 연습에서는 HTTP GET 요청에 의해 트리거될 때 시작하는 기본 워크플로를 구축했습니다. 그런 다음 스토리지 서비스를 쿼리하고 결과를 열거한 다음 해당 결과를 HTTP 응답으로 반환합니다.
-
-### 연습 3: Azure API Management를 Logic Apps의 프록시로 사용
-
-#### 작업 1: 새 제품 만들기
-
-1.  Azure Portal 탐색 창에서 **리소스 그룹**을 선택합니다.
-
-1.  **리소스 그룹** 블레이드에서 이전에 랩에서 만든 **AutomatedWorkflow** 리소스 그룹을 선택합니다.
-
-1.  **AutomatedWorkflow** 블레이드에서 이 랩의 앞에서 만든 **prodapim*[yourname]*** API Management 리소스를 선택합니다.
-
-1.  **API Management 서비스** 블레이드의 **API Management** 섹션에서 **제품**을 선택합니다.
-
-1.  **제품** 섹션에서 **+ 추가**를 선택합니다.
-
-1.  **제품 추가** 대화 상자에서 다음 작업을 수행합니다.
-
-    1.  **표시 이름** 텍스트 상자에 **Free**를 입력합니다.
-
-    1.  **Id** 텍스트 상자에 **free**를 입력합니다.
-
-    1.  **설명** 텍스트 상자에 **익명 사용을 위한 프리 티어**를 입력합니다.
-
-    1.  **상태** 섹션에서 **게시됨**을 선택합니다.
-
-    1.  **구독 필요** 확인란이 지워졌는지 확인합니다.
-
-    1.  **만들기**를 선택합니다.
-
-#### 작업 2: Logic Apps와 통합된 API 만들기
-
-1.  **API 관리** 섹션의 **API 관리 서비스** 블레이드에서 **API**를 선택합니다.
-
-1.  **새 API 추가** 섹션에서 **논리 앱**을 선택합니다.
-
-1.  **논리 앱 만들기** 대화 상자에서 다음 작업을 수행합니다.
-
-    1.  **전체**를 선택합니다.
-
-    1.  **논리 앱** 섹션에서 **탐색**을 선택합니다. 
-    
-    1.  **가져올 논리 앱 선택** 대화 상자에서 이전에 랩에서 만든 **prodflow*[yourname]*** 논리 앱을 선택한 다음 **선택**을 선택합니다.
-    
-    1.  **이름 표시** 텍스트 상자에 **메타데이터 조회**를 입력합니다.
-    
-    1.  **이름** 텍스트 박스에 **메타데이터 조회**를 입력합니다.
-
-    1.  **설명** 텍스트 상자에 **메타데이터 JSON 파일 조회**를 입력합니다.
-
-    1.  **API URL 접미사** 텍스트 상자를 비워 둡니다.
-
-    1.  **제품** 목록에서 **무료**를 선택합니다.
-
-    1.  **만들기**를 선택합니다. 
-
-    > **참고**: 새 API가 생성될 때까지 기다립니다.
-
-#### 작업 3: API 작업 테스트
-
-1.  **디자인** 탭에서 **테스트** 탭을 선택합니다.
-
-1.  **테스트** 탭에서 다음 작업을 수행합니다.
-
-    1.  단일 **GET** 작업을 선택합니다.
-
-    1.  **URL 요청** 필드의 값을 복사합니다. (이 값은 랩에서 나중에 사용합니다.)
-
-    1.  **보내기**를 선택합니다.
-
-    1.  **HTTP 응답** 섹션에서 테스트 요청의 JSON 결과를 관찰합니다.
-
-#### 작업 4: httprepl을 사용하여 종단 간 솔루션 유효성을 검사합니다.
-
-1.  작업 표시줄에서 **Windows 터미널** 아이콘을 선택합니다.
-
-1.  열린 명령 프롬프트에서 다음 명령을 입력한 다음, 엔터를 선택하여 기본 URI를 이전에 랩에서 복사한 API 작업에 대한 **요청 URL**의 값으로 설정하는 **httprepl** 도구를 시작합니다.
-
-    ```
-    httprepl <api-operation-request-url>
+        await client.SendEventAsync(secondEvent);
+        Console.WriteLine("Second event published");
+    }
     ```
 
-    > **참고**: 예를 들어 **URL**이 **https://prodapimstudent.azure-api.net/manual/paths/invoke** 인 경우, 명령은 **httprepl https://prodapimstudent.azure-api.net/manual/paths/invoke** 가 됩니다.
+1. **Program.cs** 파일을 저장합니다.
 
-1.  httprepl 도구가 표시하는 오류 메시지를 살펴봅니다. 이 메시지는 도구가 API를 "통과"하는 데 사용할 Swagger 정의 파일을 검색하기 때문에 발생합니다. 논리 앱은 Swagger 정의 파일을 생성하지 않으므로 API를 수동으로 통과해야 합니다.
+1. Visual Studio Code 창에서 탐색기 창의 바로 가기 메뉴를 마우스 오른쪽 단추로 클릭하거나 활성화한 다음 터미널에서 열기를 선택합니다.
 
-1.  도구 프롬프트 내에서 다음 명령을 입력한 다음, Enter를 선택하여 API 엔드포인트에 대해 **get** 명령을 실행합니다.
+1. 열린 명령 프롬프트에서 다음 명령을 입력하고 Enter 키를 눌러 .NET 웹 애플리케이션을 실행합니다.
 
-    ```
-    get
-    ```
-
-1.  이제 다음을 포함해야 하는 JSON 응답 내용을 관찰합니다.
-
-    ```
-    [ 
-        "item_00.json",
-        "item_01.json",
-        "item_02.json",
-        "item_03.json",
-        "item_04.json"
-    ]
+    ```powershell
+    dotnet run
     ```
 
-1.  다음 명령을 입력한 다음, 엔터를 선택하여 **httprepl** 애플리케이션을 종료합니다.
+    > **참고**: 빌드 오류가 있는 경우, **Allfiles (F):\\Allfiles\\Labs\\09\\Solution\\EventPublisher** 폴더에 있는 **Program.cs** 파일을 검토하세요.
 
-    ```
-    exit
-    ```
+1. 현재 실행 중인 콘솔 애플리케이션의 성공 메시지 출력을 관찰합니다.
 
-1.  현재 실행 중인 Microsoft Terminal 애플리케이션을 닫습니다.
+1. 터미널 종료 또는 휴지통 아이콘을 선택하여 현재 열려 있는 터미널 및 관련된 모든 작업을 종료합니다.
 
-1.	Azure Portal을 사용하여 브라우저 창으로 돌아갑니다.
+#### 작업 4: 게시된 이벤트 살펴보기
 
-#### 검토
+1. **Azure Event Grid 뷰어** 웹 애플리케이션이 있는 브라우저 창으로 돌아갑니다.
 
-이 연습에서는 Azure API Management를 프록시로 사용하여 논리 앱 워크플로를 트리거했습니다.
+1. 콘솔 애플리케이션으로 생성한 Employees.Registration.New 이벤트를 검토합니다.
 
-### 연습 4: 구독 정리 
+1. 아무 이벤트나 선택하고 JSON 콘텐츠를 검토합니다.
 
-#### 작업 1: Azure Cloud Shell 열기 및 리소스 그룹 나열
+1. Azure Portal로 돌아갑니다.
 
-1.  Azure Portal에서 **Cloud Shell** 아이콘을 선택하여 새 셸 인스턴스를 엽니다.
+#### 복습
 
-    > **참고**: **Cloud Shell** 아이콘은 초과(\>) 기호와 밑줄 문자(\_)로 표시됩니다.
+이 연습에서는 .NET 콘솔 애플리케이션을 사용하여 Event Grid 항목에 새 이벤트를 게시했습니다.
 
-1.  구독을 사용하여 Cloud Shell을 처음으로 여는 경우, 처음 사용할 경우에만 **Azure Cloud Shell 시작 마법사**를 사용하여 Cloud Shell를 구성할 수 있습니다. 마법사에서 다음 작업을 수행합니다.
-    
-    1.  대화 박스는 셸을 사용하여 시작할 새 스토리지 계정을 만들라는 메시지를 표시합니다. 기본 설정을 수락하고 **스토리지 만들기**를 선택합니다. 
+### 연습 4: 구독 정리
+
+#### 작업 1: Azure Cloud Shell 열기
+
+1. Azure Portal에서 **Cloud Shell** 아이콘을 선택하여 새 셸 인스턴스를 엽니다.
+
+    > **참고**: Cloud Shell 아이콘은 더 큼 기호(\>)와 밑줄 문자(\_)로 표시됩니다.
+
+1. 구독을 사용하여 Cloud Shell을 처음으로 여는 경우, 처음 사용할 경우에만 Azure Cloud Shell 시작 마법사를 사용하여 Cloud Shell를 구성할 수 있습니다. 마법사에서 다음 작업을 수행합니다.
+
+    1. 셸을 구성하라는 메시지가 포함된 대화 상자가 나타납니다. Bash를 선택하고 선택한 구독을 검토한 다음 스토리지 만들기를 선택합니다.
 
     > **참고**: 랩으로 진행하기 전에 Cloud Shell이 초기 설치 절차를 완료할 때까지 기다립니다. Cloud Shell의 구성 옵션이 나타나지 않는 경우 이 과정의 랩에서 기존 구독을 사용하고 있기 때문일 수 있습니다. 랩은 새 구독을 사용한다는 가정 하에서 작성됩니다.
 
 #### 작업 2: 리소스 그룹 삭제
 
-1.  다음 명령을 입력하고 엔터를 선택하여 **AutomatedWorkflow** 리소스 그룹을 삭제합니다.
+1. 다음 명령을 입력하고 Enter 키를 눌러 PubSubEvents 리소스 그룹을 삭제합니다.
 
-    ```
-    az group delete --name AutomatedWorkflow --no-wait --yes
+    ```bash
+    az group delete --name PubSubEvents --no-wait --yes
     ```
 
-1.  Cloud Shell 창을 닫습니다.
+1. 포털에서 Cloud Shell 창을 닫습니다.
 
 #### 작업 3: 활성 애플리케이션 닫기
 
--   현재 실행 중인 Microsoft Edge 애플리케이션을 닫습니다.
+1. 현재 실행 중인 Microsoft Edge 애플리케이션을 닫습니다.
 
-#### 검토
+1. 현재 실행 중인 Visual Studio Code 애플리케이션을 닫습니다.
+
+#### 복습
 
 이 연습에서는 이 랩에 사용된 리소스 그룹을 제거하여 구독을 정리했습니다.
