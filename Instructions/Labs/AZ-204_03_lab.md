@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     az204Title: '랩 03: .NET용 Azure Storage SDK를 사용하여 Azure Storage 리소스 및 메타데이터 검색'
     az020Title: '랩 03: .NET용 Azure Storage SDK를 사용하여 Azure Storage 리소스 및 메타데이터 검색'

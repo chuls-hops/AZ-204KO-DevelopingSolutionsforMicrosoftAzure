@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     az204Title: '랩 06: MSAL 및 .NET SDK를 사용하여 Microsoft Graph 인증 및 쿼리'
     az020Title: '랩 06: MSAL 및 .NET SDK를 사용하여 Microsoft Graph 인증 및 쿼리'

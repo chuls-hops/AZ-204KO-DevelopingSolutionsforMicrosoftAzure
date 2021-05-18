@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     az204Title: '랩 10: Azure Queue Storage를 사용하여 비동기적으로 메시지 처리'
     az020Title: '랩 10: Azure Queue Storage를 사용하여 비동기적으로 메시지 처리'
