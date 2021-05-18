@@ -174,7 +174,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     private const string _clientId = "";
     ```
 
-1.  이 랩 앞부분에서 기록한 **_clientId**애플리케이션(클라이언트) ID**로 값을 설정하여 **clientId** 문자열 상수를 업데이트합니다.
+1.  이 랩 앞부분에서 기록한 **_clientId** **애플리케이션(클라이언트) ID** 로 값을 설정하여 **clientId** 문자열 상수를 업데이트합니다.
 
 1.  **Program** 클래스에서 다음 코드 줄을 입력하여 **_tenantId**라는 이름의 새 문자열 상수를 만듭니다.
 
@@ -234,7 +234,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
             .WithAuthority(AzureCloudInstance.AzurePublic, _tenantId)
         ```
 
-    1.  기본 **AbstractApplicationBuilder<>** 클래스의 **[WithRedirectUri()](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.abstractapplicationbuilder-1.withredirecturi)** 메서드를 사용하도록 다른 코드 줄을 추가하여 이전 코드 줄을 업데이트합니다. 이 메서드에는 문자열 값 **http://localhost**를 전달합니다.
+    1.  기본 **AbstractApplicationBuilder<>** 클래스의 **[WithRedirectUri()](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.abstractapplicationbuilder-1.withredirecturi)** 메서드를 사용하도록 다른 코드 줄을 추가하여 이전 코드 줄을 업데이트합니다. 이 메서드에는 문자열 값 **http://localhost** 를 전달합니다.
 
         ```
         PublicClientApplicationBuilder

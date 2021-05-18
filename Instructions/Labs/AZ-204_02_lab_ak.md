@@ -7,7 +7,7 @@ lab:
     type: '해답'
 ---
 
-# 랩 02: Azure Functions를 사용한 작업 처리 논리 구현
+# 랩 02: Azure Functions를 사용하여 작업 처리 논리 구현
 # 학생 랩 답변 키
 
 ## Microsoft Azure 사용자 인터페이스
@@ -78,7 +78,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 #### 작업 3: 함수 앱 만들기
 
 1. Azure Portal의 탐색 창에서 **리소스 만들기** 링크를 선택합니다.
-1. **새로 만들기** 블레이드에서 **Marketplace 검색 **텍스트 상자를 찾습니다.
+1. **새로 만들기** 블레이드에서 **Marketplace 검색** 텍스트 상자를 찾습니다.
 1. 검색 상자에 **함수**를 입력하고 Enter 키를 누릅니다.
 1. **모든 항목** 검색 결과 블레이드에서 **함수 앱** 결과를 선택합니다.
 1. **함수 앱** 블레이드에서 **만들기**를 선택합니다.
@@ -386,7 +386,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     post --content "Hello"
     ```
 
-1. 다음 명령을 입력하고 Enter 키를 눌러 **\-\-content** 옵션을 사용하여 HTTP 요청 본문을 전송하는 **post** 명령을 실행합니다. 요청 본문은 JSON(JavaScript Object Notation) 값 **{"msg": "Successful"}**로 설정되어 있습니다.
+1. 다음 명령을 입력하고 Enter 키를 눌러 **\-\-content** 옵션을 사용하여 HTTP 요청 본문을 전송하는 **post** 명령을 실행합니다. 요청 본문은 JSON(JavaScript Object Notation) 값 **{"msg": "Successful"}** 로 설정되어 있습니다.
 
     ```powershell
     post --content "{"msg": "Successful"}"

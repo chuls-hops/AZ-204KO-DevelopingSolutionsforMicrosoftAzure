@@ -1,4 +1,4 @@
----
+﻿---
 lab:
     az204Title: '랩 01: Azure PaaS(Platform as a Service) 제품에서 웹 애플리케이션 빌드'
     az020Title: '랩 01: Azure PaaS(Platform as a Service) 제품에서 웹 애플리케이션 빌드'
@@ -76,7 +76,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     
     1.  **리소스 그룹** 섹션에서 **새로 만들기**를 선택하고 **ManagedPlatform**을 입력한 다음 **확인**을 선택합니다.
     
-    1.  **스토리지 계정 이름** 텍스트 상자에 **imgstor*[사용자 이름]*** 을 입력합니다.
+    1.  **스토리지 계정 이름** 텍스트 상자에 **imgstor[사용자 이름]** 을 입력합니다.
     
     1.  **위치** 목록에서 **(미국) 미국 동부** 지역을 선택합니다.
     
@@ -108,7 +108,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서 이 랩의 앞부분에서 만든 **ManagedPlatform** 리소스 그룹을 선택합니다.
 
-1.  **ManagedPlatform** 블레이드에서 이 랩의 앞부분에서 만든 **imgstor*[사용자 이름]*** 스토리지 계정을 선택합니다.
+1.  **ManagedPlatform** 블레이드에서 이 랩의 앞부분에서 만든 **imgstor[사용자 이름]** 스토리지 계정을 선택합니다.
 
 1.  **스토리지 계정** 블레이드의 **Blob service** 섹션에서 **컨테이너** 링크를 선택합니다.
 
@@ -154,7 +154,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     
     1.  **리소스 그룹** 드롭다운 목록에서 **ManagedPlatform**을 선택합니다.
     
-    1.  **이름** 텍스트 상자에 **imgapi*[사용자 이름]*** 을 입력합니다.
+    1.  **이름** 텍스트 상자에 **imgapi[사용자 이름]** 을 입력합니다.
 
     1.  **게시** 섹션에서 **코드**를 선택합니다.
 
@@ -186,7 +186,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  리소스 그룹 블레이드에서 이 랩의 앞부분에서 만든 **ManagedPlatform** 리소스 그룹을 선택합니다.
 
-1.  **ManagedPlatform** 블레이드에서 이 랩의 앞부분에서 만든 **imgapi*[사용자 이름]*** 웹앱을 선택합니다.
+1.  **ManagedPlatform** 블레이드에서 이 랩의 앞부분에서 만든 **imgapi[사용자 이름]** 웹앱을 선택합니다.
 
 1.  **웹앱** 블레이드의 **설정** 섹션에서 **구성** 링크를 선택합니다.
 
@@ -248,13 +248,13 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     az webapp list --resource-group ManagedPlatform
     ```
 
-1.	다음 명령을 입력하고 Enter 키를 눌러 접두사가 **imgapi\***인 앱을 찾습니다.
+1.	다음 명령을 입력하고 Enter 키를 눌러 접두사가 **imgapi\*** 인 앱을 찾습니다.
 
     ```
     az webapp list --resource-group ManagedPlatform --query "[?starts_with(name, 'imgapi')]"
     ```
 
-1.	다음 명령을 입력한 후 Enter 키를 눌러 접두사가 **imgapi\***인 단일 앱의 이름만 렌더링합니다.
+1.	다음 명령을 입력한 후 Enter 키를 눌러 접두사가 **imgapi\*** 인 단일 앱의 이름만 렌더링합니다.
 
     ```
     az webapp list --resource-group ManagedPlatform --query "[?starts_with(name, 'imgapi')].{Name:name}" --output tsv
@@ -280,7 +280,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.	**리소스 그룹** 블레이드에서 이 랩의 앞부분에서 만든 **ManagedPlatform** 리소스 그룹을 찾아서 선택합니다.
 
-1.	ManagedPlatform 블레이드에서 이 랩의 앞부분에서 만든 **imgapi*[사용자 이름]*** 웹앱을 선택합니다.
+1.	ManagedPlatform 블레이드에서 이 랩의 앞부분에서 만든 **imgapi[사용자 이름]** 웹앱을 선택합니다.
 
 1.	**웹앱** 블레이드에서 **찾아보기**를 선택합니다.
 
@@ -318,7 +318,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     
     1.  **리소스 그룹** 드롭다운 목록에서 **ManagedPlatform**을 선택합니다.
     
-    1.  **이름** 텍스트 상자에 **imgweb*[사용자 이름]*** 을 입력합니다.
+    1.  **이름** 텍스트 상자에 **imgweb[사용자 이름]** 을 입력합니다.
 
     1.  **게시** 섹션에서 **코드**를 선택합니다.
 
@@ -348,7 +348,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서 이 랩의 앞부분에서 만든 **ManagedPlatform** 리소스 그룹을 선택합니다.
 
-1.  **ManagedPlatform** 블레이드에서 이 랩의 앞부분에서 만든 **imgweb*[사용자 이름]*** 웹앱을 선택합니다.
+1.  **ManagedPlatform** 블레이드에서 이 랩의 앞부분에서 만든 **imgweb[사용자 이름]** 웹앱을 선택합니다.
 
 1.  **웹앱** 블레이드의 **설정** 섹션에서 **구성** 링크를 선택합니다.
 
@@ -360,7 +360,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     
     1.  **값** 텍스트 상자에 이 랩의 앞부분에서 복사한 웹앱 URL을 입력합니다.
 
-        > **참고**: 이 애플리케이션 설정의 **값** 텍스트 상자에 복사하는 URL에 **https://**와 같은 프로토콜을 포함해야 합니다.
+        > **참고**: 이 애플리케이션 설정의 **값** 텍스트 상자에 복사하는 URL에 **https://** 와 같은 프로토콜을 포함해야 합니다.
     
     1.  **배포 슬롯 설정** 텍스트 상자의 값은 기본값으로 설정된 상태로 유지합니다.
 
@@ -406,13 +406,13 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     az webapp list --resource-group ManagedPlatform
     ```
 
-1.	다음 명령을 입력하고 Enter 키를 눌러 접두사가 **imgweb\***인 앱을 찾습니다.
+1.	다음 명령을 입력하고 Enter 키를 눌러 접두사가 **imgweb\*** 인 앱을 찾습니다.
 
     ```
     az webapp list --resource-group ManagedPlatform --query "[?starts_with(name, 'imgweb')]"
     ```
 
-1.	다음 명령을 입력한 후 Enter 키를 눌러 접두사가 **imgweb\***인 단일 앱의 이름만 렌더링합니다.
+1.	다음 명령을 입력한 후 Enter 키를 눌러 접두사가 **imgweb\*** 인 단일 앱의 이름만 렌더링합니다.
 
     ```
     az webapp list --resource-group ManagedPlatform --query "[?starts_with(name, 'imgweb')].{Name:name}" --output tsv
@@ -438,7 +438,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.	리소스 그룹 블레이드에서 이 랩의 앞부분에서 만든 ManagedPlatform 리소스 그룹을 선택합니다.
 
-1.	ManagedPlatform 블레이드에서 이 랩의 앞부분에서 만든 **imgweb*[사용자 이름]*** 웹앱을 선택합니다.
+1.	ManagedPlatform 블레이드에서 이 랩의 앞부분에서 만든 **imgweb[사용자 이름]** 웹앱을 선택합니다.
 
 1.	웹앱 블레이드에서 찾아보기를 선택합니다.
 

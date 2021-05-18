@@ -78,7 +78,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     
     1.  **리소스 그룹** 섹션에서 **새로 만들기**를 선택하고 **MonitoredAssets**를 입력한 다음 **확인**을 선택합니다.
     
-    1.  **이름** 텍스트 상자에 **instrm*[사용자 이름]*** 을 입력합니다.
+    1.  **이름** 텍스트 상자에 **instrm[사용자 이름]** 을 입력합니다.
     
     1.  **지역** 드롭다운 목록에서 **(미국) 미국 동부** 지역을 선택합니다.
     
@@ -96,7 +96,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서 이 랩의 앞부분에서 만든 **MonitoredAssets** 리소스 그룹을 선택합니다.
 
-1.  **MonitoredAssets** 블레이드에서 이 랩의 앞부분에서 만든 **instrm*[사용자 이름]*** Application Insights 계정을 선택합니다.
+1.  **MonitoredAssets** 블레이드에서 이 랩의 앞부분에서 만든 **instrm[사용자 이름]** Application Insights 계정을 선택합니다.
 
 1.  **Application Insights** 블레이드의 **구성** 범주에서 **속성** 링크를 선택합니다.
 
@@ -124,7 +124,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     
     1.  **리소스 그룹** 드롭다운 목록에서 **MonitoredAssets**를 선택합니다.
     
-    1.  **이름** 텍스트 상자에 ***smpapi\***[사용자 이름]*** 을 입력합니다.
+    1.  **이름** 텍스트 상자에 **smpapi[사용자 이름]** 을 입력합니다.
 
     1.  **게시** 섹션에서 **코드**를 선택합니다.
 
@@ -144,7 +144,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
     1.  **Application Insights 사용** 섹션에서 **예**를 선택합니다.
 
-    1.  **Application Insights** 드롭다운 목록에서, 이 랩의 앞부분에서 만든 **instrm*[사용자 이름]*** Application Insights 계정을 선택합니다.
+    1.  **Application Insights** 드롭다운 목록에서, 이 랩의 앞부분에서 만든 **instrm[사용자 이름]** Application Insights 계정을 선택합니다.
 
     1.  **검토 + 만들기**를 선택합니다.
 
@@ -158,7 +158,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  리소스 그룹 블레이드에서 이 랩의 앞부분에서 만든 MonitoredAssets 리소스 그룹을 선택합니다.
 
-1.  **MonitoredAssets** 블레이드에서, 이 랩의 앞부분에서 만든 ***smpapi\***[사용자 이름]*** 웹앱을 선택합니다.
+1.  **MonitoredAssets** 블레이드에서, 이 랩의 앞부분에서 만든 **smpapi[사용자 이름]** 웹앱을 선택합니다.
 
 1.  **App Service** 블레이드의 **설정** 범주에서 **구성** 링크를 선택합니다.
 
@@ -288,7 +288,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     services.AddApplicationInsightsTelemetry(INSTRUMENTATION_KEY);
     ```
 
-1.  ConfigureServices** 메서드를 살펴봅니다. 이제 메서드에 다음 코드가 포함되어 있어야 합니다.
+1.  **ConfigureServices** 메서드를 살펴봅니다. 이제 메서드에 다음 코드가 포함되어 있어야 합니다.
 
     ```
     public void ConfigureServices(IServiceCollection services)
@@ -332,7 +332,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  **리소스 그룹** 블레이드에서 이 랩의 앞부분에서 만든 **MonitoredAssets** 리소스 그룹을 찾아서 선택합니다.
 
-1.  MonitoredAssets 블레이드에서 이 랩의 앞부분에서 만든 **instrm*[사용자 이름]*** Application Insights 계정을 선택합니다.
+1.  MonitoredAssets 블레이드에서 이 랩의 앞부분에서 만든 **instrm[사용자 이름]** Application Insights 계정을 선택합니다.
 
 1.  블레이드 중앙에 있는 타일의 **Application Insights** 블레이드에서 표시된 메트릭을 찾습니다. 특히 발생한 서버 요청 수 및 평균 서버 응답 시간을 확인합니다.
 
@@ -376,13 +376,13 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
     az webapp list --resource-group MonitoredAssets
     ```
 
-1.  다음 명령을 입력하고 Enter 키를 눌러 접두사가 **smpapi\***인 앱을 찾습니다.
+1.  다음 명령을 입력하고 Enter 키를 눌러 접두사가 **smpapi\*** 인 앱을 찾습니다.
 
     ```
     az webapp list --resource-group MonitoredAssets --query "[?starts_with(name, 'smpapi')]"
     ```
 
-1.  다음 명령을 입력하고 Enter 키를 눌러 **smpapi\***가 있는 단일 앱의 이름만 렌더링합니다.
+1.  다음 명령을 입력하고 Enter 키를 눌러 **smpapi\*** 가 있는 단일 앱의 이름만 렌더링합니다.
 
     ```
     az webapp list --resource-group MonitoredAssets --query "[?starts_with(name, 'smpapi')].{Name:name}" --output tsv
@@ -412,13 +412,13 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  리소스 그룹 블레이드에서 이 랩의 앞부분에서 만든 MonitoredAssets 리소스 그룹을 선택합니다.
 
-1.  MonitoredAssets 블레이드에서, 이 랩의 앞부분에서 만든 ***smpapi\***[사용자 이름]*** 웹앱을 선택합니다.
+1.  MonitoredAssets 블레이드에서, 이 랩의 앞부분에서 만든 **smpapi[사용자 이름]** 웹앱을 선택합니다.
 
 1.  **App Service** 블레이드에서 **찾아보기**를 선택합니다. 새 브라우저 창 또는 탭이 열리고 "404(찾을 수 없음)" 오류가 반환됩니다.
 
 1.  브라우저 주소 표시줄에서 현재 URL의 끝에 **/weatherforecast** 접미사를 추가하여 URL을 업데이트하고 Enter 키를 누릅니다.
 
-    > **참고**: 예를 들어 URL이 https://smpapistudent.azurewebsites.net이 경우 새 URL은 https://smpapistudent.azurewebsites.net/weatherforecast가 됩니다.
+    > **참고**: 예를 들어 URL이 https://smpapistudent.azurewebsites.net 이 경우 새 URL은 https://smpapistudent.azurewebsites.net/weatherforecast 가 됩니다.
 
 1.  API를 사용한 결과로 반환되는 JSON(JavaScript Object Notation) 배열을 찾습니다.
 
@@ -430,7 +430,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  리소스 그룹 블레이드에서 이 랩의 앞부분에서 만든 MonitoredAssets 리소스 그룹을 선택합니다.
 
-1.  MonitoredAssets 블레이드에서, 이 랩의 앞부분에서 만든 ***smpapi\***[사용자 이름]*** 웹앱을 선택합니다.
+1.  MonitoredAssets 블레이드에서, 이 랩의 앞부분에서 만든 **smpapi[사용자 이름]** 웹앱을 선택합니다.
 
 1.  **App Service** 블레이드에서 **Application Insights**를 선택합니다.
 
@@ -458,7 +458,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  브라우저 주소 표시줄에서 현재 URL의 끝에 /weatherforecast 접미사를 추가하여 URL을 업데이트하고 Enter 키를 누릅니다.
 
-    > **참고**: 예를 들어 URL이 https://smpapistudent.azurewebsites.net이 경우 새 URL은 https://smpapistudent.azurewebsites.net/weatherforecast가 됩니다.
+    > **참고**: 예를 들어 URL이 https://smpapistudent.azurewebsites.net 이 경우 새 URL은 https://smpapistudent.azurewebsites.net/weatherforecast 가 됩니다.
 
 1.  API를 사용하여 반환되는 JSON 배열을 관찰합니다.
 
@@ -474,7 +474,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  리소스 그룹 블레이드에서 이 랩의 앞부분에서 만든 MonitoredAssets 리소스 그룹을 찾아서 선택합니다.
 
-1.  MonitoredAssets 블레이드에서 이 랩의 앞부분에서 만든 **instrm*[사용자 이름]*** Application Insights 계정을 선택합니다.
+1.  MonitoredAssets 블레이드에서 이 랩의 앞부분에서 만든 **instrm[사용자 이름]** Application Insights 계정을 선택합니다.
 
 1.  블레이드 중앙에 있는 타일의 Application Insights 블레이드에서 표시된 메트릭을 찾습니다. 특히 발생한 서버 요청 수 및 평균 서버 응답 시간을 확인합니다.
 
@@ -488,7 +488,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 
 1.  리소스 그룹 블레이드에서 이 랩의 앞부분에서 만든 MonitoredAssets 리소스 그룹을 찾아서 선택합니다.
 
-1.  MonitoredAssets 블레이드에서 이 랩의 앞부분에서 만든 **instrm*[사용자 이름]*** Application Insights 계정을 선택합니다.
+1.  MonitoredAssets 블레이드에서 이 랩의 앞부분에서 만든 **instrm[사용자 이름]** Application Insights 계정을 선택합니다.
 
 1.  **Application Insights** 블레이드의 **조사** 섹션에서 **라이브 메트릭 스트림**을 선택합니다.
 

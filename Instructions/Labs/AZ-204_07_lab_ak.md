@@ -7,7 +7,7 @@ lab:
     type: '해답'
 ---
 
-# 랩 07: 서비스 전반에서 리소스 비밀에 안전하게 액세스
+# 랩 07: 서비스 전반에서 리소스 비밀에 보다 안전하게 액세스
 # 학생 랩 답변 키
 
 ## Microsoft Azure 사용자 인터페이스
@@ -189,7 +189,7 @@ Windows 10 데스크톱에서 작업 표시줄을 찾습니다. 작업 표시줄
 1. **구성** 창에서 다음 작업을 수행합니다.
     1. **애플리케이션 설정** 탭을 선택한 다음 **새 애플리케이션 설정**을 선택합니다.
     1. **애플리케이션 설정 추가/편집** 팝업 창의 **이름** 텍스트 상자에 **StorageConnectionString**을 입력합니다.
-    1. **값** 텍스트 상자에서 ``@Microsoft.KeyVault(SecretUri=*비밀 식별자*)`` 구문을 사용하여 값을 생성합니다.
+    1. **값** 텍스트 상자에서 ``@Microsoft.KeyVault(SecretUri=*Secret Identifier*)`` 구문을 사용하여 값을 생성합니다.
         > **참고**: 위의 구문을 사용하여 ***비밀 식별자***에 대한 참조를 빌드해야 합니다. 예를 들어, 비밀 식별자가 ``https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf``인 경우 값은 ``@Microsoft.KeyVault(SecretUri=https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf)``가 됩니다.
     1. **배포 슬롯 설정** 텍스트 상자의 값은 기본값으로 설정된 상태로 유지합니다.
     1. **확인**을 선택하여 팝업 창을 닫고 **구성** 섹션으로 돌아갑니다.
