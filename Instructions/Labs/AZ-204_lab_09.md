@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     az204Title: '랩 09: Event Grid 이벤트 게시 및 구독'
     az020Title: '랩 09: Event Grid 이벤트 게시 및 구독'
