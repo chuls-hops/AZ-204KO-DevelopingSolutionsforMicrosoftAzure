@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     az204Title: '랩 12: Azure Content Delivery Network를 사용하여 웹 애플리케이션 향상'
     az204Module: '모듈 12: 솔루션 내에서 캐싱 및 콘텐츠 배달 통합'
