@@ -1,9 +1,16 @@
 ﻿# AZ-204: Microsoft Azure 솔루션 개발
 
-- **수강생**들이 [https://aka.ms/az204labs-kor](https://aka.ms/az204labs-kor)에서 쉽게 사용 가능한 립 지침 목록을 확인하도록 합니다.
-- **[최신 학생용 핸드북 및 AllFiles 콘텐츠 다운로드](../../releases/latest)**
-- **MCT입니까?** - [MCT용 GitHub 사용자 가이드](https://microsoftlearning.github.io/MCT-User-Guide-KO/)를 살펴보세요.
-- **랩 명령을 수동으로 빌드해야 합니까?** - [MicrosoftLearning/Docker-Build](https://github.com/MicrosoftLearning/Docker-Build) 리포지토리에서 명령을 사용할 수 있습니다.
+**모든 랩 지침은 2021년 10월 15일에 업데이트되었습니다.** 현재 진행 중인 모든 이슈와 PR을 종료할 예정이며, 모두가 새로운 지침을 검토한 후 향후 새로운 변경 사항을 제출해야 합니다.
+
+> **참고**: *allfiles.zip*을 다운로드하기 위한 새로운 방법이 아래에 나와 있습니다. 자동화된 빌드 프로세스는 오프라인입니다.
+
+- **수강생**들이 [https://aka.ms/az204labs-kor](https://aka.ms/az204labs-kor)에서 쉽게 사용 가능한 랩 지침 목록을 확인하도록 합니다.
+- **[AllFiles 콘텐츠 다운로드](https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/raw/master/Allfiles/allfiles-20220106.zip)**
+- **MCT인가요?** - [MCT용 GitHub 사용자 가이드](https://microsoftlearning.github.io/MCT-User-Guide-KO/)를 살펴보세요.
+- **랩 지침을 수동으로 빌드해야 합니까?** - [MicrosoftLearning/Docker-Build](https://github.com/MicrosoftLearning/Docker-Build) 리포지토리에서 명령을 사용할 수 있습니다. 
+<!-- 
+
+- **[최신 학생 핸드북 및 AllFiles 콘텐츠 다운로드](../../releases/latest)**-->
 
 ## Microsoft의 역할
 
