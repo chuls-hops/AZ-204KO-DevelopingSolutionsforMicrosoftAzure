@@ -1,4 +1,12 @@
-﻿# AZ-204: Microsoft Azure 솔루션 개발
+**Important Notice!**
+
+This repo was replaced by a [new repo](https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure.ko-kr) on 4 February 2022 . We're making this change to improve the localized version of this content and reduce the delta between English and localized content updates. 
+After a short interval, this repo will be archived.
+
+**Contributions**
+
+At this time, we are not accepting external contributions to this repo. If you have suggestions or spot any errors, please create a pull request or report an issue on the [new repo](https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure.ko-kr).
+# AZ-204: Microsoft Azure 솔루션 개발
 
 **모든 랩 지침은 2021년 10월 15일에 업데이트되었습니다.** 현재 진행 중인 모든 이슈와 PR을 종료할 예정이며, 모두가 새로운 지침을 검토한 후 향후 새로운 변경 사항을 제출해야 합니다.
 
