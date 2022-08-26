@@ -1,3 +1,7 @@
+# Repo Archived!
+
+This repo has been archived. Please refer to the new repo for this course at https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure.ko-kr
+
 **Important Notice!**
 
 This repo was replaced by a [new repo](https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure.ko-kr) on 4 February 2022 . We're making this change to improve the localized version of this content and reduce the delta between English and localized content updates. 
